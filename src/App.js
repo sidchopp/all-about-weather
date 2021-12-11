@@ -6,8 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 //Components
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
-import WeatherForecast from './components/weatherForecast/WeatherForecast';
-import WeatherToday from './components/weatherToday/WeatherToday';
+import WeatherAll from './components/weatherAll/WeatherAll';
 
 
 function App() {
@@ -16,8 +15,7 @@ function App() {
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
       <CssBaseline />
       <Navbar />
-      <WeatherToday />
-      <WeatherForecast />
+      <WeatherAll />
       <Footer />
     </React.Fragment>
   );
