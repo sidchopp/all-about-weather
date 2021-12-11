@@ -5,6 +5,7 @@ import Loader from '../loader/Loader'
 
 
 import { formatISO, startOfYesterday } from 'date-fns'
+import GraphDaily from '../charts/GraphDaily'
 
 // Date in ISO format For Yesterday's weather
 const yesterday = startOfYesterday()
@@ -70,7 +71,7 @@ function WeatherAll() {
       {(typeof data.current !== 'undefined' && typeof data.location !== 'undefined' && typeof data.forecast !== 'undefined' && typeof dataYesterday.forecast !== 'undefined')
         ? <>
           <WeatherToday data={data} />
-
+          <GraphDaily data1={data} />
           <WeatherForecast data={data} />
 
         </>
