@@ -32,9 +32,9 @@ function WeatherToday({ data }) {
         elevation={9}
         backgroundColor="blue"
       >
-        <Grid container spacing={2}>
+        <Grid container spacing={4}>
 
-          <Grid item>
+          <Grid item xs >
             <Typography variant="h7" align="left" color="text.secondary" component="p">
               Feels Like
             </Typography>
@@ -43,9 +43,9 @@ function WeatherToday({ data }) {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm container>
+          <Grid item xs={6} sm container>
             <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
+              <Grid item >
                 <Typography variant="h1" gutterBottom align="center" color="text.secondary" component="p">
                   {data.current.temp_c}°
                 </Typography>
@@ -75,7 +75,7 @@ function WeatherToday({ data }) {
               <Img src={data.current.condition.icon} alt="Weather" />
             </Typography>
           </Grid> */}
-          <Grid item>
+          <Grid item xs>
             <Typography variant="h7" align="right" color="text.secondary" component="p">
               {data.current.condition.text}
             </Typography>
