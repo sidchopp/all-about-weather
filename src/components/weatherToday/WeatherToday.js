@@ -18,26 +18,37 @@ const Img = styled('img')({
 function WeatherToday({ data }) {
   console.log(data);
   return (
-    <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
-      <Paper sx={{ p: 2, margin: 'auto', maxWidth: 500, flexGrow: 1 }}>
+    // <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
+    <Container maxWidth="sm" sx={{ mt: 4, mb: 4 }}>
+      {/* <Paper sx={{ p: 2, margin: 'auto', maxWidth: 500, flexGrow: 1 }}> */}
+      <Paper
+        sx={{
+          p: 2,
+          display: 'flex',
+          flexDirection: 'column',
+          height: 300,
+          backgroundColor: "skyblue"
+        }}
+        elevation={9}
+        backgroundColor="blue"
+      >
         <Grid container spacing={2}>
-          <Grid item>
 
-            <Typography variant="h7" align="center" color="text.secondary" component="p">
+          <Grid item>
+            <Typography variant="h7" align="left" color="text.secondary" component="p">
               Feels Like
             </Typography>
-            <Typography variant="h5" align="center" color="text.primary" component="p">
+            <Typography variant="h5" align="left" color="text.primary" component="p">
               {data.current.feelslike_c}°
             </Typography>
-
           </Grid>
+
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography variant="h1" gutterBottom align="center" color="text.secondary" component="p">
                   {data.current.temp_c}°
                 </Typography>
-
                 <Typography
                   component="h1"
                   variant="h4"
@@ -56,13 +67,23 @@ function WeatherToday({ data }) {
                 </Typography>
               </Grid> */}
             </Grid>
-            <Grid item>
-              <Typography variant="h6" align="center" color="text.primary" component="p">
-                {data.current.condition.text}
-                <Img src={data.current.condition.icon} alt="Weather" />
-              </Typography>
-            </Grid>
           </Grid>
+
+          {/* <Grid item>
+            <Typography variant="h6" align="right" color="text.primary" component="p">
+              {data.current.condition.text}
+              <Img src={data.current.condition.icon} alt="Weather" />
+            </Typography>
+          </Grid> */}
+          <Grid item>
+            <Typography variant="h7" align="right" color="text.secondary" component="p">
+              {data.current.condition.text}
+            </Typography>
+            <Typography variant="h5" align="right" color="text.primary" component="p">
+              <Img src={data.current.condition.icon} alt="Weather" />
+            </Typography>
+          </Grid>
+
         </Grid>
       </Paper>
     </Container>

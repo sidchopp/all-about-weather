@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from 'react'
+
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Toolbar from '@mui/material/Toolbar';
+
+
 import WeatherForecast from '../weatherForecast/WeatherForecast'
 import WeatherToday from '../weatherToday/WeatherToday'
 import Loader from '../loader/Loader'
@@ -6,6 +12,7 @@ import Loader from '../loader/Loader'
 
 import { formatISO, startOfYesterday } from 'date-fns'
 import GraphDaily from '../charts/GraphDaily'
+import PieChartDaily from '../charts/PieChartDaily'
 
 // Date in ISO format For Yesterday's weather
 const yesterday = startOfYesterday()
@@ -71,7 +78,17 @@ function WeatherAll() {
       {(typeof data.current !== 'undefined' && typeof data.location !== 'undefined' && typeof data.forecast !== 'undefined' && typeof dataYesterday.forecast !== 'undefined')
         ? <>
           <WeatherToday data={data} />
-          <GraphDaily data1={data} />
+          <Toolbar />
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={8} lg={9}>
+                <GraphDaily data1={data} />
+              </Grid>
+              <Grid item xs={12} md={4} lg={3}>
+                <PieChartDaily />
+              </Grid>
+            </Grid>
+          </Container>
           <WeatherForecast data={data} />
 
         </>
