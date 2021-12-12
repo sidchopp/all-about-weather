@@ -16,7 +16,7 @@ const Img = styled('img')({
 
 
 function WeatherToday({ data }) {
-  console.log(data);
+  // console.log(data);
   return (
     // <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
     <Container maxWidth="sm" sx={{ mt: 4, mb: 4 }}>

@@ -13,6 +13,7 @@ import Loader from '../loader/Loader'
 import { formatISO, startOfYesterday } from 'date-fns'
 import GraphDaily from '../charts/GraphDaily'
 import PieChartDaily from '../charts/PieChartDaily'
+import PieChartYesterday from '../charts/PieChartYesterday'
 
 // Date in ISO format For Yesterday's weather
 const yesterday = startOfYesterday()
@@ -89,7 +90,8 @@ function WeatherAll() {
               </Grid>
             </Grid>
           </Container>
-          <WeatherForecast data={data} />
+          <PieChartYesterday dataYesterday={dataYesterday} />
+          <WeatherForecast data2={data} />
 
         </>
         : <div></div>
