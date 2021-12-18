@@ -33,31 +33,31 @@ export default function PieChartYesterday({ dataYesterday }) {
   const average = (array) => array.reduce((a, b) => a + b) / array.length;
 
   const dataHourly = dataYesterday.forecast.forecastday[0].hour;
-  console.log(dataHourly);
+  // console.log(dataHourly);
   const chancesOfRain = dataYesterday.forecast.forecastday[0].hour.map(rain => rain.chance_of_rain);
   const chancesOfSnow = dataYesterday.forecast.forecastday[0].hour.map(snow => snow.chance_of_snow);
   const cloud = dataYesterday.forecast.forecastday[0].hour.map(cloud => cloud.cloud)
-  console.log(average(chancesOfRain));
-  console.log(average(chancesOfSnow));
-  console.log(average(cloud));
+  // console.log(average(chancesOfRain));
+  // console.log(average(chancesOfSnow));
+  // console.log(average(cloud));
 
   const snow = new Object();
   snow.name = 'snow';
   snow.value = average(chancesOfSnow);
-  console.log(snow);
+  // console.log(snow);
 
   const rain = new Object();
   rain.name = 'rain';
   rain.value = average(chancesOfRain);
-  console.log(rain);
+  // console.log(rain);
 
   const cloud1 = new Object();
   cloud1.name = 'cloud';
   cloud1.value = average(cloud);
-  console.log(cloud1);
+  // console.log(cloud1);
 
   const DATA = [snow, rain, cloud1]
-  console.log(DATA);
+  // console.log(DATA);
 
 
 

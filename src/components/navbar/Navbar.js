@@ -16,6 +16,8 @@ import Link from '@mui/material/Link';
 // import Container from '@mui/material/Container';
 // import { ReplayCircleFilledTwoTone } from '@mui/icons-material';
 
+import { Link as RouterLink } from 'react-router-dom';
+
 
 
 function Navbar() {
@@ -28,32 +30,43 @@ function Navbar() {
     >
       <Toolbar sx={{ flexWrap: 'wrap' }}>
         <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-          All About Weather
+          <Link
+            component={RouterLink}
+            to=""
+            variant="button"
+            color="text.primary"
+            sx={{ my: 1, mx: 1.5 }}
+          >
+            All About Weather
+          </Link>
         </Typography>
         <nav>
           <Link
+            component={RouterLink}
+            to=""
             variant="button"
             color="text.primary"
-            href="#"
             sx={{ my: 1, mx: 1.5 }}
           >
             Weather
           </Link>
           <Link
+            component={RouterLink}
+            to="forecast"
             variant="button"
             color="text.primary"
-            href="#"
             sx={{ my: 1, mx: 1.5 }}
           >
             Forecast
           </Link>
           <Link
+            component={RouterLink}
+            to="yesterday"
             variant="button"
             color="text.primary"
-            href="#"
             sx={{ my: 1, mx: 1.5 }}
           >
-            Support
+            Yesterday
           </Link>
         </nav>
         {/* <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
