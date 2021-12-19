@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { format } from 'date-fns'
 
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
@@ -14,7 +15,12 @@ const Img = styled('img')({
   maxHeight: '100%',
 });
 
-
+// Today's Date and Day
+const day = format(new Date(), 'do');
+const weekday = format(new Date(), 'eeee');
+const month = format(new Date(), 'MMMM');
+const today = `${weekday},${day}${" "}${month}`
+// console.log(today);
 
 
 function WeatherToday({ data }) {
@@ -22,7 +28,7 @@ function WeatherToday({ data }) {
   return (
     // <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
     <div  >
-      <Container maxWidth="sm" sx={{
+      <Container maxWidth="xl" sx={{
         mt: 4,
         mb: 4
       }}>
@@ -41,11 +47,16 @@ function WeatherToday({ data }) {
           <Grid container spacing={4}>
 
             <Grid item xs >
-              <Typography variant="h7" align="left" color="text.secondary" component="p">
-                Feels Like
+              <Typography
+                component="h1"
+                variant="h4"
+                align="left"
+                color="text.primary"
+              >
+                {data.location.name}
               </Typography>
-              <Typography variant="h5" align="left" color="text.primary" component="p">
-                {data.current.feelslike_c}°
+              <Typography gutterBottom variant="h7" align="left" color="text.primary" component="p">
+                {data.location.region}, {data.location.country}
               </Typography>
             </Grid>
 
@@ -61,10 +72,10 @@ function WeatherToday({ data }) {
                     align="center"
                     color="text.primary"
                   >
-                    {data.location.name}
+                    {data.current.condition.text}
                   </Typography>
                   <Typography variant="h7" align="center" color="text.secondary" component="p">
-                    {data.location.region}, {data.location.country}
+                    <Img src={data.current.condition.icon} alt="Weather" />
                   </Typography>
                 </Grid>
                 {/* <Grid item>
@@ -82,14 +93,10 @@ function WeatherToday({ data }) {
             </Typography>
           </Grid> */}
             <Grid item xs>
-              <Typography variant="h7" align="right" color="text.secondary" component="p">
-                {data.current.condition.text}
-              </Typography>
-              <Typography variant="h5" align="right" color="text.primary" component="p">
-                <Img src={data.current.condition.icon} alt="Weather" />
+              <Typography variant="h9" align="right" color="text.secondary" component="p">
+                {today}
               </Typography>
             </Grid>
-
           </Grid>
         </Paper>
       </Container>
