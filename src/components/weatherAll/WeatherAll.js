@@ -8,6 +8,7 @@ import Toolbar from '@mui/material/Toolbar';
 import WeatherForecast from '../weatherForecast/WeatherForecast'
 import WeatherToday from '../weatherToday/WeatherToday'
 import Loader from '../loader/Loader'
+import WeatherTodayDetails from '../weatherToday/WeatherTodayDetails';
 
 
 import { formatISO, startOfYesterday } from 'date-fns'
@@ -90,7 +91,17 @@ function WeatherAll() {
       {(typeof data.current !== 'undefined' && typeof data.location !== 'undefined' && typeof data.forecast !== 'undefined' && typeof dataYesterday.forecast !== 'undefined')
         ? <>
           <div style={styles.paperContainer}>
-            <WeatherToday data={data} />
+            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+              <Grid container spacing={3}>
+                <Grid item xs={12} md={8} lg={3}>
+                  <WeatherToday data={data} />
+                </Grid>
+                <Grid item xs={12} md={4} lg={9}>
+                  <WeatherTodayDetails data={data} />
+                </Grid>
+              </Grid>
+            </Container>
+
             {/* <Toolbar /> */}
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Grid container spacing={3}>
