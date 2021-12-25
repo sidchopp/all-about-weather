@@ -45,10 +45,10 @@ function WeatherToday({ data }) {
         backgroundColor="blue"
 
       >
-        <Grid container spacing={4}>
+        <Grid container spacing={2}>
 
           <Grid item xs >
-            <Typography variant="h9" align="left" color="text.secondary" component="p">
+            <Typography gutterBottom variant="h9" align="left" color="text.secondary" component="p">
               {today}
             </Typography>
             <Typography
@@ -59,17 +59,16 @@ function WeatherToday({ data }) {
             >
               {data.location.name}
             </Typography>
-            <Typography gutterBottom variant="h7" align="left" color="text.primary" component="p">
+            <Typography variant="h7" align="left" color="text.primary" component="p">
               {data.location.region}, {data.location.country}
             </Typography>
-
           </Grid>
 
           <Grid item xs>
             <Typography
               variant="h1"
               align="center"
-              color="text.secondary"
+              color="text.primary"
               component="h1"
             >
               {data.current.temp_c}°
@@ -86,6 +85,7 @@ function WeatherToday({ data }) {
               <Img src={data.current.condition.icon} alt="Weather" />
             </Typography>
           </Grid>
+
         </Grid>
       </Paper>
       {/* </Container> */}
