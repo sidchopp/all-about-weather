@@ -13,7 +13,7 @@ import WeatherTodayDetails from '../weatherToday/WeatherTodayDetails';
 
 import { formatISO, startOfYesterday } from 'date-fns'
 import GraphDaily from '../charts/GraphDaily'
-import PieChartDaily from '../charts/PieChartDaily'
+import LabeledPieChart from '../charts/LabeledPieChart'
 import PieChartYesterday from '../charts/PieChartYesterday'
 import Image from '../../images/background.jpg'
 
@@ -105,11 +105,11 @@ function WeatherAll() {
             {/* <Toolbar /> */}
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Grid container spacing={3}>
-                <Grid item xs={12} md={8} lg={9}>
+                <Grid item xs={12} md={8} lg={7}>
                   <GraphDaily data1={data} />
                 </Grid>
-                <Grid item xs={12} md={4} lg={3}>
-                  <PieChartDaily />
+                <Grid item xs={12} md={4} lg={5}>
+                  <LabeledPieChart />
                 </Grid>
               </Grid>
             </Container>

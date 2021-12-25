@@ -49,7 +49,7 @@ export default class Example extends PureComponent {
         >
           <ResponsiveContainer width="100%" height="100%">
             <PieChart width={400} height={400}>
-              <Pie
+              {/* <Pie
                 data={data}
                 cx="50%"
                 cy="50%"
@@ -57,6 +57,20 @@ export default class Example extends PureComponent {
                 label={renderCustomizedLabel}
                 outerRadius={80}
                 fill="#8884d8"
+                dataKey="value"
+              >
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie> */}
+              <Pie
+                data={data}
+                cx="50%"
+                cy="50%"
+                innerRadius={60}
+                outerRadius={80}
+                fill="#8884d8"
+                paddingAngle={2}
                 dataKey="value"
               >
                 {data.map((entry, index) => (

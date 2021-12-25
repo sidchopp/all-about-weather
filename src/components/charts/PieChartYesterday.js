@@ -82,10 +82,10 @@ export default function PieChartYesterday({ dataYesterday }) {
                 data={DATA}
                 cx="50%"
                 cy="50%"
-                labelLine={false}
-                label={renderCustomizedLabel}
+                innerRadius={60}
                 outerRadius={80}
                 fill="#8884d8"
+                paddingAngle={5}
                 dataKey="value"
               >
                 {data.map((entry, index) => (
