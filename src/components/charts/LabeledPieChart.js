@@ -130,6 +130,7 @@ export default function LabeledPieChart({ data }) {
             fill="#8884d8"
             dataKey="value"
             onMouseEnter={onPieEnter}
+            paddingAngle={2.5}
           />
         </PieChart>
       </Paper>
