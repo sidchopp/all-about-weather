@@ -3,12 +3,13 @@ import React, { useCallback, useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
 import Paper from '@mui/material/Paper';
 
-const data = [
+const data1 = [
   { name: "Group A", value: 400 },
   { name: "Group B", value: 300 },
   { name: "Group C", value: 300 },
   { name: "Group D", value: 200 }
 ];
+
 
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
@@ -69,8 +70,8 @@ const renderActiveShape = (props) => {
         y={ey}
         textAnchor={textAnchor}
         fill="#333"
-      >{`PV ${value}`}</text>
-      <text
+      >{`Prob. ${value}`}%</text>
+      {/* <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
         dy={18}
@@ -78,12 +79,24 @@ const renderActiveShape = (props) => {
         fill="#999"
       >
         {`(Rate ${(percent * 100).toFixed(2)}%)`}
-      </text>
+      </text> */}
     </g>
   );
 };
 
-export default function LabeledPieChart() {
+export default function LabeledPieChart({ data }) {
+
+  const snow = new Object();
+  snow.name = 'Snow';
+  snow.value = data.forecast.forecastday[0].day.daily_chance_of_snow
+
+  const rain = new Object();
+  rain.name = 'Rain';
+  rain.value = data.forecast.forecastday[0].day.daily_chance_of_rain
+
+  const DATA = [snow, rain]
+  // console.log(DATA);
+
   const [activeIndex, setActiveIndex] = useState(0);
   const onPieEnter = useCallback(
     (_, index) => {
@@ -109,7 +122,7 @@ export default function LabeledPieChart() {
           <Pie
             activeIndex={activeIndex}
             activeShape={renderActiveShape}
-            data={data}
+            data={DATA}
             cx="50%"
             cy="50%"
             innerRadius={60}

@@ -109,7 +109,7 @@ function WeatherAll() {
                   <GraphDaily data1={data} />
                 </Grid>
                 <Grid item xs={12} md={4} lg={5}>
-                  <LabeledPieChart />
+                  <LabeledPieChart data={data} />
                 </Grid>
               </Grid>
             </Container>
