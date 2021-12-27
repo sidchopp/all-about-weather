@@ -2,6 +2,7 @@
 import React, { useCallback, useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
 import Paper from '@mui/material/Paper';
+import Container from '@mui/material/Container';
 
 const data1 = [
   { name: "Group A", value: 400 },
@@ -71,15 +72,15 @@ const renderActiveShape = (props) => {
         textAnchor={textAnchor}
         fill="#333"
       >{`Prob. ${value}`}%</text>
-      {/* <text
+      <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
         dy={18}
         textAnchor={textAnchor}
         fill="#999"
       >
-        {`(Rate ${(percent * 100).toFixed(2)}%)`}
-      </text> */}
+        {`(Overall ${(percent * 100).toFixed(2)}%)`}
+      </text>
     </g>
   );
 };
@@ -106,34 +107,38 @@ export default function LabeledPieChart({ data }) {
   );
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <Paper
-        sx={{
-          p: 2,
-          display: 'flex',
-          flexDirection: 'column',
-          height: 300,
-          backgroundColor: "skyblue"
-        }}
-        elevation={9}
-        backgroundColor="blue"
-      >
-        <PieChart width={400} height={300}>
-          <Pie
-            activeIndex={activeIndex}
-            activeShape={renderActiveShape}
-            data={DATA}
-            cx="50%"
-            cy="50%"
-            innerRadius={60}
-            outerRadius={80}
-            fill="#8884d8"
-            dataKey="value"
-            onMouseEnter={onPieEnter}
-            paddingAngle={2.5}
-          />
-        </PieChart>
-      </Paper>
-    </ResponsiveContainer>
+    <div style={{ width: "100%", height: 300 }}>
+
+      <ResponsiveContainer >
+        <Paper
+          sx={{
+            p: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            height: 300,
+            backgroundColor: "skyblue"
+          }}
+          elevation={9}
+          backgroundColor="blue"
+        >
+          <PieChart width={500} height={300}>
+            <Pie
+              activeIndex={activeIndex}
+              activeShape={renderActiveShape}
+              data={DATA}
+              cx="50%"
+              cy="50%"
+              innerRadius={60}
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+              onMouseEnter={onPieEnter}
+              paddingAngle={2.5}
+            />
+          </PieChart>
+        </Paper>
+      </ResponsiveContainer>
+
+    </div>
   );
 }

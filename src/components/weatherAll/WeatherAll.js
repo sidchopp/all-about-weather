@@ -91,19 +91,19 @@ function WeatherAll() {
       {(typeof data.current !== 'undefined' && typeof data.location !== 'undefined' && typeof data.forecast !== 'undefined' && typeof dataYesterday.forecast !== 'undefined')
         ? <>
           <div style={styles.paperContainer}>
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
               <Grid container spacing={3}>
-                <Grid item xs={12} md={8} lg={3}>
+                <Grid item xs={12} md={8} lg={4}>
                   <WeatherToday data={data} />
                 </Grid>
-                <Grid item xs={12} md={4} lg={9}>
+                <Grid item xs={12} md={4} lg={8}>
                   <WeatherTodayDetails data={data} />
                 </Grid>
               </Grid>
             </Container>
 
             {/* <Toolbar /> */}
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={8} lg={7}>
                   <GraphDaily data1={data} />

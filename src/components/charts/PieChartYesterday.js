@@ -29,6 +29,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 };
 
 export default function PieChartYesterday({ dataYesterday }) {
+  console.log(dataYesterday);
 
   const average = (array) => array.reduce((a, b) => a + b) / array.length;
 
@@ -67,7 +68,7 @@ export default function PieChartYesterday({ dataYesterday }) {
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         <Paper
           sx={{
-            p: 2,
+            p: 1,
             display: 'flex',
             flexDirection: 'column',
             height: 300,
@@ -76,8 +77,8 @@ export default function PieChartYesterday({ dataYesterday }) {
           elevation={9}
           backgroundColor="blue"
         >
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart width={800} height={400}>
+          <ResponsiveContainer width="100%" height="100%" >
+            <PieChart width={400} height={300}>
               <Pie
                 data={DATA}
                 cx="50%"
@@ -96,7 +97,7 @@ export default function PieChartYesterday({ dataYesterday }) {
           </ResponsiveContainer>
         </Paper>
       </Container>
-    </div>
+    </div >
   );
 }
 
