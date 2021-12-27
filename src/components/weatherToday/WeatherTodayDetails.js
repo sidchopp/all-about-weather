@@ -7,6 +7,12 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import Container from '@mui/material/Container';
+import AirIcon from '@mui/icons-material/Air';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import NightsStayIcon from '@mui/icons-material/NightsStay';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import { WiSunrise, WiSunset, WiHumidity, WiThermometer, WiThermometerExterior, WiDaySunny } from "react-icons/wi";
+import { BsPersonLinesFill, BsThermometerSnow } from "react-icons/bs"
 
 function WeatherTodayDetails({ data }) {
 
@@ -45,8 +51,8 @@ function WeatherTodayDetails({ data }) {
                   C
                 </span>
               </Typography>
-              <Typography gutterBottom variant="h9" align="center" color="text.secondary" component="p">
-                Feels like
+              <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
+                <BsThermometerSnow />
               </Typography>
             </Grid>
             <Grid item xs >
@@ -61,8 +67,8 @@ function WeatherTodayDetails({ data }) {
                   mph
                 </span>
               </Typography>
-              <Typography variant="h7" align="center" color="text.secondary" component="p">
-                Wind
+              <Typography variant="h4" align="center" color="text.secondary" component="p">
+                <AirIcon />
               </Typography>
             </Grid>
             <Grid item xs >
@@ -74,8 +80,8 @@ function WeatherTodayDetails({ data }) {
               >
                 {data.forecast.forecastday[0].astro.sunrise}
               </Typography>
-              <Typography variant="h7" align="center" color="text.secondary" component="p">
-                Sunrise
+              <Typography variant="h4" align="center" color="text.secondary" component="p">
+                <WiSunrise />
               </Typography>
             </Grid>
           </Grid>
@@ -94,8 +100,8 @@ function WeatherTodayDetails({ data }) {
                   C
                 </span>
               </Typography>
-              <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                Max.
+              <Typography gutterBottom variant="h4" align="center" color="text.secondary" component="p">
+                <WiThermometer />
               </Typography>
             </Grid>
             <Grid item xs >
@@ -110,8 +116,8 @@ function WeatherTodayDetails({ data }) {
                   miles
                 </span>
               </Typography>
-              <Typography variant="h7" align="center" color="text.secondary" component="p">
-                Visibility
+              <Typography variant="h4" align="center" color="text.secondary" component="p">
+                <VisibilityIcon />
               </Typography>
             </Grid>
             <Grid item xs >
@@ -123,8 +129,8 @@ function WeatherTodayDetails({ data }) {
               >
                 {data.forecast.forecastday[0].astro.sunset}
               </Typography>
-              <Typography variant="h7" align="center" color="text.secondary" component="p">
-                Sunset
+              <Typography variant="h4" align="center" color="text.secondary" component="p">
+                <WiSunset />
               </Typography>
             </Grid>
           </Grid>
@@ -143,8 +149,8 @@ function WeatherTodayDetails({ data }) {
                   C
                 </span>
               </Typography>
-              <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                Min.
+              <Typography gutterBottom variant="h4" align="center" color="text.secondary" component="p">
+                <WiThermometerExterior />
               </Typography>
             </Grid>
             <Grid item xs >
@@ -159,8 +165,8 @@ function WeatherTodayDetails({ data }) {
                   %
                 </span>
               </Typography>
-              <Typography variant="h7" align="center" color="text.secondary" component="p">
-                Humidity
+              <Typography variant="h4" align="center" color="text.secondary" component="p">
+                <WiHumidity />
               </Typography>
             </Grid>
             <Grid item xs >
@@ -172,8 +178,8 @@ function WeatherTodayDetails({ data }) {
               >
                 {data.forecast.forecastday[0].day.uv}
               </Typography>
-              <Typography variant="h7" align="center" color="text.secondary" component="p">
-                UV Index
+              <Typography variant="h4" align="center" color="text.secondary" component="p">
+                <WiDaySunny />
               </Typography>
             </Grid>
           </Grid>

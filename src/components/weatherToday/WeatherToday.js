@@ -72,6 +72,9 @@ function WeatherToday({ data }) {
               component="h1"
             >
               {data.current.temp_c}°
+              <span style={{ fontSize: "45px" }} >
+                C
+              </span>
             </Typography>
             <Typography
               component="p"
