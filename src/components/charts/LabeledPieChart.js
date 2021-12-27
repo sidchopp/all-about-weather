@@ -14,19 +14,7 @@ const data1 = [
 
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
-  const {
-    cx,
-    cy,
-    midAngle,
-    innerRadius,
-    outerRadius,
-    startAngle,
-    endAngle,
-    fill,
-    payload,
-    percent,
-    value
-  } = props;
+  const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props;
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(-RADIAN * midAngle);
   const sx = cx + (outerRadius + 10) * cos;
@@ -35,7 +23,7 @@ const renderActiveShape = (props) => {
   const my = cy + (outerRadius + 30) * sin;
   const ex = mx + (cos >= 0 ? 1 : -1) * 22;
   const ey = my;
-  const textAnchor = cos >= 0 ? "start" : "end";
+  const textAnchor = cos >= 0 ? 'start' : 'end';
 
   return (
     <g>
@@ -49,7 +37,7 @@ const renderActiveShape = (props) => {
         outerRadius={outerRadius}
         startAngle={startAngle}
         endAngle={endAngle}
-        fill={fill}
+        fill="#3895D3"
       />
       <Sector
         cx={cx}
@@ -58,34 +46,32 @@ const renderActiveShape = (props) => {
         endAngle={endAngle}
         innerRadius={outerRadius + 6}
         outerRadius={outerRadius + 10}
-        fill={fill}
+        fill="#072F5F"
       />
-      <path
-        d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
-        stroke={fill}
-        fill="none"
-      />
+      <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
       <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
-      <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey}
-        textAnchor={textAnchor}
-        fill="#333"
-      >{`Prob. ${value}`}%</text>
-      <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey}
-        dy={18}
-        textAnchor={textAnchor}
-        fill="#999"
-      >
-        {`(Overall ${(percent * 100).toFixed(2)}%)`}
+      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#072F5F">
+        {` ${value}% Prob.`}
+      </text>
+      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
+        {`(Overall: ${(percent * 100).toFixed(2)}%)`}
       </text>
     </g>
   );
 };
 
+
 export default function LabeledPieChart({ data }) {
+
+
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const onPieEnter = useCallback(
+    (_, index) => {
+      setActiveIndex(index);
+    },
+    [setActiveIndex]
+  );
 
   const snow = new Object();
   snow.name = 'Snow';
@@ -98,29 +84,20 @@ export default function LabeledPieChart({ data }) {
   const DATA = [snow, rain]
   // console.log(DATA);
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const onPieEnter = useCallback(
-    (_, index) => {
-      setActiveIndex(index);
-    },
-    [setActiveIndex]
-  );
-
   return (
-    <div style={{ width: "100%", height: 300 }}>
-
-      <ResponsiveContainer >
-        <Paper
-          sx={{
-            p: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            height: 300,
-            backgroundColor: "skyblue"
-          }}
-          elevation={9}
-          backgroundColor="blue"
-        >
+    <div >
+      <Paper
+        sx={{
+          p: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          height: 300,
+          backgroundColor: "skyblue"
+        }}
+        elevation={9}
+        backgroundColor="blue"
+      >
+        <ResponsiveContainer width="100%" height="100%" >
           <PieChart width={500} height={300}>
             <Pie
               activeIndex={activeIndex}
@@ -136,9 +113,9 @@ export default function LabeledPieChart({ data }) {
               paddingAngle={2.5}
             />
           </PieChart>
-        </Paper>
-      </ResponsiveContainer>
+        </ResponsiveContainer>
+      </Paper>
 
-    </div>
+    </div >
   );
 }
