@@ -46,7 +46,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {data.current.feelslike_c}°
+                {Math.round(data.current.feelslike_c)}°
                 <span style={{ fontSize: "15px" }} >
                   C
                 </span>
@@ -62,7 +62,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {data.current.wind_mph}
+                {Math.round(data.current.wind_mph)}
                 <span style={{ fontSize: "15px" }} >
                   mph
                 </span>
@@ -95,7 +95,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {data.forecast.forecastday[0].day.maxtemp_c}°
+                {Math.round(data.forecast.forecastday[0].day.maxtemp_c)}°
                 <span style={{ fontSize: "15px" }} >
                   C
                 </span>
@@ -111,7 +111,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {data.current.vis_miles}
+                {Math.round(data.current.vis_miles)}
                 <span style={{ fontSize: "15px" }} >
                   miles
                 </span>
@@ -144,7 +144,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {data.forecast.forecastday[0].day.mintemp_c}°
+                {Math.round(data.forecast.forecastday[0].day.mintemp_c)}°
                 <span style={{ fontSize: "15px" }} >
                   C
                 </span>
@@ -160,7 +160,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {data.current.humidity}
+                {Math.round(data.current.humidity)}
                 <span style={{ fontSize: "15px" }} >
                   %
                 </span>

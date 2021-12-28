@@ -71,7 +71,7 @@ function WeatherToday({ data }) {
               color="text.primary"
               component="h1"
             >
-              {data.current.temp_c}°
+              {Math.round(data.current.temp_c)}°
               <span style={{ fontSize: "45px" }} >
                 C
               </span>
