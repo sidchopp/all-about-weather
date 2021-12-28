@@ -16,7 +16,7 @@ import { BsPersonLinesFill, BsThermometerSnow } from "react-icons/bs"
 
 function WeatherTodayDetails({ data }) {
 
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <Paper
