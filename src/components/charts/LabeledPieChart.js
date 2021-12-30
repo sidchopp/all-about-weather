@@ -63,7 +63,7 @@ const renderActiveShape = (props) => {
 
 export default function LabeledPieChart({ data }) {
 
-
+  console.log(data);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const onPieEnter = useCallback(
@@ -84,6 +84,13 @@ export default function LabeledPieChart({ data }) {
   const DATA = [snow, rain]
   // console.log(DATA);
 
+  // In case there is no snow or rain
+  const cloud = new Object();
+  cloud.name = 'Sunny';
+  cloud.value = 100;
+  const dataFallback = [cloud]
+  // console.log(dataFallback);
+
   return (
     <div >
       <Paper
@@ -102,7 +109,7 @@ export default function LabeledPieChart({ data }) {
             <Pie
               activeIndex={activeIndex}
               activeShape={renderActiveShape}
-              data={DATA}
+              data={DATA[0].value === 0 && DATA[1].value === 0 ? dataFallback : DATA}
               cx="50%"
               cy="50%"
               innerRadius={60}
