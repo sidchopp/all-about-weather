@@ -30,6 +30,13 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import { format } from 'date-fns'
 
+const Img = styled('img')({
+  margin: 'auto',
+  display: 'block',
+  maxWidth: '100%',
+  maxHeight: '100%',
+});
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -47,7 +54,7 @@ function WeatherForecast({ data2 }) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  // console.log(data2)
+  console.log(data2)
   // // console.log(format(new Date({day.date}), 'MMM'));
   // const today = new Date(data2.forecast.forecastday[0].date);
   // const tomorrow = new Date(data2.forecast.forecastday[1].date);
@@ -58,8 +65,8 @@ function WeatherForecast({ data2 }) {
   // const threeDays = data2.forecast.forecastday.map(day => format(new Date(day.date), 'MM/dd/yyyy'))
   // console.log(threeDays);
   return (
-    <Container maxWidth="lg" component="main">
-      <Grid container spacing={5} alignItems="flex-end">
+    <Container maxWidth="xl" component="main">
+      <Grid container spacing={4} alignItems="flex-end">
         {data2.forecast.forecastday.map((day) => (
           // Enterprise card is full width at sm breakpoint
           <Grid
@@ -69,33 +76,83 @@ function WeatherForecast({ data2 }) {
             sm={day.date === '2021-12-28' ? 12 : 6}
             md={4}
           >
-
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 375 }}>
               <CardHeader
                 avatar={
-                  <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                    R
-                  </Avatar>
+                  // <Avatar variant="rounded" sx={{ width: 56, height: 56 }} >
+                  <Img src={day.day.condition.icon} alt="Weather" />
+                  // </Avatar>
+
                 }
                 action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
-                  </IconButton>
+                  <Typography variant="h7" align="center" color="text.secondary" component="p">
+                    {day.date}
+                  </Typography>
                 }
-                title={day.date}
-                subheader={day.day.condition.text}
+                // title={day.date}
+                subheader={
+                  <Typography variant="h5" align="center" color="text.primary" component="p">
+                    {day.day.condition.text}
+                  </Typography>
+                }
               />
-              <CardMedia
-                component="img"
-                // height="50"
-                image={day.day.condition.icon}
-                alt="Weather"
-              />
+              <CardMedia>
+                <Grid>
+                  <Grid container spacing={1}>
+                    <Grid item xs >
+                      <Typography
+                        component="h1"
+                        variant="h5"
+                        align="center"
+                        color="text.primary"
+                      >
+                        {day.day.avgtemp_c}°
+                        <span style={{ fontSize: "15px" }} >
+                          C
+                        </span>
+                      </Typography>
+                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                        Avg T
+                      </Typography>
+                    </Grid>
+                    <Grid item xs >
+                      <Typography
+                        component="h1"
+                        variant="h5"
+                        align="center"
+                        color="text.primary"
+                      >
+                        {day.day.avgvis_miles}
+                        <span style={{ fontSize: "15px" }} >
+                          Mile
+                        </span>
+                      </Typography>
+                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                        Avg Visiblity
+                      </Typography>
+                    </Grid>
+                    <Grid item xs >
+                      <Typography
+                        component="h1"
+                        variant="h5"
+                        align="center"
+                        color="text.primary"
+                      >
+                        {day.day.uv}
+                        {/* <span style={{ fontSize: "15px" }} >
+                          C
+                        </span> */}
+                      </Typography>
+                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                        UV Index
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </CardMedia>
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
-                  This impressive paella is a perfect party dish and a fun meal to cook
-                  together with your guests. Add 1 cup of frozen peas along with the mussels,
-                  if you like.
+                  HI
                 </Typography>
               </CardContent>
               <CardActions disableSpacing>
