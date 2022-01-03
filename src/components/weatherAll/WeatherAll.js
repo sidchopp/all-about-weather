@@ -14,8 +14,8 @@ import WeatherTodayDetails from '../weatherToday/WeatherTodayDetails';
 import { formatISO, startOfYesterday } from 'date-fns'
 import GraphDaily from '../charts/GraphDaily'
 import LabeledPieChart from '../charts/LabeledPieChart'
-import PieChartYesterday from '../charts/PieChartYesterday'
 import Image from '../../images/background.jpg'
+import ComparisonGraph from '../charts/ComparisonGraph';
 
 const styles = {
   paperContainer: {
@@ -114,9 +114,8 @@ function WeatherAll() {
               </Grid>
             </Container>
           </div>
-          <PieChartYesterday dataYesterday={dataYesterday} />
           <WeatherForecast data2={data} />
-
+          <ComparisonGraph data1={data} />
         </>
         : <div></div>
       }

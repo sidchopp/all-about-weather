@@ -16,8 +16,6 @@ import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import WeatherAll from './components/weatherAll/WeatherAll';
 import WeatherForecast from './components/weatherForecast/WeatherForecast';
-import PieChartYesterday from './components/charts/PieChartYesterday';
-
 
 function App() {
   return (
@@ -29,7 +27,6 @@ function App() {
         <Routes>
           <Route path="/" element={<WeatherAll />} />
           <Route path="/forecast" element={<WeatherForecast />} />
-          <Route path="/yesterday" element={<PieChartYesterday />} />
         </Routes>
         <Footer />
       </React.Fragment>
