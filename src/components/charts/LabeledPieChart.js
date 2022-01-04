@@ -63,7 +63,7 @@ const renderActiveShape = (props) => {
 
 export default function LabeledPieChart({ data }) {
 
-  console.log(data);
+  // console.log(data);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const onPieEnter = useCallback(

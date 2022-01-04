@@ -17,12 +17,12 @@ import {
 
 
 export default function ComparisonGraph({ data1 }) {
-  console.log(data1);
+  // console.log(data1);
   const theme = useTheme();
 
   let timeDataToday = data1.forecast.forecastday[0].hour
   const dataToday = timeDataToday;
-  console.log(dataToday);
+  // console.log(dataToday);
   let timeDataTomorrow = data1.forecast.forecastday[1].hour
   const dataTomorrow = timeDataTomorrow;
   let timeDataDayafter = data1.forecast.forecastday[2].hour
