@@ -34,19 +34,31 @@ export default function Warning({ data }) {
         <Box sx={style}>
           {data.alerts.alert.map(alert => (
             alert.length === 0
-              ? "No Worning today"
+              ? "No Warning today"
               : <>
-                <Typography id="modal-modal-title" variant="h4" component="h2">
+                <Typography variant="h6" color="text.primary" component="p">
+                  Warning
+                </Typography>
+                <Typography variant="button" color="text.secondary" >
                   {alert.event}
                 </Typography>
-                <Typography id="modal-modal-title" variant="h7" >
-                  {`${alert.category} issued by ${alert.headline}`}
+                <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}>
+                  Issued By
                 </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <Typography variant="h7" color="text.secondary" component="p">
+                  {alert.headline}
+                </Typography>
+                <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }} >
+                  Description
+                </Typography>
+                <Typography variant="h7" color="text.secondary" component="p" >
                   {alert.desc}
                 </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 6 }}>
-                  {`Effective from ${alert.effective} to ${alert.expires}`}
+                <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}  >
+                  Effective From
+                </Typography>
+                <Typography variant="h7" color="text.secondary" component="p">
+                  {` ${alert.effective} to ${alert.expires}`}
                 </Typography>
               </>
 
