@@ -24,12 +24,12 @@ export default function Warning({ data }) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Warning</Button>
+      <Button size="small" color="warning" variant="contained" onClick={handleOpen}>Warning</Button>
       <Modal
         open={open}
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+      // aria-labelledby="modal-modal-title"
+      // aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
           {data.alerts.alert.map(alert => (

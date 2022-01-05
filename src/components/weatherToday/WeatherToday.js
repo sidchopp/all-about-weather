@@ -48,7 +48,7 @@ function WeatherToday({ data }) {
         backgroundColor="blue"
 
       >
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
 
           <Grid item xs >
             <Typography gutterBottom variant="h9" align="left" color="text.secondary" component="p">
