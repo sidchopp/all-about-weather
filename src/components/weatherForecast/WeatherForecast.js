@@ -54,7 +54,7 @@ function WeatherForecast({ data2 }) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  console.log(data2)
+  // console.log(data2)
   // // console.log(format(new Date({day.date}), 'MMM'));
   // const today = new Date(data2.forecast.forecastday[0].date);
   // const tomorrow = new Date(data2.forecast.forecastday[1].date);

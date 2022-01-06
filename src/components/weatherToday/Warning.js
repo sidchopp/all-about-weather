@@ -32,10 +32,14 @@ export default function Warning({ data }) {
       // aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          {data.alerts.alert.map(alert => (
-            alert.length === 0
-              ? "No Warning today"
-              : <>
+          {data.alerts.alert.length === 0
+
+            ? <Typography variant="h5" color="text.primary" component="p">
+              No Warning Today. Enjoy :)
+            </Typography>
+
+            : data.alerts.alert.map(alert => (
+              <>
                 <Typography variant="h6" color="text.primary" component="p">
                   Warning
                 </Typography>
@@ -61,10 +65,8 @@ export default function Warning({ data }) {
                   {` ${alert.effective} to ${alert.expires}`}
                 </Typography>
               </>
-
-          )
-          )}
-
+            )
+            )}
         </Box>
       </Modal>
     </div>
