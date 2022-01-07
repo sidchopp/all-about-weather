@@ -11,8 +11,12 @@ import AirIcon from '@mui/icons-material/Air';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { WiSunrise, WiSunset, WiHumidity, WiThermometer, WiThermometerExterior, WiDaySunny } from "react-icons/wi";
-import { BsPersonLinesFill, BsThermometerSnow } from "react-icons/bs"
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
+import { WiSunrise, WiSunset, WiHumidity, WiDaySunny } from "react-icons/wi";
+import { BsThermometerHalf, BsThermometerSnow } from "react-icons/bs"
+import { AiOutlineUserSwitch } from "react-icons/ai";
 
 function WeatherTodayDetails({ data }) {
 
@@ -52,7 +56,8 @@ function WeatherTodayDetails({ data }) {
                 </span>
               </Typography>
               <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
-                <BsThermometerSnow />
+                <AiOutlineUserSwitch />
+                {/* <BsThermometerHalf /> */}
               </Typography>
             </Grid>
             <Grid item xs >
@@ -101,7 +106,7 @@ function WeatherTodayDetails({ data }) {
                 </span>
               </Typography>
               <Typography gutterBottom variant="h4" align="center" color="text.secondary" component="p">
-                <WiThermometer />
+                <ArrowUpwardIcon color="warning" />
               </Typography>
             </Grid>
             <Grid item xs >
@@ -150,7 +155,7 @@ function WeatherTodayDetails({ data }) {
                 </span>
               </Typography>
               <Typography gutterBottom variant="h4" align="center" color="text.secondary" component="p">
-                <WiThermometerExterior />
+                <ArrowDownwardIcon color="primary" />
               </Typography>
             </Grid>
             <Grid item xs >

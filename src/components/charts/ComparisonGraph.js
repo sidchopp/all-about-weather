@@ -43,7 +43,7 @@ export default function ComparisonGraph({ data1 }) {
         backgroundColor="blue"
       >
         <Typography component="h2" variant="h6" color="primary" gutterBottom sx={{ textAlign: 'center' }}>
-          Comparison for Three days
+          Hourly Forecast
         </Typography>
         <Typography component="h2" variant="h6" color="secondary" gutterBottom sx={{ textAlign: 'left' }}>
           Today
