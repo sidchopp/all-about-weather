@@ -26,51 +26,49 @@ export default function Warning({ data }) {
 
   return (
     <div>
-      <Button size="small" color="warning" variant="contained" onClick={handleOpen}>Warning</Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          {data.alerts.alert.length === 0
-
-            ? <Typography variant="h5" color="text.primary" component="p">
-              No Warning Today. Enjoy :)
-            </Typography>
-
-            : data.alerts.alert.map(alert => (
-              <>
-                <Typography variant="h6" color="text.primary" component="p">
-                  Warning
-                </Typography>
-                <Typography variant="button" color="text.secondary" >
-                  {alert.event}
-                </Typography>
-                <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}>
-                  Issued By
-                </Typography>
-                <Typography variant="h7" color="text.secondary" component="p">
-                  {alert.headline}
-                </Typography>
-                <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }} >
-                  Description
-                </Typography>
-                <Typography variant="h7" color="text.secondary" component="p" >
-                  {alert.desc}
-                </Typography>
-                <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}  >
-                  Effective From
-                </Typography>
-                <Typography variant="h7" color="text.secondary" component="p">
-                  {` ${alert.effective} to ${alert.expires}`}
-                </Typography>
-              </>
-            )
-            )}
-        </Box>
-      </Modal>
+      {data.alerts.alert.length === 0
+        ? <></>
+        : <><Button size="small" color="warning" variant="contained" onClick={handleOpen}>Warning</Button>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              {data.alerts.alert.map(alert => (
+                <>
+                  <Typography variant="h6" color="text.primary" component="p">
+                    Warning
+                  </Typography>
+                  <Typography variant="button" color="text.secondary" >
+                    {alert.event}
+                  </Typography>
+                  <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}>
+                    Issued By
+                  </Typography>
+                  <Typography variant="h7" color="text.secondary" component="p">
+                    {alert.headline}
+                  </Typography>
+                  <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }} >
+                    Description
+                  </Typography>
+                  <Typography variant="h7" color="text.secondary" component="p" >
+                    {alert.desc}
+                  </Typography>
+                  <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}  >
+                    Effective From
+                  </Typography>
+                  <Typography variant="h7" color="text.secondary" component="p">
+                    {` ${alert.effective} to ${alert.expires}`}
+                  </Typography>
+                </>
+              )
+              )}
+            </Box>
+          </Modal>
+        </>
+      }
     </div>
   );
 }
