@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Paper from '@mui/material/Paper';
 
 const style = {
   position: 'absolute',
@@ -15,7 +16,7 @@ const style = {
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
+  p: 1,
 };
 
 export default function Warning({ data }) {
@@ -36,35 +37,37 @@ export default function Warning({ data }) {
             aria-describedby="modal-modal-description"
           >
             <Box sx={style}>
-              {data.alerts.alert.map(alert => (
-                <>
-                  <Typography variant="h6" color="text.primary" component="p">
-                    Warning
-                  </Typography>
-                  <Typography variant="button" color="text.secondary" >
-                    {alert.event}
-                  </Typography>
-                  <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}>
-                    Issued By
-                  </Typography>
-                  <Typography variant="h7" color="text.secondary" component="p">
-                    {alert.headline}
-                  </Typography>
-                  <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }} >
-                    Description
-                  </Typography>
-                  <Typography variant="h7" color="text.secondary" component="p" >
-                    {alert.desc}
-                  </Typography>
-                  <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}  >
-                    Effective From
-                  </Typography>
-                  <Typography variant="h7" color="text.secondary" component="p">
-                    {` ${alert.effective} to ${alert.expires}`}
-                  </Typography>
-                </>
-              )
-              )}
+              <Paper style={{ padding: "10px", position: "relative" }} elevation={12} >
+                {data.alerts.alert.map(alert => (
+                  <>
+                    <Typography variant="h6" color="text.primary" component="p">
+                      Warning
+                    </Typography>
+                    <Typography variant="button" color="text.secondary" >
+                      {alert.event}
+                    </Typography>
+                    <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}>
+                      Issued By
+                    </Typography>
+                    <Typography variant="h7" color="text.secondary" component="p">
+                      {alert.headline}
+                    </Typography>
+                    <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }} >
+                      Description
+                    </Typography>
+                    <Typography variant="h7" color="text.secondary" component="p" >
+                      {alert.desc}
+                    </Typography>
+                    <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}  >
+                      Effective From
+                    </Typography>
+                    <Typography variant="h7" color="text.secondary" component="p">
+                      {` ${alert.effective} to ${alert.expires}`}
+                    </Typography>
+                  </>
+                )
+                )}
+              </Paper>
             </Box>
           </Modal>
         </>

@@ -18,6 +18,8 @@ import { WiSunrise, WiSunset, WiHumidity, WiDaySunny } from "react-icons/wi";
 import { BsThermometerHalf, BsThermometerSnow } from "react-icons/bs"
 import { AiOutlineUserSwitch } from "react-icons/ai";
 
+
+
 function WeatherTodayDetails({ data }) {
 
   // console.log(data);

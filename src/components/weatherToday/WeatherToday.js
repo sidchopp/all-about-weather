@@ -9,6 +9,8 @@ import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import Container from '@mui/material/Container';
 
+//Components
+import AirQuality from '../airQuality/AirQuality';
 import Warning from './Warning'
 
 const Img = styled('img')({
@@ -51,7 +53,7 @@ function WeatherToday({ data }) {
         <Grid container spacing={1}>
 
           <Grid item xs >
-            <Typography gutterBottom variant="h9" align="left" color="text.secondary" component="p">
+            <Typography variant="h9" align="left" color="text.secondary" component="p">
               {today}
             </Typography>
             <Typography
@@ -62,8 +64,11 @@ function WeatherToday({ data }) {
             >
               {data.location.name}
             </Typography>
-            <Typography variant="h7" align="left" color="text.primary" component="p">
+            <Typography variant="caption" display="block" align="left" color="text.primary">
               {data.location.region}, {data.location.country}
+            </Typography>
+            <Typography gutterBottom variant="button" display="block" align="left" >
+              <AirQuality data={data} />
             </Typography>
             <Typography variant="button" display="block" align="left" >
               <Warning data={data} />
