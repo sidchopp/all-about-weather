@@ -10,7 +10,7 @@ import ButtonBase from '@mui/material/ButtonBase';
 import Container from '@mui/material/Container';
 
 //Components
-import AirQuality from '../airQuality/AirQuality';
+// import AirQuality from '../airQuality/AirQuality';
 import Warning from './Warning'
 
 const Img = styled('img')({
@@ -67,9 +67,9 @@ function WeatherToday({ data }) {
             <Typography variant="caption" display="block" align="left" color="text.primary">
               {data.location.region}, {data.location.country}
             </Typography>
-            <Typography gutterBottom variant="button" display="block" align="left" >
+            {/* <Typography gutterBottom variant="button" display="block" align="left" >
               <AirQuality data={data} />
-            </Typography>
+            </Typography> */}
             <Typography variant="button" display="block" align="left" >
               <Warning data={data} />
             </Typography>

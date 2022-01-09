@@ -16,6 +16,7 @@ import GraphDaily from '../charts/GraphDaily'
 import LabeledPieChart from '../charts/LabeledPieChart'
 import Image from '../../images/background.jpg'
 import ComparisonGraph from '../charts/ComparisonGraph';
+import AQRadar from '../charts/AQRadar';
 
 const styles = {
   paperContainer: {
@@ -109,7 +110,8 @@ function WeatherAll() {
                   <GraphDaily data1={data} />
                 </Grid>
                 <Grid item xs={12} md={4} lg={5}>
-                  <LabeledPieChart data={data} />
+                  {/* <LabeledPieChart data={data} /> */}
+                  <AQRadar data={data} />
                 </Grid>
               </Grid>
             </Container>
