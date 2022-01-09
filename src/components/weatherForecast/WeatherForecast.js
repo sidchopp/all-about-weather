@@ -1,16 +1,7 @@
 import * as React from 'react';
-// import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 
-
-// import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import StarIcon from '@mui/icons-material/StarBorder';
-// import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-// import Link from '@mui/material/Link';
-// import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -19,16 +10,10 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
-
-import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-
-import { format } from 'date-fns'
 
 const Img = styled('img')({
   margin: 'auto',
@@ -71,7 +56,7 @@ function WeatherForecast({ data2 }) {
           // Enterprise card is full width at sm breakpoint
           <Grid
             item
-            key={day.date}
+            key={day.astro.sunrise}
             xs={12}
             sm={day.date === '2021-12-28' ? 12 : 6}
             md={4}
@@ -194,7 +179,7 @@ function WeatherForecast({ data2 }) {
                     </Grid>
                   ))}
 
-                  <Typography paragraph>
+                  {/* <Typography paragraph>
                     Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
                     medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
                     occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
@@ -213,16 +198,12 @@ function WeatherForecast({ data2 }) {
                   </Typography>
                   <Typography>
                     Set aside off of the heat to let rest for 10 minutes, and then serve.
-                  </Typography>
+                  </Typography> */}
                 </CardContent>
               </Collapse>
             </Card>
-
-
           </Grid>
         ))}
-
-
       </Grid>
     </Container>
   )

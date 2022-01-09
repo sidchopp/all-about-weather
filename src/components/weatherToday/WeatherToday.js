@@ -1,16 +1,11 @@
 import * as React from 'react';
 import { format } from 'date-fns'
-
-
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
-import Container from '@mui/material/Container';
 
 //Components
-// import AirQuality from '../airQuality/AirQuality';
 import Warning from './Warning'
 
 const Img = styled('img')({
@@ -51,7 +46,6 @@ function WeatherToday({ data }) {
 
       >
         <Grid container spacing={1}>
-
           <Grid item xs >
             <Typography variant="h9" align="left" color="text.secondary" component="p">
               {today}
@@ -74,7 +68,6 @@ function WeatherToday({ data }) {
               <Warning data={data} />
             </Typography>
           </Grid>
-
           <Grid item xs>
             <Typography
               variant="h1"

@@ -30,7 +30,7 @@ export default function AQRadar({ data }) {
 
   const DATA = [carbonMonoxide, nitrogenDioxide, ozone, pm2_5, pm10, sulphurDioxide];
 
-  console.log(DATA);
+  // console.log(DATA);
 
   return (
     <Paper
@@ -39,7 +39,7 @@ export default function AQRadar({ data }) {
         display: 'flex',
         flexDirection: 'column',
         height: 300,
-        backgroundColor: "blue"
+        backgroundColor: "skyblue"
       }}
       elevation={9}
       backgroundColor="blue"

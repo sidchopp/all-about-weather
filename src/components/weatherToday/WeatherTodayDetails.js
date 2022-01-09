@@ -1,24 +1,13 @@
 import React from 'react'
-
-import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
-import Container from '@mui/material/Container';
 import AirIcon from '@mui/icons-material/Air';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import NightsStayIcon from '@mui/icons-material/NightsStay';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
 import { WiSunrise, WiSunset, WiHumidity, WiDaySunny } from "react-icons/wi";
-import { BsThermometerHalf, BsThermometerSnow } from "react-icons/bs"
 import { AiOutlineUserSwitch } from "react-icons/ai";
-
-
 
 function WeatherTodayDetails({ data }) {
 
@@ -59,7 +48,6 @@ function WeatherTodayDetails({ data }) {
               </Typography>
               <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
                 <AiOutlineUserSwitch />
-                {/* <BsThermometerHalf /> */}
               </Typography>
             </Grid>
             <Grid item xs >

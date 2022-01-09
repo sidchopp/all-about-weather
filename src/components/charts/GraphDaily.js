@@ -1,12 +1,7 @@
 import { useTheme } from '@mui/material/styles';
 import { LineChart, Line, XAxis, YAxis, Label, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import Paper from '@mui/material/Paper';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-
-
 
 export default function GraphDaily({ data1 }) {
   const theme = useTheme();
@@ -17,6 +12,12 @@ export default function GraphDaily({ data1 }) {
   // let timeSpread = [...timeData];
   // const data = timeSpread;
   // const timeHour = timeSpread.time.slice(11, 16)
+
+  const finalData = data1.forecast.forecastday.map((value) => (
+    value.hour
+  )
+  )
+  // console.log(finalData);
 
   return (
     <div>
