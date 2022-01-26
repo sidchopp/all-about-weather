@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from 'react'
-
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Toolbar from '@mui/material/Toolbar';
-
-
 import WeatherForecast from '../weatherForecast/WeatherForecast'
 import WeatherToday from '../weatherToday/WeatherToday'
 import Loader from '../loader/Loader'
 import WeatherTodayDetails from '../weatherToday/WeatherTodayDetails';
-
-
 import { formatISO, startOfYesterday } from 'date-fns'
 import GraphDaily from '../charts/GraphDaily'
-import LabeledPieChart from '../charts/LabeledPieChart'
 import Image from '../../images/background.jpg'
 import ComparisonGraph from '../charts/ComparisonGraph';
 import AQRadar from '../charts/AQRadar';

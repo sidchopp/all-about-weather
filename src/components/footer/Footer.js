@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 // import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import GlobalStyles from '@mui/material/GlobalStyles';
+// import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 
 function Copyright(props) {
