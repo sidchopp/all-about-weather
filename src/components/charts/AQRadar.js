@@ -1,16 +1,28 @@
 
 import Paper from '@mui/material/Paper';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip } from 'recharts';
+
+import React, { PureComponent } from 'react';
+import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+
+const style = {
+  top: '50%',
+  right: 0,
+  transform: 'translate(0, -50%)',
+  lineHeight: '24px',
+};
 
 export default function AQRadar({ data }) {
 
   const carbonMonoxide = {};
   carbonMonoxide.name = 'Carbon Monoxide';
-  carbonMonoxide.value = data.current.air_quality.co.toFixed(2)
+  carbonMonoxide.value = data.current.air_quality.co.toFixed(2);
+  carbonMonoxide.fill = "#8884d8"
 
   const nitrogenDioxide = {};
   nitrogenDioxide.name = 'Nitrogen Dioxide';
-  nitrogenDioxide.value = data.current.air_quality.no2.toFixed(2)
+  nitrogenDioxide.value = data.current.air_quality.no2.toFixed(2);
+  nitrogenDioxide.fill = "#83a6ed"
 
   const ozone = {};
   ozone.name = 'Ozone';
@@ -44,7 +56,7 @@ export default function AQRadar({ data }) {
       elevation={9}
       backgroundColor="blue"
     >
-      <ResponsiveContainer width="100%" height="100%">
+      {/* <ResponsiveContainer width="100%" height="100%">
         <RadarChart cx="50%" cy="50%" outerRadius="80%" data={DATA}>
           <PolarGrid />
           <PolarAngleAxis dataKey="name" />
@@ -52,7 +64,23 @@ export default function AQRadar({ data }) {
           <Tooltip />
           <Radar name="name" dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
         </RadarChart>
+      </ResponsiveContainer> */}
+
+      <ResponsiveContainer width="100%" height="100%">
+        <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={DATA}>
+          <RadialBar
+            minAngle={15}
+            label={{ position: 'insideStart', fill: '#fff' }}
+            background
+            clockWise
+            dataKey="value"
+          />
+          <Tooltip />
+          <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+        </RadialBarChart>
       </ResponsiveContainer>
+
+
     </Paper>
   );
 
