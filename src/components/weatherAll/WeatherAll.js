@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import WeatherForecast from '../weatherForecast/WeatherForecast'
-import WeatherToday from '../weatherToday/WeatherToday'
-import Loader from '../loader/Loader'
+import { formatISO, startOfYesterday } from 'date-fns';
+
+//Components
+import WeatherForecast from '../weatherForecast/WeatherForecast';
+import WeatherToday from '../weatherToday/WeatherToday';
+import Loader from '../loader/Loader';
 import WeatherTodayDetails from '../weatherToday/WeatherTodayDetails';
-import { formatISO, startOfYesterday } from 'date-fns'
-import GraphDaily from '../charts/GraphDaily'
-import Image from '../../images/background.jpg'
-import AQRadar from '../charts/AQRadar';
+import WeatherYesterday from '../weatherYesterday/WeatherYesterday'
+import GraphDaily from '../charts/GraphDaily';
+import Image from '../../images/background.jpg';
 
 const styles = {
   paperContainer: {
@@ -98,15 +100,12 @@ function WeatherAll() {
             <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
               <GraphDaily data1={data} />
             </Container>
-            {/* <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
-              <AQRadar data={data} />
-            </Container> */}
             <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
               <WeatherForecast data2={data} />
             </Container>
-            {/* <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
-              <ComparisonGraph data1={data} />
-            </Container> */}
+            <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
+              <WeatherYesterday dataYesterday={dataYesterday} />
+            </Container>
           </div>
         </>
         : <div></div>

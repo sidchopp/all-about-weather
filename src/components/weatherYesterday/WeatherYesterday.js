@@ -9,9 +9,10 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { WiSunrise, WiSunset, WiHumidity, WiDaySunny } from "react-icons/wi";
 import { AiOutlineUserSwitch } from "react-icons/ai";
 
-function WeatherTodayDetails({ data }) {
-
-  // console.log(data);
+function WeatherTodayDetails({ dataYesterday }) {
+  const value = dataYesterday.forecast.forecastday[0]
+  console.log(value);
+  // console.log(dataYesterday);
   return (
     <div>
       <Paper
@@ -26,9 +27,10 @@ function WeatherTodayDetails({ data }) {
         backgroundColor="blue"
       >
         <Grid>
+
           <Grid>
-            <Typography gutterBottom style={{ marginBottom: "10px" }} color="text.secondary" align="center">
-              Last updated:{" "}{data.current.last_updated}
+            <Typography component="h1" variant="h5" gutterBottom style={{ marginBottom: "10px" }} color="text.secondary" align="center">
+              Yesterday
             </Typography>
           </Grid>
 
@@ -41,7 +43,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {Math.round(data.current.feelslike_c)}°
+                {value.day.avgtemp_c}°
                 <span style={{ fontSize: "15px" }} >
                   C
                 </span>
@@ -57,7 +59,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {Math.round(data.current.wind_mph)}
+                {value.day.maxwind_mph}
                 <span style={{ fontSize: "15px" }} >
                   mph
                 </span>
@@ -73,7 +75,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {data.forecast.forecastday[0].astro.sunrise}
+                {value.astro.sunrise}
               </Typography>
               <Typography variant="h4" align="center" color="text.secondary" component="p">
                 <WiSunrise />
@@ -90,7 +92,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {Math.round(data.forecast.forecastday[0].day.maxtemp_c)}°
+                {value.day.maxtemp_c}°
                 <span style={{ fontSize: "15px" }} >
                   C
                 </span>
@@ -106,7 +108,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {Math.round(data.current.vis_miles)}
+                {value.day.avgvis_km}
                 <span style={{ fontSize: "15px" }} >
                   miles
                 </span>
@@ -122,7 +124,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {data.forecast.forecastday[0].astro.sunset}
+                {value.astro.sunset}
               </Typography>
               <Typography variant="h4" align="center" color="text.secondary" component="p">
                 <WiSunset />
@@ -139,7 +141,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {Math.round(data.forecast.forecastday[0].day.mintemp_c)}°
+                {value.day.mintemp_c}°
                 <span style={{ fontSize: "15px" }} >
                   C
                 </span>
@@ -155,7 +157,7 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {Math.round(data.current.humidity)}
+                {value.day.avghumidity}
                 <span style={{ fontSize: "15px" }} >
                   %
                 </span>
@@ -171,13 +173,14 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {data.forecast.forecastday[0].day.uv}
+                {value.day.uv}
               </Typography>
               <Typography variant="h4" align="center" color="text.secondary" component="p">
                 <WiDaySunny />
               </Typography>
             </Grid>
           </Grid>
+
         </Grid>
       </Paper>
     </div >

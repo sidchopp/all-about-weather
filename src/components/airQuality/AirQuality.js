@@ -20,7 +20,7 @@ const style = {
 };
 
 export default function AirQuality({ data }) {
-  console.log(data);
+  // console.log(data);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
