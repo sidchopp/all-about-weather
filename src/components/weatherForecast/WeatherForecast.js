@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { format } from 'date-fns'
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -8,12 +8,9 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+//For today's card
+const date = format(new Date(), "yyyy-MM-dd")
 
 const Img = styled('img')({
   margin: 'auto',
@@ -22,68 +19,78 @@ const Img = styled('img')({
   maxHeight: '100%',
 });
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
-
 function WeatherForecast({ data2 }) {
-  const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
   // console.log(data2)
-  // // console.log(format(new Date({day.date}), 'MMM'));
-  // const today = new Date(data2.forecast.forecastday[0].date);
-  // const tomorrow = new Date(data2.forecast.forecastday[1].date);
-  // const dayAfterTomorrow = new Date(data2.forecast.forecastday[2].date);
-  // const days = [today, tomorrow, dayAfterTomorrow]
-  // console.log(days);
-
-  // const threeDays = data2.forecast.forecastday.map(day => format(new Date(day.date), 'MM/dd/yyyy'))
-  // console.log(threeDays);
   return (
     <Container maxWidth="xl" component="main">
       <Grid container spacing={4} alignItems="flex-end">
         {data2.forecast.forecastday.map((day) => (
-          // Enterprise card is full width at sm breakpoint
+          // Today's card is full width at sm breakpoint
           <Grid
             item
             key={day.astro.sunrise}
             xs={12}
-            sm={day.date === '2021-12-28' ? 12 : 6}
+            sm={day.date === date ? 12 : 6}
             md={4}
           >
-            <Card sx={{ maxWidth: 375 }}>
+            <Card style={{ padding: "10px" }}  >
+
               <CardHeader
-                avatar={
-                  // <Avatar variant="rounded" sx={{ width: 56, height: 56 }} >
-                  <Img src={day.day.condition.icon} alt="Weather" />
-                  // </Avatar>
+                avatar={<Img src={day.day.condition.icon} alt="Weather" />}
+                action={
+                  day.date === date
+                    ? <Typography variant="h6" align="center" color="text.primary" component="p">
+                      Today
+                    </Typography>
+                    : <Typography variant="h7" align="center" color="text.secondary" component="p">
+                      {day.date}
+                    </Typography>
 
                 }
-                action={
-                  <Typography variant="h7" align="center" color="text.secondary" component="p">
-                    {day.date}
-                  </Typography>
-                }
-                // title={day.date}
                 subheader={
                   <Typography variant="h5" align="center" color="text.primary" component="p">
                     {day.day.condition.text}
                   </Typography>
                 }
               />
-              <CardMedia>
-                <Grid>
-                  <Grid container spacing={1}>
+              <CardContent>
+                <Grid >
+
+                  {/* 1st Row */}
+                  < Grid container spacing={3}>
+                    <Grid item xs >
+                      <Typography
+                        component="h1"
+                        variant="h5"
+                        align="center"
+                        color="text.primary"
+                      >
+                        {day.day.maxtemp_c}°
+                        <span style={{ fontSize: "15px" }} >
+                          C
+                        </span>
+                      </Typography>
+                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                        Max. T
+                      </Typography>
+                    </Grid>
+                    <Grid item xs >
+                      <Typography
+                        component="h1"
+                        variant="h5"
+                        align="center"
+                        color="text.primary"
+                      >
+                        {day.day.mintemp_c}°
+                        <span style={{ fontSize: "15px" }} >
+                          C
+                        </span>
+                      </Typography>
+                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                        Min. T
+                      </Typography>
+                    </Grid>
                     <Grid item xs >
                       <Typography
                         component="h1"
@@ -97,7 +104,27 @@ function WeatherForecast({ data2 }) {
                         </span>
                       </Typography>
                       <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                        Avg T
+                        Avg. T
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  {/* 2nd Row */}
+                  <Grid container spacing={3}>
+                    <Grid item xs >
+                      <Typography
+                        component="h1"
+                        variant="h5"
+                        align="center"
+                        color="text.primary"
+                      >
+                        {day.astro.sunrise.slice(0, 5)}
+                        <span style={{ fontSize: "15px" }} >
+                          AM
+                        </span>
+                      </Typography>
+                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                        Sunrise
                       </Typography>
                     </Grid>
                     <Grid item xs >
@@ -107,13 +134,13 @@ function WeatherForecast({ data2 }) {
                         align="center"
                         color="text.primary"
                       >
-                        {day.day.avgvis_miles}
+                        {day.astro.sunset.slice(0, 5)}
                         <span style={{ fontSize: "15px" }} >
-                          Mile
+                          PM
                         </span>
                       </Typography>
                       <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                        Avg Visiblity
+                        Sunset
                       </Typography>
                     </Grid>
                     <Grid item xs >
@@ -124,88 +151,19 @@ function WeatherForecast({ data2 }) {
                         color="text.primary"
                       >
                         {day.day.uv}
-                        {/* <span style={{ fontSize: "15px" }} >
-                          C
-                        </span> */}
                       </Typography>
                       <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                        UV Index
+                        UV
                       </Typography>
                     </Grid>
                   </Grid>
                 </Grid>
-              </CardMedia>
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  HI
-                </Typography>
               </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-                <ExpandMore
-                  expand={expanded}
-                  onClick={handleExpandClick}
-                  aria-expanded={expanded}
-                  aria-label="show more"
-                >
-                  <ExpandMoreIcon />
-                </ExpandMore>
-              </CardActions>
-              <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                  {day.hour.map((arr) => (
-                    <Grid>
-                      <Grid container spacing={1}>
-                        <Grid item xs>
-                          <Typography paragraph>Max.</Typography>
-                          <Typography paragraph>
-                            {arr.temp_c}
-                          </Typography>
-                        </Grid>
-
-                        {/* <Grid item xs>
-                        <Typography paragraph>Min.</Typography>
-                        <Typography paragraph>
-                          {day.hour.map(arr => <h5>{arr.temp_c}</h5>)}
-                        </Typography>
-                      </Grid> */}
-
-                      </Grid>
-                    </Grid>
-                  ))}
-
-                  {/* <Typography paragraph>
-                    Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
-                    medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
-                    occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
-                    large plate and set aside, leaving chicken and chorizo in the pan. Add
-                    pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook,
-                    stirring often until thickened and fragrant, about 10 minutes. Add
-                    saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-                  </Typography>
-                  <Typography paragraph>
-                    Add rice and stir very gently to distribute. Top with artichokes and
-                    peppers, and cook without stirring, until most of the liquid is absorbed,
-                    15 to 18 minutes. Reduce heat to medium-low, add reserved shrimp and
-                    mussels, tucking them down into the rice, and cook again without
-                    stirring, until mussels have opened and rice is just tender, 5 to 7
-                    minutes more. (Discard any mussels that don’t open.)
-                  </Typography>
-                  <Typography>
-                    Set aside off of the heat to let rest for 10 minutes, and then serve.
-                  </Typography> */}
-                </CardContent>
-              </Collapse>
             </Card>
           </Grid>
         ))}
       </Grid>
-    </Container>
+    </Container >
   )
 }
 
