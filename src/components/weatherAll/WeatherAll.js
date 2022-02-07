@@ -8,7 +8,6 @@ import WeatherTodayDetails from '../weatherToday/WeatherTodayDetails';
 import { formatISO, startOfYesterday } from 'date-fns'
 import GraphDaily from '../charts/GraphDaily'
 import Image from '../../images/background.jpg'
-import ComparisonGraph from '../charts/ComparisonGraph';
 import AQRadar from '../charts/AQRadar';
 
 const styles = {
@@ -67,7 +66,6 @@ function WeatherAll() {
       console.log('This is the error:', err.message);
     }
 
-
   }
   useEffect(() => {
     whereAmI();
@@ -98,25 +96,23 @@ function WeatherAll() {
 
             {/* <Toolbar /> */}
             <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={8} lg={7}>
-                  <GraphDaily data1={data} />
-                </Grid>
-                <Grid item xs={12} md={4} lg={5}>
-                  {/* <LabeledPieChart data={data} /> */}
-                  <AQRadar data={data} />
-                </Grid>
-              </Grid>
+              <GraphDaily data1={data} />
             </Container>
+            <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
+              <AQRadar data={data} />
+            </Container>
+            <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
+              <WeatherForecast data2={data} />
+            </Container>
+            {/* <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
+              <ComparisonGraph data1={data} />
+            </Container> */}
           </div>
-          <WeatherForecast data2={data} />
-          <ComparisonGraph data1={data} />
         </>
         : <div></div>
       }
     </>
-
   )
 }
 
-export default WeatherAll
+export default WeatherAll;

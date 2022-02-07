@@ -1,16 +1,42 @@
 
 import Paper from '@mui/material/Paper';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip } from 'recharts';
+import { Legend, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 
-import React, { PureComponent } from 'react';
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+// const getIntroOfPage = (label) => {
+//   if (label === 'Carbon Monoxide') {
+//     return "Page A is about men's clothing";
+//   }
+//   if (label === 'Nitrogen Dioxide') {
+//     return "Page B is about women's dress";
+//   }
+//   if (label === 'Ozone') {
+//     return "Page C is about women's bag";
+//   }
+//   if (label === 'PM 2.5') {
+//     return 'Page D is about household goods';
+//   }
+//   if (label === 'PM 10') {
+//     return 'Page E is about food';
+//   }
+//   if (label === 'Sulphur Dioxide') {
+//     return 'Page F is about baby food';
+//   }
+//   return '';
+// };
 
-const style = {
-  top: '50%',
-  right: 0,
-  transform: 'translate(0, -50%)',
-  lineHeight: '24px',
-};
+// const CustomTooltip = ({ active, payload, label }) => {
+//   if (active && payload && payload.length) {
+//     return (
+//       <div className="custom-tooltip">
+//         <p className="label">{`${label} : ${payload[0].value}`}</p>
+//         <p className="intro">{getIntroOfPage(label)}</p>
+//         <p className="desc">Anything you want can be displayed here.</p>
+//       </div>
+//     );
+//   }
+
+//   return null;
+// };
 
 export default function AQRadar({ data }) {
 
@@ -56,32 +82,29 @@ export default function AQRadar({ data }) {
       elevation={9}
       backgroundColor="blue"
     >
-      {/* <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={DATA}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="name" />
-          <PolarRadiusAxis />
-          <Tooltip />
-          <Radar name="name" dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-        </RadarChart>
-      </ResponsiveContainer> */}
-
       <ResponsiveContainer width="100%" height="100%">
-        <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={DATA}>
-          <RadialBar
-            minAngle={15}
-            label={{ position: 'insideStart', fill: '#fff' }}
-            background
-            clockWise
-            dataKey="value"
-          />
+        <BarChart
+          width={500}
+          height={500}
+          data={DATA}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
           <Tooltip />
-          <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
-        </RadialBarChart>
+          <Legend />
+          <Bar dataKey="value" barSize={20} fill="#8884d8" />
+        </BarChart>
       </ResponsiveContainer>
-
-
     </Paper>
   );
 
 }
+
+//content={<CustomTooltip />}
