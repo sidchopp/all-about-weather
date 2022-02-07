@@ -17,8 +17,8 @@ const Img = styled('img')({
 
 // Today's Date and Day
 const day = format(new Date(), 'do');
-const weekday = format(new Date(), 'eeee');
-const month = format(new Date(), 'MMMM');
+const weekday = format(new Date(), 'eee');
+const month = format(new Date(), 'MMM');
 const today = `${weekday},${day}${" "}${month}`
 // console.log(today);
 

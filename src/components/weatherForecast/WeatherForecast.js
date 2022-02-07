@@ -58,7 +58,7 @@ function WeatherForecast({ data2 }) {
                 <Grid >
 
                   {/* 1st Row */}
-                  < Grid container spacing={3}>
+                  < Grid container spacing={2}>
                     <Grid item xs >
                       <Typography
                         component="h1"
@@ -110,7 +110,7 @@ function WeatherForecast({ data2 }) {
                   </Grid>
 
                   {/* 2nd Row */}
-                  <Grid container spacing={3}>
+                  <Grid container spacing={2}>
                     <Grid item xs >
                       <Typography
                         component="h1"
