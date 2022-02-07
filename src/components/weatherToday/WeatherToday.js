@@ -6,7 +6,8 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 //Components
-import Warning from './Warning'
+import Warning from './Warning';
+import AirQuality from '../airQuality/AirQuality';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -61,9 +62,9 @@ function WeatherToday({ data }) {
             <Typography variant="caption" display="block" align="left" color="text.primary">
               {data.location.region}, {data.location.country}
             </Typography>
-            {/* <Typography gutterBottom variant="button" display="block" align="left" >
+            <Typography gutterBottom variant="button" display="block" align="left" >
               <AirQuality data={data} />
-            </Typography> */}
+            </Typography>
             <Typography variant="button" display="block" align="left" >
               <Warning data={data} />
             </Typography>
