@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { format } from 'date-fns'
+import { format } from 'date-fns';
+import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -27,6 +28,7 @@ function WeatherForecast({ data2 }) {
       <Grid container spacing={4} alignItems="flex-end">
         {data2.forecast.forecastday.map((day) => (
           // Today's card is full width at sm breakpoint
+
           <Grid
             item
             key={day.astro.sunrise}
@@ -34,132 +36,142 @@ function WeatherForecast({ data2 }) {
             sm={day.date === date ? 12 : 6}
             md={4}
           >
-            <Card style={{ padding: "10px" }}  >
+            <Paper
+              sx={{
+                p: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                backgroundColor: "skyblue"
+              }}
+              elevation={9}
+            // backgroundColor="blue"
+            >
+              <Card style={{ padding: "10px" }}  >
+                <CardHeader
+                  avatar={<Img src={day.day.condition.icon} alt="Weather" />}
+                  action={
+                    day.date === date
+                      ? <Typography variant="h6" align="center" color="text.primary" component="p">
+                        Today
+                      </Typography>
+                      : <Typography variant="h7" align="center" color="text.secondary" component="p">
+                        {day.date}
+                      </Typography>
 
-              <CardHeader
-                avatar={<Img src={day.day.condition.icon} alt="Weather" />}
-                action={
-                  day.date === date
-                    ? <Typography variant="h6" align="center" color="text.primary" component="p">
-                      Today
+                  }
+                  subheader={
+                    <Typography variant="h5" align="center" color="text.primary" component="p">
+                      {day.day.condition.text}
                     </Typography>
-                    : <Typography variant="h7" align="center" color="text.secondary" component="p">
-                      {day.date}
-                    </Typography>
+                  }
+                />
+                <CardContent>
+                  <Grid >
 
-                }
-                subheader={
-                  <Typography variant="h5" align="center" color="text.primary" component="p">
-                    {day.day.condition.text}
-                  </Typography>
-                }
-              />
-              <CardContent>
-                <Grid >
+                    {/* 1st Row */}
+                    < Grid container spacing={2}>
+                      <Grid item xs >
+                        <Typography
+                          component="h1"
+                          variant="h5"
+                          align="center"
+                          color="text.primary"
+                        >
+                          {day.day.maxtemp_c}°
+                          <span style={{ fontSize: "15px" }} >
+                            C
+                          </span>
+                        </Typography>
+                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                          Max. T
+                        </Typography>
+                      </Grid>
+                      <Grid item xs >
+                        <Typography
+                          component="h1"
+                          variant="h5"
+                          align="center"
+                          color="text.primary"
+                        >
+                          {day.day.mintemp_c}°
+                          <span style={{ fontSize: "15px" }} >
+                            C
+                          </span>
+                        </Typography>
+                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                          Min. T
+                        </Typography>
+                      </Grid>
+                      <Grid item xs >
+                        <Typography
+                          component="h1"
+                          variant="h5"
+                          align="center"
+                          color="text.primary"
+                        >
+                          {day.day.avgtemp_c}°
+                          <span style={{ fontSize: "15px" }} >
+                            C
+                          </span>
+                        </Typography>
+                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                          Avg. T
+                        </Typography>
+                      </Grid>
+                    </Grid>
 
-                  {/* 1st Row */}
-                  < Grid container spacing={2}>
-                    <Grid item xs >
-                      <Typography
-                        component="h1"
-                        variant="h5"
-                        align="center"
-                        color="text.primary"
-                      >
-                        {day.day.maxtemp_c}°
-                        <span style={{ fontSize: "15px" }} >
-                          C
-                        </span>
-                      </Typography>
-                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                        Max. T
-                      </Typography>
-                    </Grid>
-                    <Grid item xs >
-                      <Typography
-                        component="h1"
-                        variant="h5"
-                        align="center"
-                        color="text.primary"
-                      >
-                        {day.day.mintemp_c}°
-                        <span style={{ fontSize: "15px" }} >
-                          C
-                        </span>
-                      </Typography>
-                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                        Min. T
-                      </Typography>
-                    </Grid>
-                    <Grid item xs >
-                      <Typography
-                        component="h1"
-                        variant="h5"
-                        align="center"
-                        color="text.primary"
-                      >
-                        {day.day.avgtemp_c}°
-                        <span style={{ fontSize: "15px" }} >
-                          C
-                        </span>
-                      </Typography>
-                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                        Avg. T
-                      </Typography>
+                    {/* 2nd Row */}
+                    <Grid container spacing={2}>
+                      <Grid item xs >
+                        <Typography
+                          component="h1"
+                          variant="h5"
+                          align="center"
+                          color="text.primary"
+                        >
+                          {day.astro.sunrise.slice(0, 5)}
+                          <span style={{ fontSize: "15px" }} >
+                            AM
+                          </span>
+                        </Typography>
+                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                          Sunrise
+                        </Typography>
+                      </Grid>
+                      <Grid item xs >
+                        <Typography
+                          component="h1"
+                          variant="h5"
+                          align="center"
+                          color="text.primary"
+                        >
+                          {day.astro.sunset.slice(0, 5)}
+                          <span style={{ fontSize: "15px" }} >
+                            PM
+                          </span>
+                        </Typography>
+                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                          Sunset
+                        </Typography>
+                      </Grid>
+                      <Grid item xs >
+                        <Typography
+                          component="h1"
+                          variant="h5"
+                          align="center"
+                          color="text.primary"
+                        >
+                          {day.day.uv}
+                        </Typography>
+                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
+                          UV
+                        </Typography>
+                      </Grid>
                     </Grid>
                   </Grid>
-
-                  {/* 2nd Row */}
-                  <Grid container spacing={2}>
-                    <Grid item xs >
-                      <Typography
-                        component="h1"
-                        variant="h5"
-                        align="center"
-                        color="text.primary"
-                      >
-                        {day.astro.sunrise.slice(0, 5)}
-                        <span style={{ fontSize: "15px" }} >
-                          AM
-                        </span>
-                      </Typography>
-                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                        Sunrise
-                      </Typography>
-                    </Grid>
-                    <Grid item xs >
-                      <Typography
-                        component="h1"
-                        variant="h5"
-                        align="center"
-                        color="text.primary"
-                      >
-                        {day.astro.sunset.slice(0, 5)}
-                        <span style={{ fontSize: "15px" }} >
-                          PM
-                        </span>
-                      </Typography>
-                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                        Sunset
-                      </Typography>
-                    </Grid>
-                    <Grid item xs >
-                      <Typography
-                        component="h1"
-                        variant="h5"
-                        align="center"
-                        color="text.primary"
-                      >
-                        {day.day.uv}
-                      </Typography>
-                      <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                        UV
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </Paper>
           </Grid>
         ))}
       </Grid>
