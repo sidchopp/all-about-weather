@@ -2,12 +2,12 @@ import React from 'react'
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import AirIcon from '@mui/icons-material/Air';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { WiHumidity } from "react-icons/wi";
 import { BsFillPersonLinesFill, BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
+
+//Components
+import WindDirection from '../dynamic/WindDirection';
 
 function WeatherTodayDetails({ data }) {
 
@@ -47,7 +47,7 @@ function WeatherTodayDetails({ data }) {
                 </span>
               </Typography>
               <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
-                <BsFillPersonLinesFill color="primary" />
+                <BsFillPersonLinesFill />
               </Typography>
             </Grid>
             <Grid item xs >
@@ -62,8 +62,11 @@ function WeatherTodayDetails({ data }) {
                   mph
                 </span>
               </Typography>
-              <Typography variant="h4" align="center" color="text.secondary" component="p">
-                <AirIcon />
+              <Typography variant="h5" align="center" color="text.secondary" component="p">
+
+                {/* Component import */}
+                <WindDirection data={data} />
+
               </Typography>
             </Grid>
             <Grid item xs >

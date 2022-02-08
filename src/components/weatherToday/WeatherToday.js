@@ -21,19 +21,11 @@ const day = format(new Date(), 'do');
 const weekday = format(new Date(), 'eee');
 const month = format(new Date(), 'MMM');
 const today = `${weekday},${day}${" "}${month}`
-// console.log(today);
-
 
 function WeatherToday({ data }) {
   // console.log(data);
   return (
-    // <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
     <div  >
-      {/* <Container maxWidth="sm" sx={{
-        mt: 4,
-        mb: 4
-      }}> */}
-      {/* <Paper sx={{ p: 2, margin: 'auto', maxWidth: 500, flexGrow: 1 }}> */}
       <Paper
         sx={{
           p: 2,
@@ -95,10 +87,9 @@ function WeatherToday({ data }) {
           </Grid>
         </Grid>
       </Paper>
-      {/* </Container> */}
     </div>
   )
-}
+};
 
 export default WeatherToday;
 
