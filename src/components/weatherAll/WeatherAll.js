@@ -100,7 +100,7 @@ function WeatherAll() {
             <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
               <GraphDaily data1={data} />
             </Container>
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
               <WeatherForecast data2={data} />
             </Container>
             <Container maxWidth="sm" sx={{ mt: 4, mb: 4 }}>

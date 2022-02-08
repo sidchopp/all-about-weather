@@ -40,12 +40,12 @@ function WeatherTodayDetails({ dataYesterday }) {
           <CardHeader
             avatar={<Img src={value.day.condition.icon} alt="Weather" />}
             action={
-              <Typography variant="h6" align="center" color="text.secondary" component="p">
+              <Typography variant="caption" display="block" align="right" color="text.secondary" >
                 Yesterday
               </Typography>
             }
             subheader={
-              <Typography variant="h5" align="center" color="text.primary" component="p">
+              <Typography variant="h5" align="left" color="text.primary" component="p">
                 {value.day.condition.text}
               </Typography>
             }
@@ -175,6 +175,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                     <BsArrowDown />
                   </Typography>
                 </Grid>
+
                 <Grid item xs >
                   <Typography
                     component="h1"
@@ -182,13 +183,10 @@ function WeatherTodayDetails({ dataYesterday }) {
                     align="center"
                     color="text.primary"
                   >
-                    {Math.round(value.day.avghumidity)}
-                    <span style={{ fontSize: "15px" }} >
-                      %
-                    </span>
+                    {value.day.uv}
                   </Typography>
                   <Typography variant="h4" align="center" color="text.secondary" component="p">
-                    <WiHumidity />
+                    <BsFillSunFill />
                   </Typography>
                 </Grid>
                 <Grid item xs >
@@ -198,10 +196,13 @@ function WeatherTodayDetails({ dataYesterday }) {
                     align="right"
                     color="text.primary"
                   >
-                    {value.day.uv}
+                    {Math.round(value.day.avghumidity)}
+                    <span style={{ fontSize: "15px" }} >
+                      %
+                    </span>
                   </Typography>
                   <Typography variant="h4" align="right" color="text.secondary" component="p">
-                    <BsFillSunFill />
+                    <WiHumidity />
                   </Typography>
                 </Grid>
               </Grid>

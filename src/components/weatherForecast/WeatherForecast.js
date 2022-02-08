@@ -52,10 +52,10 @@ function WeatherForecast({ data2 }) {
                   avatar={<Img src={day.day.condition.icon} alt="Weather" />}
                   action={
                     day.date === date
-                      ? <Typography variant="h6" align="right" color="text.secondary" component="p">
+                      ? <Typography variant="caption" display="block" align="right" color="text.secondary" >
                         TODAY
                       </Typography>
-                      : <Typography variant="h7" align="right" color="text.secondary" component="p">
+                      : <Typography variant="caption" display="block" align="right" color="text.secondary" >
                         {day.date}
                       </Typography>
 
