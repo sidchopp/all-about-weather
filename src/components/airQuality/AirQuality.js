@@ -10,11 +10,12 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  overflow: 'scroll',
-  width: "370px",
-  height: "550px",
-  bgcolor: 'background.paper',
+  // overflow: 'scroll',
+  // width: "370px",
+  // height: "550px",
+  bgcolor: 'skyblue',
   border: '2px solid #000',
+  borderRadius: '10px',
   boxShadow: 24,
   p: 1,
 };
@@ -35,14 +36,12 @@ export default function AirQuality({ data }) {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
-            {/* <Paper style={{ padding: "10px", position: "relative" }} elevation={12} > */}
-
-            <>
-              <Typography variant="h6" color="text.primary" component="p">
+            <Paper style={{ padding: "10px" }} elevation={12} >
+              <Typography variant="h5" color="text.primary" component="p">
                 Air Quality
               </Typography>
               <Typography variant="h7" color="text.secondary" component="p" sx={{ mt: 2 }} >
-                Carbon Monoxide: {data.current.air_quality.co}
+                Carbon Monoxide: {Math.round(data.current.air_quality.co).toFixed(2)}
               </Typography>
               <Typography variant="h7" color="text.secondary" component="p" sx={{ mt: 2 }}>
                 Nitrogen Dioxide: {(data.current.air_quality.no2).toFixed(2)}
@@ -59,8 +58,7 @@ export default function AirQuality({ data }) {
               <Typography variant="h7" color="text.secondary" component="p" sx={{ mt: 2 }}>
                 Sulphur Dioxide: {(data.current.air_quality.so2.toFixed(2))}
               </Typography>
-            </>
-            {/* </Paper> */}
+            </Paper>
           </Box>
         </Modal>
       </>
