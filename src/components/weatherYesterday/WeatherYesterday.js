@@ -38,15 +38,15 @@ function WeatherTodayDetails({ dataYesterday }) {
 
         <Card style={{ padding: "10px" }}  >
           <CardHeader
-            avatar={<Img src={value.day.condition.icon} alt="Weather" />}
+            avatar={<Grid container spacing={1} >
+              <Typography variant="caption" display="block" align="center" color="text.primary" component="p">
+                <Img src={value.day.condition.icon} alt="Weather" />
+                <span >  {value.day.condition.text}</span>
+              </Typography>
+            </Grid>}
             action={
               <Typography variant="caption" display="block" align="right" color="text.secondary" >
                 Yesterday
-              </Typography>
-            }
-            subheader={
-              <Typography variant="h5" align="left" color="text.primary" component="p">
-                {value.day.condition.text}
               </Typography>
             }
           />

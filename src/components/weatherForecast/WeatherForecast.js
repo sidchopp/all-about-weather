@@ -47,9 +47,14 @@ function WeatherForecast({ data2 }) {
               elevation={9}
             // backgroundColor="blue"
             >
-              <Card style={{ padding: "10px" }}  >
+              <Card   >
                 <CardHeader
-                  avatar={<Img src={day.day.condition.icon} alt="Weather" />}
+                  avatar={<Grid container spacing={1} >
+                    <Typography variant="caption" display="block" align="center" color="text.primary" component="p">
+                      <Img src={day.day.condition.icon} alt="Weather" />
+                      <span >  {day.day.condition.text}</span>
+                    </Typography>
+                  </Grid>}
                   action={
                     day.date === date
                       ? <Typography variant="caption" display="block" align="right" color="text.secondary" >
@@ -58,12 +63,6 @@ function WeatherForecast({ data2 }) {
                       : <Typography variant="caption" display="block" align="right" color="text.secondary" >
                         {day.date}
                       </Typography>
-
-                  }
-                  subheader={
-                    <Typography variant="h5" align="left" color="text.primary" component="p">
-                      {day.day.condition.text}
-                    </Typography>
                   }
                 />
                 <CardContent>
