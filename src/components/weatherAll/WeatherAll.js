@@ -50,7 +50,7 @@ function WeatherAll() {
     try {
 
       // For today's weather and for weather forecast
-      const responseGeo = await fetch(`${process.env.REACT_APP_API_URL}/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${lat},${lon}&days=7&aqi=yes&alerts=yes`)
+      const responseGeo = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${lat},${lon}&days=7&aqi=yes&alerts=yes`)
       // console.log("Response is:", responseGeo);
       const dataGeo = await responseGeo.json();
       // console.log(dataGeo);
