@@ -139,7 +139,7 @@ export default function GraphDaily({ data1 }) {
           p: 2,
           display: 'flex',
           flexDirection: 'column',
-          height: 300,
+          height: 350,
           backgroundColor: "skyblue"
         }}
         elevation={9}

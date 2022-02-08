@@ -7,8 +7,9 @@ import Container from '@mui/material/Container';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
+import { BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
+import { CgCompressV } from "react-icons/cg";
 
 //For today's card
 const date = format(new Date(), "yyyy-MM-dd")
@@ -51,8 +52,8 @@ function WeatherForecast({ data2 }) {
                   avatar={<Img src={day.day.condition.icon} alt="Weather" />}
                   action={
                     day.date === date
-                      ? <Typography variant="h6" align="center" color="text.primary" component="p">
-                        Today
+                      ? <Typography variant="h6" align="center" color="text.secondary" component="p">
+                        TODAY
                       </Typography>
                       : <Typography variant="h7" align="center" color="text.secondary" component="p">
                         {day.date}
@@ -82,8 +83,8 @@ function WeatherForecast({ data2 }) {
                             C
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                          Max. T
+                        <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
+                          <BsArrowUp />
                         </Typography>
                       </Grid>
                       <Grid item xs >
@@ -98,8 +99,8 @@ function WeatherForecast({ data2 }) {
                             C
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                          Min. T
+                        <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
+                          <BsArrowDown />
                         </Typography>
                       </Grid>
                       <Grid item xs >
@@ -114,8 +115,8 @@ function WeatherForecast({ data2 }) {
                             C
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                          Avg. T
+                        <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
+                          <CgCompressV />
                         </Typography>
                       </Grid>
                     </Grid>
@@ -131,11 +132,11 @@ function WeatherForecast({ data2 }) {
                         >
                           {day.astro.sunrise.slice(0, 5)}
                           <span style={{ fontSize: "15px" }} >
-                            AM
+                            am
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                          Sunrise
+                        <Typography variant="h4" align="center" color="text.secondary" component="p">
+                          <BsFillSunriseFill />
                         </Typography>
                       </Grid>
                       <Grid item xs >
@@ -147,11 +148,11 @@ function WeatherForecast({ data2 }) {
                         >
                           {day.astro.sunset.slice(0, 5)}
                           <span style={{ fontSize: "15px" }} >
-                            PM
+                            pm
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                          Sunset
+                        <Typography variant="h4" align="center" color="text.secondary" component="p">
+                          <BsFillSunsetFill />
                         </Typography>
                       </Grid>
                       <Grid item xs >
@@ -163,8 +164,8 @@ function WeatherForecast({ data2 }) {
                         >
                           {day.day.uv}
                         </Typography>
-                        <Typography gutterBottom variant="h7" align="center" color="text.secondary" component="p">
-                          UV
+                        <Typography variant="h4" align="center" color="text.secondary" component="p">
+                          <BsFillSunFill />
                         </Typography>
                       </Grid>
                     </Grid>

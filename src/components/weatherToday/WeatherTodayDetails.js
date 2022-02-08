@@ -6,8 +6,8 @@ import AirIcon from '@mui/icons-material/Air';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import { WiSunrise, WiSunset, WiHumidity, WiDaySunny } from "react-icons/wi";
-import { AiOutlineUserSwitch } from "react-icons/ai";
+import { WiHumidity } from "react-icons/wi";
+import { BsFillPersonLinesFill, BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
 
 function WeatherTodayDetails({ data }) {
 
@@ -19,11 +19,11 @@ function WeatherTodayDetails({ data }) {
           p: 2,
           display: 'flex',
           flexDirection: 'column',
-          height: 360,
+          height: 350,
           backgroundColor: "skyblue"
         }}
         elevation={9}
-        backgroundColor="blue"
+      // backgroundColor="blue"
       >
         <Grid>
           <Grid>
@@ -47,7 +47,7 @@ function WeatherTodayDetails({ data }) {
                 </span>
               </Typography>
               <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
-                <AiOutlineUserSwitch />
+                <BsFillPersonLinesFill color="primary" />
               </Typography>
             </Grid>
             <Grid item xs >
@@ -73,10 +73,13 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {data.forecast.forecastday[0].astro.sunrise}
+                {data.forecast.forecastday[0].astro.sunrise.slice(0, 5)}
+                <span style={{ fontSize: "15px" }} >
+                  am
+                </span>
               </Typography>
               <Typography variant="h4" align="center" color="text.secondary" component="p">
-                <WiSunrise />
+                <BsFillSunriseFill />
               </Typography>
             </Grid>
           </Grid>
@@ -95,8 +98,8 @@ function WeatherTodayDetails({ data }) {
                   C
                 </span>
               </Typography>
-              <Typography gutterBottom variant="h4" align="center" color="text.secondary" component="p">
-                <ArrowUpwardIcon color="warning" />
+              <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
+                <BsArrowUp />
               </Typography>
             </Grid>
             <Grid item xs >
@@ -122,10 +125,13 @@ function WeatherTodayDetails({ data }) {
                 align="center"
                 color="text.primary"
               >
-                {data.forecast.forecastday[0].astro.sunset}
+                {data.forecast.forecastday[0].astro.sunset.slice(0, 5)}
+                <span style={{ fontSize: "15px" }} >
+                  pm
+                </span>
               </Typography>
               <Typography variant="h4" align="center" color="text.secondary" component="p">
-                <WiSunset />
+                <BsFillSunsetFill />
               </Typography>
             </Grid>
           </Grid>
@@ -144,8 +150,8 @@ function WeatherTodayDetails({ data }) {
                   C
                 </span>
               </Typography>
-              <Typography gutterBottom variant="h4" align="center" color="text.secondary" component="p">
-                <ArrowDownwardIcon color="primary" />
+              <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
+                <BsArrowDown />
               </Typography>
             </Grid>
             <Grid item xs >
@@ -174,7 +180,7 @@ function WeatherTodayDetails({ data }) {
                 {data.forecast.forecastday[0].day.uv}
               </Typography>
               <Typography variant="h4" align="center" color="text.secondary" component="p">
-                <WiDaySunny />
+                <BsFillSunFill />
               </Typography>
             </Grid>
           </Grid>
