@@ -58,7 +58,10 @@ function WeatherAll() {
       setData(dataGeo)
 
       // For yesterday's weather
-      const responseYesterday = await fetch(`${process.env.REACT_APP_API_URL}/history.json?key=${process.env.REACT_APP_API_KEY}&q=${lat},${lon}&dt=${yesterdayIso}`)
+      // const responseYesterday = await fetch(`${process.env.REACT_APP_API_URL}/history.json?key=${process.env.REACT_APP_API_KEY}&q=${lat},${lon}&dt=${yesterdayIso}`)
+
+      const responseYesterday = await fetch(`https://api.weatherapi.com/v1/history.json?key=${process.env.REACT_APP_API_KEY}&q=${lat},${lon}&dt=${yesterdayIso}`)
+
       const dataYesterday = await responseYesterday.json();
       // console.log(dataYesterday);
       setDataYesterday(dataYesterday);
