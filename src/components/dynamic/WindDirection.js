@@ -7,7 +7,8 @@ import {
   BsFillArrowUpLeftCircleFill,
   BsFillArrowUpRightCircleFill,
   BsFillArrowDownLeftCircleFill,
-  BsFillArrowDownRightCircleFill
+  BsFillArrowDownRightCircleFill,
+  BsWind
 } from "react-icons/bs";
 
 
@@ -30,6 +31,9 @@ function WindDirection({ data }) {
     return <BsFillArrowLeftCircleFill />;
   } else if (data.current.wind_degree === 270 && data.current.wind_degree) {
     return <BsFillArrowDownCircleFill />;
+  } else {
+    return <BsWind />
+
   }
 };
 
