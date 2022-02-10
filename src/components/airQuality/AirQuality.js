@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MasksIcon from '@mui/icons-material/Masks';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
@@ -28,7 +30,10 @@ export default function AirQuality({ data }) {
 
   return (
     <div>
-      <><Button size="small" color="primary" variant="contained" onClick={handleOpen}>Air Quality</Button>
+      <>
+        <IconButton color="info" variant="contained" onClick={handleOpen}>
+          <MasksIcon fontSize='large' />
+        </IconButton>
         <Modal
           open={open}
           onClose={handleClose}
