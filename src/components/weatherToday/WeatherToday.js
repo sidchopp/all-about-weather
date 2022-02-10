@@ -39,7 +39,7 @@ function WeatherToday({ data }) {
 
       >
         <Grid container spacing={1}>
-          <Grid item xs >
+          <Grid item xs={4} >
             <Typography variant="h9" align="left" color="text.secondary" component="p">
               {today}
             </Typography>
@@ -61,10 +61,10 @@ function WeatherToday({ data }) {
               <Warning data={data} />
             </Typography>
           </Grid>
-          <Grid item xs>
+          <Grid item xs={8}>
             <Typography
               variant="h1"
-              align="center"
+              align="right"
               color="text.primary"
               component="h1"
             >
@@ -76,13 +76,13 @@ function WeatherToday({ data }) {
             <Typography
               component="p"
               variant="h7"
-              align="center"
+              align="right"
               color="text.secondary"
             >
               {data.current.condition.text}
             </Typography>
             <Typography variant="h7" align="center" color="text.secondary" component="p">
-              <Img src={data.current.condition.icon} alt="Weather" />
+              <Img style={{ float: 'right' }} src={data.current.condition.icon} alt="Weather" />
             </Typography>
           </Grid>
         </Grid>
