@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import WarningIcon from '@mui/icons-material/Warning';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
@@ -29,7 +31,10 @@ export default function Warning({ data }) {
     <div>
       {data.alerts.alert.length === 0
         ? <></>
-        : <><Button size="small" color="warning" variant="contained" onClick={handleOpen}>Warning</Button>
+        : <>
+          <IconButton variant="contained" onClick={handleOpen}>
+            <WarningIcon color="warning" />
+          </IconButton>
           <Modal
             open={open}
             onClose={handleClose}
