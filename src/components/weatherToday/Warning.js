@@ -6,6 +6,9 @@ import WarningIcon from '@mui/icons-material/Warning';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import CloseIcon from '@mui/icons-material/Close';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const style = {
   position: 'absolute',
@@ -43,6 +46,16 @@ export default function Warning({ data }) {
           >
             <Box sx={style}>
               <Paper style={{ padding: "10px", position: "relative" }} elevation={12} >
+                <Grid container direction="row" justifyContent="space-between" >
+                  <Grid item >
+
+                  </Grid>
+                  <Grid item >
+                    <IconButton color="primary" variant="contained" onClick={handleClose}>
+                      <CancelIcon />
+                    </IconButton>
+                  </Grid>
+                </Grid>
                 {data.alerts.alert.map(alert => (
                   <>
                     <Typography variant="h6" color="text.primary" component="p">
