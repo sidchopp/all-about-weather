@@ -17,10 +17,10 @@ const Img = styled('img')({
 });
 
 // Today's Date and Day
-const day = format(new Date(), 'do');
+const day = format(new Date(), 'd');
 const weekday = format(new Date(), 'eee');
 const month = format(new Date(), 'MMM');
-const today = `${weekday},${day}${" "}${month}`
+const today = `${weekday},${month}${" "}${day}`
 
 function WeatherToday({ data }) {
   // console.log(data);
@@ -45,7 +45,7 @@ function WeatherToday({ data }) {
             </Typography>
             <Typography
               component="h1"
-              variant="h4"
+              variant="h5"
               align="left"
               color="text.primary"
             >
