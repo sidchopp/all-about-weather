@@ -51,8 +51,9 @@ function WeatherToday({ data }) {
             >
               {data.location.name}
             </Typography>
-            <Typography variant="caption" display="block" align="left" color="text.primary">
-              {data.location.region}, {data.location.country}
+            <Typography variant="h9" align="left" color="text.primary">
+              {data.location.region}
+              {/* , {data.location.country} */}
             </Typography>
             <Typography gutterBottom variant="button" display="block" align="left" >
               <AirQuality data={data} />
@@ -75,7 +76,7 @@ function WeatherToday({ data }) {
             </Typography>
             <Typography
               component="p"
-              variant="h7"
+              variant="h6"
               align="right"
               color="text.secondary"
             >
