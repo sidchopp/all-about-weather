@@ -1,13 +1,11 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import WarningIcon from '@mui/icons-material/Warning';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import CloseIcon from '@mui/icons-material/Close';
 import CancelIcon from '@mui/icons-material/Cancel';
 
 const style = {
@@ -49,7 +47,7 @@ export default function Warning({ data }) {
 
                 {data.alerts.alert.map(alert => (
                   <>
-                    <Grid container direction="row" justifyContent="space-between" >
+                    <Grid container direction="row" justifyContent="space-between" alignItems="center" >
                       <Grid item >
                         <Typography variant="h6" color="text.primary" component="p">
                           Warning
@@ -61,7 +59,6 @@ export default function Warning({ data }) {
                         </IconButton>
                       </Grid>
                     </Grid>
-
                     <Typography variant="button" color="text.secondary" >
                       {alert.event}
                     </Typography>

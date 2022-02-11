@@ -1,11 +1,12 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MasksIcon from '@mui/icons-material/Masks';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const style = {
   position: 'absolute',
@@ -41,10 +42,19 @@ export default function AirQuality({ data }) {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
-            <Paper style={{ padding: "10px" }} elevation={12} >
-              <Typography variant="h5" color="text.primary" component="p">
-                Air Quality
-              </Typography>
+            <Paper style={{ padding: "10px", position: "relative" }} elevation={12} >
+              <Grid container direction="row" justifyContent="space-between" alignItems="center" >
+                <Grid item >
+                  <Typography variant="h6" color="text.primary" component="p">
+                    Air Quality
+                  </Typography>
+                </Grid>
+                <Grid item >
+                  <IconButton color="primary" variant="contained" onClick={handleClose}>
+                    <CancelIcon />
+                  </IconButton>
+                </Grid>
+              </Grid>
               <Typography variant="h7" color="text.secondary" component="p" sx={{ mt: 2 }} >
                 Carbon Monoxide: {Math.round(data.current.air_quality.co).toFixed(2)}
               </Typography>
