@@ -46,21 +46,22 @@ export default function Warning({ data }) {
           >
             <Box sx={style}>
               <Paper style={{ padding: "10px", position: "relative" }} elevation={12} >
-                <Grid container direction="row" justifyContent="space-between" >
-                  <Grid item >
 
-                  </Grid>
-                  <Grid item >
-                    <IconButton color="primary" variant="contained" onClick={handleClose}>
-                      <CancelIcon />
-                    </IconButton>
-                  </Grid>
-                </Grid>
                 {data.alerts.alert.map(alert => (
                   <>
-                    <Typography variant="h6" color="text.primary" component="p">
-                      Warning
-                    </Typography>
+                    <Grid container direction="row" justifyContent="space-between" >
+                      <Grid item >
+                        <Typography variant="h6" color="text.primary" component="p">
+                          Warning
+                        </Typography>
+                      </Grid>
+                      <Grid item >
+                        <IconButton color="primary" variant="contained" onClick={handleClose}>
+                          <CancelIcon />
+                        </IconButton>
+                      </Grid>
+                    </Grid>
+
                     <Typography variant="button" color="text.secondary" >
                       {alert.event}
                     </Typography>
