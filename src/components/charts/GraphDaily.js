@@ -7,16 +7,16 @@ export default function GraphDaily({ data1 }) {
   const theme = useTheme();
   // console.log(data1);
 
-  const newArray = [];
+  const graphData = [];
   for (let i = 0; i < data1.forecast.forecastday[0].hour.length; i++) {
     const time = data1.forecast.forecastday[0].hour[i].time.slice(-5);
     const temperature = data1.forecast.forecastday[0].hour[i].temp_c;
     const objectSets = {};
     objectSets.time = time;
     objectSets.value = temperature;
-    newArray.push(objectSets)
+    graphData.push(objectSets)
   };
-  // console.log(newArray);
+  // console.log(graphData);
 
   return (
     <div>
@@ -31,14 +31,14 @@ export default function GraphDaily({ data1 }) {
           backgroundColor: "skyblue"
         }}
         elevation={9}
-        backgroundColor="blue"
+      // backgroundColor="blue"
       >
         <Typography component="h2" variant="h6" color="primary" gutterBottom sx={{ textAlign: 'center' }}>
           Variation in Temperature with time
         </Typography>
         <ResponsiveContainer width="100%" >
           <LineChart
-            data={newArray}
+            data={graphData}
             margin={{
               top: 24,
               right: 24,

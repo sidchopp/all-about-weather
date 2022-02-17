@@ -35,7 +35,7 @@ function WeatherToday({ data }) {
           backgroundColor: "skyblue"
         }}
         elevation={9}
-        backgroundColor="blue"
+      // backgroundColor="blue"
 
       >
         <Grid container spacing={1}>

@@ -8,8 +8,7 @@ import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-import { BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
-import { CgCompressV } from "react-icons/cg";
+import { BsFillSunriseFill, BsFillSunsetFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
 
 //For today's card
 const date = format(new Date(), "yyyy-MM-dd")
