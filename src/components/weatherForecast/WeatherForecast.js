@@ -22,7 +22,7 @@ const Img = styled('img')({
 
 function WeatherForecast({ data2 }) {
 
-  // console.log(data2)
+  console.log(data2)
   return (
     <Container maxWidth="xl" component="main">
       <Grid container spacing={6} alignItems="flex-end">
@@ -60,7 +60,7 @@ function WeatherForecast({ data2 }) {
                         TODAY
                       </Typography>
                       : <Typography variant="caption" display="block" align="right" color="text.secondary" >
-                        {day.date}
+                        {day.date.slice(-5)}
                       </Typography>
                   }
                 />
