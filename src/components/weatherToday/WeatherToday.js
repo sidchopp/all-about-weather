@@ -3,6 +3,9 @@ import { format } from 'date-fns'
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 //Components
@@ -28,65 +31,69 @@ function WeatherToday({ data }) {
     <div  >
       <Paper
         sx={{
-          p: 2,
+          p: 1,
           display: 'flex',
           flexDirection: 'column',
-          height: 350,
-          backgroundColor: "skyblue"
+          // height: 350,
+          // backgroundColor: "skyblue"
         }}
         elevation={9}
       // backgroundColor="blue"
 
       >
-        <Grid container spacing={1}>
-          <Grid item xs={4} >
-            <Typography variant="h9" align="left" color="text.secondary" component="p">
-              {today}
-            </Typography>
-            <Typography
-              component="h1"
-              variant="h5"
-              align="left"
-              color="text.primary"
-            >
-              {data.location.name}
-            </Typography>
-            <Typography variant="h9" align="left" color="text.primary">
-              {data.location.region}
-              {/* , {data.location.country} */}
-            </Typography>
-            <Typography gutterBottom variant="button" display="block" align="left" >
-              <AirQuality data={data} />
-            </Typography>
-            <Typography variant="button" display="block" align="left" >
-              <Warning data={data} />
-            </Typography>
-          </Grid>
-          <Grid item xs={8}>
-            <Typography
-              variant="h1"
-              align="right"
-              color={data.current.temp_c < 0 ? "red" : "blue"}
-              component="h1"
-            >
-              {Math.round(data.current.temp_c)}°
-              <span style={{ fontSize: "45px" }} >
-                C
-              </span>
-            </Typography>
-            <Typography
-              component="p"
-              variant="h6"
-              align="right"
-              color="text.secondary"
-            >
-              {data.current.condition.text}
-            </Typography>
-            <Typography variant="h7" align="center" color="text.secondary" component="p">
-              <Img style={{ float: 'right' }} src={data.current.condition.icon} alt="Weather" />
-            </Typography>
-          </Grid>
-        </Grid>
+        <Card  >
+          <CardContent>
+            <Grid container spacing={1}>
+              <Grid item xs={4} >
+                <Typography variant="h9" align="left" color="text.secondary" component="p">
+                  {today}
+                </Typography>
+                <Typography
+                  component="h1"
+                  variant="h5"
+                  align="left"
+                  color="text.primary"
+                >
+                  {data.location.name}
+                </Typography>
+                <Typography variant="h9" align="left" color="text.primary">
+                  {data.location.region}
+                  {/* , {data.location.country} */}
+                </Typography>
+                <Typography gutterBottom variant="button" display="block" align="left" >
+                  <AirQuality data={data} />
+                </Typography>
+                <Typography variant="button" display="block" align="left" >
+                  <Warning data={data} />
+                </Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Typography
+                  variant="h1"
+                  align="right"
+                  color={data.current.temp_c < 0 ? "red" : "blue"}
+                  component="h1"
+                >
+                  {Math.round(data.current.temp_c)}°
+                  <span style={{ fontSize: "45px" }} >
+                    C
+                  </span>
+                </Typography>
+                <Typography
+                  component="p"
+                  variant="h6"
+                  align="right"
+                  color="text.secondary"
+                >
+                  {data.current.condition.text}
+                </Typography>
+                <Typography variant="h7" align="center" color="text.secondary" component="p">
+                  <Img style={{ float: 'right' }} src={data.current.condition.icon} alt="Weather" />
+                </Typography>
+              </Grid>
+            </Grid>
+          </CardContent>
+        </Card>
       </Paper>
     </div>
   )

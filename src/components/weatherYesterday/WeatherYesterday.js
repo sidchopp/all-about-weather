@@ -30,10 +30,10 @@ function WeatherTodayDetails({ dataYesterday }) {
           p: 1,
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: "skyblue"
+          // backgroundColor: "skyblue"
         }}
         elevation={9}
-        backgroundColor="blue"
+      // backgroundColor="blue"
       >
 
         <Card style={{ padding: "10px" }}  >

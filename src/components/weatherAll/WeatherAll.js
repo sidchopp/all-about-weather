@@ -72,6 +72,7 @@ function WeatherAll() {
   }
   useEffect(() => {
     whereAmI();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // if data is not fetched,show loader

@@ -41,7 +41,7 @@ function WeatherForecast({ data2 }) {
                 p: 1,
                 display: 'flex',
                 flexDirection: 'column',
-                backgroundColor: "skyblue"
+                // backgroundColor: "skyblue"
               }}
               elevation={9}
             // backgroundColor="blue"
