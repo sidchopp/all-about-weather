@@ -22,7 +22,7 @@ const Img = styled('img')({
 
 function WeatherForecast({ data2 }) {
 
-  console.log(data2)
+  // console.log(data2)
   return (
     <Container maxWidth="xl" component="main">
       <Grid container spacing={6} alignItems="flex-end">
