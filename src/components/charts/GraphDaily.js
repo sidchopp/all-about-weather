@@ -37,7 +37,7 @@ export default function GraphDaily({ data1 }) {
         elevation={9}
         className={classes.paper}
       >
-        <Card style={{ padding: '20px' }}>
+        <Card className={classes.card} style={{ padding: '20px' }}>
           <Typography component="h2" variant="h6" color="primary" gutterBottom sx={{ textAlign: 'center' }}>
             Today's Temperature
           </Typography>

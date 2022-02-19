@@ -41,22 +41,21 @@ function WeatherToday({ data }) {
         elevation={9}
         className={classes.paper}
       >
-        <Card  >
+        <Card className={classes.card}  >
           <CardContent>
             <Grid container spacing={1}>
               <Grid item xs={4} >
-                <Typography variant="h9" align="left" color="text.secondary" component="p">
+                <Typography variant="h9" align="left" component="p">
                   {today}
                 </Typography>
                 <Typography
                   component="h1"
                   variant="h5"
                   align="left"
-                  color="text.primary"
                 >
                   {data.location.name}
                 </Typography>
-                <Typography variant="h9" align="left" color="text.primary">
+                <Typography variant="h9" align="left" >
                   {data.location.region}
                   {/* , {data.location.country} */}
                 </Typography>
@@ -83,11 +82,10 @@ function WeatherToday({ data }) {
                   component="p"
                   variant="h6"
                   align="right"
-                  color="text.secondary"
                 >
                   {data.current.condition.text}
                 </Typography>
-                <Typography variant="h7" align="center" color="text.secondary" component="p">
+                <Typography variant="h7" align="center" component="p">
                   <Img style={{ float: 'right' }} src={data.current.condition.icon} alt="Weather" />
                 </Typography>
               </Grid>

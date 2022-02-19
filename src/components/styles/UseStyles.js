@@ -1,7 +1,7 @@
 import { makeStyles } from '@mui/styles';
 
-const lightColor = 'skyblue';
-const darkColor = 'darkBlue';
+const lightColor = '#E2D3F3';
+const darkColor = '#013DC4';
 
 const useStyles = makeStyles({
   body: {
@@ -17,6 +17,10 @@ const useStyles = makeStyles({
   paper: {
     backgroundColor: darkColor,
   },
+  card: {
+    backgroundColor: lightColor,
+    color: darkColor
+  }
 });
 
 export default useStyles;

@@ -29,10 +29,10 @@ function WeatherTodayDetails({ data }) {
         className={classes.paper}
       >
         <Card  >
-          <CardContent>
+          <CardContent className={classes.card}>
             <Grid>
               <Grid>
-                <Typography gutterBottom style={{ marginBottom: "10px" }} color="text.secondary" align="center">
+                <Typography gutterBottom style={{ marginBottom: "10px" }} align="center">
                   Last updated:{" "}{data.current.last_updated}
                 </Typography>
               </Grid>
@@ -44,14 +44,13 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-                    color="text.primary"
                   >
                     {Math.round(data.current.feelslike_c)}°
                     <span style={{ fontSize: "15px" }} >
                       C
                     </span>
                   </Typography>
-                  <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
+                  <Typography gutterBottom variant="h5" align="center" component="p">
                     <BsFillPersonLinesFill />
                   </Typography>
                 </Grid>
@@ -60,14 +59,14 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-                    color="text.primary"
+
                   >
                     {Math.round(data.current.wind_mph)}
                     <span style={{ fontSize: "15px" }} >
                       mph
                     </span>
                   </Typography>
-                  <Typography variant="h5" align="center" color="text.secondary" component="p">
+                  <Typography variant="h5" align="center" component="p">
 
                     {/* Component import */}
                     <WindDirection data={data} />
@@ -79,14 +78,14 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-                    color="text.primary"
+
                   >
                     {data.forecast.forecastday[0].astro.sunrise.slice(0, 5)}
                     <span style={{ fontSize: "15px" }} >
                       am
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="center" color="text.secondary" component="p">
+                  <Typography variant="h4" align="center" component="p">
                     <BsFillSunriseFill />
                   </Typography>
                 </Grid>
@@ -99,14 +98,14 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-                    color="text.primary"
+
                   >
                     {Math.round(data.forecast.forecastday[0].day.maxtemp_c)}°
                     <span style={{ fontSize: "15px" }} >
                       C
                     </span>
                   </Typography>
-                  <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
+                  <Typography gutterBottom variant="h5" align="center" component="p">
                     <BsArrowUp />
                   </Typography>
                 </Grid>
@@ -115,14 +114,14 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-                    color="text.primary"
+
                   >
                     {Math.round(data.current.vis_miles)}
                     <span style={{ fontSize: "15px" }} >
                       miles
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="center" color="text.secondary" component="p">
+                  <Typography variant="h4" align="center" component="p">
                     <VisibilityIcon />
                   </Typography>
                 </Grid>
@@ -131,14 +130,14 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-                    color="text.primary"
+
                   >
                     {data.forecast.forecastday[0].astro.sunset.slice(0, 5)}
                     <span style={{ fontSize: "15px" }} >
                       pm
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="center" color="text.secondary" component="p">
+                  <Typography variant="h4" align="center" component="p">
                     <BsFillSunsetFill />
                   </Typography>
                 </Grid>
@@ -151,14 +150,14 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-                    color="text.primary"
+
                   >
                     {Math.round(data.forecast.forecastday[0].day.mintemp_c)}°
                     <span style={{ fontSize: "15px" }} >
                       C
                     </span>
                   </Typography>
-                  <Typography gutterBottom variant="h5" align="center" color="text.secondary" component="p">
+                  <Typography gutterBottom variant="h5" align="center" component="p">
                     <BsArrowDown />
                   </Typography>
                 </Grid>
@@ -167,14 +166,14 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-                    color="text.primary"
+
                   >
                     {Math.round(data.current.humidity)}
                     <span style={{ fontSize: "15px" }} >
                       %
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="center" color="text.secondary" component="p">
+                  <Typography variant="h4" align="center" component="p">
                     <WiHumidity />
                   </Typography>
                 </Grid>
@@ -183,11 +182,11 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-                    color="text.primary"
+
                   >
                     {data.forecast.forecastday[0].day.uv}
                   </Typography>
-                  <Typography variant="h4" align="center" color="text.secondary" component="p">
+                  <Typography variant="h4" align="center" component="p">
                     <BsFillSunFill />
                   </Typography>
                 </Grid>

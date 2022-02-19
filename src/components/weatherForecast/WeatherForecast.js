@@ -53,7 +53,7 @@ function WeatherForecast({ data2 }) {
               elevation={9}
               className={classes.paper}
             >
-              <Card   >
+              <Card className={classes.card}   >
                 <CardHeader
                   className={classes.darkColor}
                   avatar={<Grid container spacing={1} >
@@ -64,10 +64,10 @@ function WeatherForecast({ data2 }) {
                   </Grid>}
                   action={
                     day.date === todayDate
-                      ? <Typography variant="caption" display="block" align="right" color="text.secondary" >
+                      ? <Typography variant="caption" display="block" align="right"  >
                         TODAY
                       </Typography>
-                      : <Typography variant="caption" display="block" align="right" color="text.secondary" >
+                      : <Typography variant="caption" display="block" align="right"  >
                         {day.date.slice(-5)}
                       </Typography>
                   }
@@ -82,14 +82,14 @@ function WeatherForecast({ data2 }) {
                           component="h1"
                           variant="h5"
                           align="left"
-                          color="text.primary"
+
                         >
                           {day.day.maxtemp_c}°
                           <span style={{ fontSize: "15px" }} >
                             C
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h5" align="left" color="text.secondary" component="p">
+                        <Typography gutterBottom variant="h5" align="left" component="p">
                           <BsArrowUp />
                         </Typography>
                       </Grid>
@@ -98,14 +98,14 @@ function WeatherForecast({ data2 }) {
                           component="h1"
                           variant="h5"
                           align="right"
-                          color="text.primary"
+
                         >
                           {day.day.mintemp_c}°
                           <span style={{ fontSize: "15px" }} >
                             C
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h5" align="right" color="text.secondary" component="p">
+                        <Typography gutterBottom variant="h5" align="right" component="p">
                           <BsArrowDown />
                         </Typography>
                       </Grid>
@@ -114,14 +114,14 @@ function WeatherForecast({ data2 }) {
                           component="h1"
                           variant="h5"
                           align="right"
-                          color="text.primary"
+                          
                         >
                           {day.day.avgtemp_c}°
                           <span style={{ fontSize: "15px" }} >
                             C
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h5" align="right" color="text.secondary" component="p">
+                        <Typography gutterBottom variant="h5" align="right"  component="p">
                           <CgCompressV />
                         </Typography>
                       </Grid> */}
@@ -134,14 +134,14 @@ function WeatherForecast({ data2 }) {
                           component="h1"
                           variant="h5"
                           align="left"
-                          color="text.primary"
+
                         >
                           {day.astro.sunrise.slice(0, 5)}
                           <span style={{ fontSize: "15px" }} >
                             am
                           </span>
                         </Typography>
-                        <Typography variant="h4" align="left" color="text.secondary" component="p">
+                        <Typography variant="h4" align="left" component="p">
                           <BsFillSunriseFill />
                         </Typography>
                       </Grid>
@@ -150,14 +150,14 @@ function WeatherForecast({ data2 }) {
                           component="h1"
                           variant="h5"
                           align="right"
-                          color="text.primary"
+
                         >
                           {day.astro.sunset.slice(0, 5)}
                           <span style={{ fontSize: "15px" }} >
                             pm
                           </span>
                         </Typography>
-                        <Typography variant="h4" align="right" color="text.secondary" component="p">
+                        <Typography variant="h4" align="right" component="p">
                           <BsFillSunsetFill />
                         </Typography>
                       </Grid>
@@ -166,11 +166,11 @@ function WeatherForecast({ data2 }) {
                           component="h1"
                           variant="h5"
                           align="right"
-                          color="text.primary"
+                          
                         >
                           {day.day.uv}
                         </Typography>
-                        <Typography variant="h4" align="right" color="text.secondary" component="p">
+                        <Typography variant="h4" align="right"  component="p">
                           <BsFillSunFill />
                         </Typography>
                       </Grid> */}
