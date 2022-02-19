@@ -2,8 +2,11 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 
+//Components
+import useStyles from '../styles/UseStyles';
 
 function Footer() {
+  const classes = useStyles();
   return (
     <Container
       maxWidth="md"

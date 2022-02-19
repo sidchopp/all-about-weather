@@ -9,6 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 //Components
+import useStyles from '../styles/UseStyles';
 import Warning from './Warning';
 import AirQuality from '../airQuality/AirQuality';
 
@@ -26,6 +27,7 @@ const month = format(new Date(), 'MMM');
 const today = `${weekday},${month}${" "}${day}`
 
 function WeatherToday({ data }) {
+  const classes = useStyles();
   // console.log(data);
   return (
     <div  >
@@ -35,11 +37,9 @@ function WeatherToday({ data }) {
           display: 'flex',
           flexDirection: 'column',
           // height: 350,
-          // backgroundColor: "skyblue"
         }}
         elevation={9}
-      // backgroundColor="blue"
-
+        className={classes.paper}
       >
         <Card  >
           <CardContent>

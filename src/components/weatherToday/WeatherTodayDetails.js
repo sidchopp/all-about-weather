@@ -10,10 +10,11 @@ import { WiHumidity } from "react-icons/wi";
 import { BsFillPersonLinesFill, BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
 
 //Components
+import useStyles from '../styles/UseStyles';
 import WindDirection from '../dynamic/WindDirection';
 
 function WeatherTodayDetails({ data }) {
-
+  const classes = useStyles();
   // console.log(data);
   return (
     <div>
@@ -23,10 +24,9 @@ function WeatherTodayDetails({ data }) {
           display: 'flex',
           flexDirection: 'column',
           // height: 350,
-          // backgroundColor: "skyblue"
         }}
         elevation={9}
-      // backgroundColor="blue"
+        className={classes.paper}
       >
         <Card  >
           <CardContent>

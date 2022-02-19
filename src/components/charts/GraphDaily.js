@@ -6,8 +6,12 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
+//Components
+import useStyles from '../styles/UseStyles';
+
 export default function GraphDaily({ data1 }) {
   const theme = useTheme();
+  const classes = useStyles();
   // console.log(data1);
 
   const graphData = [];
@@ -23,25 +27,20 @@ export default function GraphDaily({ data1 }) {
 
   return (
     <div>
-      {/* <Toolbar /> */}
-      {/* <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}> */}
       <Paper
         sx={{
           p: 1,
           display: 'flex',
           flexDirection: 'column',
           height: 350,
-          // backgroundColor: "skyblue"
         }}
         elevation={9}
-      // backgroundColor="blue"
+        className={classes.paper}
       >
         <Card style={{ padding: '20px' }}>
-
           <Typography component="h2" variant="h6" color="primary" gutterBottom sx={{ textAlign: 'center' }}>
             Today's Temperature
           </Typography>
-
           <ResponsiveContainer width="100%" >
             <LineChart
               data={graphData}
@@ -97,7 +96,6 @@ export default function GraphDaily({ data1 }) {
               />
             </LineChart>
           </ResponsiveContainer>
-
         </Card>
       </Paper>
       {/* </Container> */}

@@ -10,8 +10,16 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import { BsFillSunriseFill, BsFillSunsetFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
 
-//For today's card
-const date = format(new Date(), "yyyy-MM-dd")
+//Components
+import useStyles from '../styles/UseStyles';
+
+
+//For today's and tomorrow's date
+const todayDate = format(new Date(), "yyyy-MM-dd")
+// const tomdate = new Date().setDate(new Date().getDate() + 1)
+// const tomorrowDate = format(tomdate, "yyyy-MM-dd")
+// const dayAfterTomorrow = format(new Date().setDate(new Date().getDate() + 2), "yyyy-MM-dd")
+// console.log(todayDate, tomorrowDate, dayAfterTomorrow);
 
 const Img = styled('img')({
   margin: 'auto',
@@ -21,7 +29,7 @@ const Img = styled('img')({
 });
 
 function WeatherForecast({ data2 }) {
-
+  const classes = useStyles();
   // console.log(data2)
   return (
     <Container maxWidth="xl" component="main">
@@ -33,7 +41,7 @@ function WeatherForecast({ data2 }) {
             item
             key={day.astro.sunrise}
             xs={12}
-            sm={day.date === date ? 12 : 6}
+            sm={day.date === todayDate ? 12 : 6}
             md={4}
           >
             <Paper
@@ -41,21 +49,21 @@ function WeatherForecast({ data2 }) {
                 p: 1,
                 display: 'flex',
                 flexDirection: 'column',
-                // backgroundColor: "skyblue"
               }}
               elevation={9}
-            // backgroundColor="blue"
+              className={classes.paper}
             >
               <Card   >
                 <CardHeader
+                  className={classes.darkColor}
                   avatar={<Grid container spacing={1} >
-                    <Typography variant="caption" display="block" align="center" color="text.primary" component="p">
+                    <Typography variant="caption" display="block" align="center" component="p">
                       <Img src={day.day.condition.icon} alt="Weather" />
                       <span >  {day.day.condition.text}</span>
                     </Typography>
                   </Grid>}
                   action={
-                    day.date === date
+                    day.date === todayDate
                       ? <Typography variant="caption" display="block" align="right" color="text.secondary" >
                         TODAY
                       </Typography>

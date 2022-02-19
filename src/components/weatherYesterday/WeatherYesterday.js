@@ -12,6 +12,9 @@ import { WiHumidity } from "react-icons/wi";
 import { BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
 import { CgCompressV } from "react-icons/cg";
 
+//Components
+import useStyles from '../styles/UseStyles';
+
 const Img = styled('img')({
   margin: 'auto',
   display: 'block',
@@ -20,6 +23,7 @@ const Img = styled('img')({
 });
 
 function WeatherTodayDetails({ dataYesterday }) {
+  const classes = useStyles();
   const value = dataYesterday.forecast.forecastday[0]
   // console.log(value);
   // console.log(dataYesterday);
@@ -30,10 +34,9 @@ function WeatherTodayDetails({ dataYesterday }) {
           p: 1,
           display: 'flex',
           flexDirection: 'column',
-          // backgroundColor: "skyblue"
         }}
         elevation={9}
-      // backgroundColor="blue"
+        className={classes.paper}
       >
 
         <Card style={{ padding: "10px" }}  >
