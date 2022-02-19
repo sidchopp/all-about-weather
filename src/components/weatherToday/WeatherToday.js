@@ -70,7 +70,7 @@ function WeatherToday({ data }) {
                 <Typography
                   variant="h1"
                   align="right"
-                  color={data.current.temp_c < 0 ? "red" : "blue"}
+                  // color={data.current.temp_c < 0 ? "red" : "blue"}
                   component="h1"
                 >
                   {Math.round(data.current.temp_c)}°
