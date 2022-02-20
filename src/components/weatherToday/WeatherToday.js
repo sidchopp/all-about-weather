@@ -50,7 +50,7 @@ function WeatherToday({ data }) {
                 </Typography>
                 <Typography
                   component="h1"
-                  variant="h5"
+                  variant="h6"
                   align="left"
                 >
                   {data.location.name}
@@ -73,9 +73,9 @@ function WeatherToday({ data }) {
                   // color={data.current.temp_c < 0 ? "red" : "blue"}
                   component="h1"
                 >
-                  {Math.round(data.current.temp_c)}°
+                  {Math.round(data.current.temp_c)}
                   <span style={{ fontSize: "30px" }} >
-                    C
+                    °C
                   </span>
                 </Typography>
                 <Typography
