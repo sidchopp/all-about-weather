@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
-import WarningIcon from '@mui/icons-material/Warning';
+import ReportIcon from '@mui/icons-material/Report';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
@@ -34,7 +34,7 @@ export default function Warning({ data }) {
         ? <></>
         : <>
           <IconButton variant="contained" onClick={handleOpen}>
-            <WarningIcon color="warning" />
+            <ReportIcon fontSize='large' color="warning" />
           </IconButton>
           <Modal
             open={open}
