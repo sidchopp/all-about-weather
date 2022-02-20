@@ -15,7 +15,7 @@ import WindDirection from '../dynamic/WindDirection';
 
 function WeatherTodayDetails({ data }) {
   const classes = useStyles();
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <Paper
@@ -185,8 +185,8 @@ function WeatherTodayDetails({ data }) {
                 </Grid>
               </Grid>
               <Grid>
-                <Typography variant="h7" align="center" component="p">
-                  Last updated:{" "}{data.current.last_updated}
+                <Typography variant="caption" align="center" display="block" >
+                  Last updated:{" "}{data.current.last_updated.slice(-6)}
                 </Typography>
               </Grid>
             </Grid>
