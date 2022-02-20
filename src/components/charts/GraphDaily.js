@@ -38,7 +38,7 @@ export default function GraphDaily({ data1 }) {
         className={classes.paper}
       >
         <Card className={classes.card} style={{ padding: '20px' }}>
-          <Typography component="h2" variant="h6" color="primary" gutterBottom sx={{ textAlign: 'center' }}>
+          <Typography component="h2" variant="h6" gutterBottom sx={{ textAlign: 'center' }}>
             Today's Temperature
           </Typography>
           <ResponsiveContainer width="100%" >
