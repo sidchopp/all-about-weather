@@ -39,9 +39,9 @@ function WeatherTodayDetails({ data }) {
                     variant="h5"
                     align="center"
                   >
-                    {Math.round(data.current.feelslike_c)}°
+                    {Math.round(data.current.feelslike_c)}
                     <span style={{ fontSize: "15px" }} >
-                      C
+                      °C
                     </span>
                   </Typography>
                   <Typography gutterBottom variant="h5" align="center" component="p">
@@ -93,9 +93,9 @@ function WeatherTodayDetails({ data }) {
                     align="center"
 
                   >
-                    {Math.round(data.forecast.forecastday[0].day.maxtemp_c)}°
+                    {Math.round(data.forecast.forecastday[0].day.maxtemp_c)}
                     <span style={{ fontSize: "15px" }} >
-                      C
+                      °C
                     </span>
                   </Typography>
                   <Typography gutterBottom variant="h5" align="center" component="p">
@@ -145,9 +145,9 @@ function WeatherTodayDetails({ data }) {
                     align="center"
 
                   >
-                    {Math.round(data.forecast.forecastday[0].day.mintemp_c)}°
+                    {Math.round(data.forecast.forecastday[0].day.mintemp_c)}
                     <span style={{ fontSize: "15px" }} >
-                      C
+                      °C
                     </span>
                   </Typography>
                   <Typography gutterBottom variant="h5" align="center" component="p">

@@ -83,9 +83,9 @@ function WeatherForecast({ data2 }) {
                           variant="h5"
                           align="center"
                         >
-                          {Math.round(day.day.maxtemp_c)}°
+                          {Math.round(day.day.maxtemp_c)}
                           <span style={{ fontSize: "15px" }} >
-                            C
+                            °C
                           </span>
                         </Typography>
                         <Typography gutterBottom variant="h5" align="center" component="p">
@@ -117,9 +117,9 @@ function WeatherForecast({ data2 }) {
                           variant="h5"
                           align="center"
                         >
-                          {Math.round(day.day.mintemp_c)}°
+                          {Math.round(day.day.mintemp_c)}
                           <span style={{ fontSize: "15px" }} >
-                            C
+                            °C
                           </span>
                         </Typography>
                         <Typography gutterBottom variant="h5" align="center" component="p">
