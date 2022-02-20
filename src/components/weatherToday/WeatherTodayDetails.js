@@ -15,7 +15,7 @@ import WindDirection from '../dynamic/WindDirection';
 
 function WeatherTodayDetails({ data }) {
   const classes = useStyles();
-  // console.log(data);
+  console.log(data);
   return (
     <div>
       <Paper
@@ -31,12 +31,6 @@ function WeatherTodayDetails({ data }) {
         <Card  >
           <CardContent className={classes.card}>
             <Grid>
-              <Grid>
-                <Typography gutterBottom style={{ marginBottom: "10px" }} align="center">
-                  Last updated:{" "}{data.current.last_updated}
-                </Typography>
-              </Grid>
-
               {/* 1st Row */}
               <Grid container spacing={3}>
                 <Grid item xs >
@@ -78,7 +72,6 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-
                   >
                     {data.forecast.forecastday[0].astro.sunrise.slice(0, 5)}
                     <span style={{ fontSize: "15px" }} >
@@ -173,7 +166,7 @@ function WeatherTodayDetails({ data }) {
                       %
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="center" component="p">
+                  <Typography gutterBottom variant="h4" align="center" component="p">
                     <WiHumidity />
                   </Typography>
                 </Grid>
@@ -186,10 +179,15 @@ function WeatherTodayDetails({ data }) {
                   >
                     {data.forecast.forecastday[0].day.uv}
                   </Typography>
-                  <Typography variant="h4" align="center" component="p">
+                  <Typography gutterBottom variant="h4" align="center" component="p">
                     <BsFillSunFill />
                   </Typography>
                 </Grid>
+              </Grid>
+              <Grid>
+                <Typography variant="h7" align="center" component="p">
+                  Last updated:{" "}{data.current.last_updated}
+                </Typography>
               </Grid>
             </Grid>
           </CardContent>

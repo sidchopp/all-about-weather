@@ -81,15 +81,14 @@ function WeatherForecast({ data2 }) {
                         <Typography
                           component="h1"
                           variant="h5"
-                          align="left"
-
+                          align="center"
                         >
-                          {day.day.maxtemp_c}°
+                          {Math.round(day.day.maxtemp_c)}°
                           <span style={{ fontSize: "15px" }} >
                             C
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h5" align="left" component="p">
+                        <Typography gutterBottom variant="h5" align="center" component="p">
                           <BsArrowUp />
                         </Typography>
                       </Grid>
@@ -97,34 +96,17 @@ function WeatherForecast({ data2 }) {
                         <Typography
                           component="h1"
                           variant="h5"
-                          align="right"
-
+                          align="center"
                         >
-                          {day.day.mintemp_c}°
+                          {day.astro.sunrise.slice(0, 5)}
                           <span style={{ fontSize: "15px" }} >
-                            C
+                            am
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h5" align="right" component="p">
-                          <BsArrowDown />
+                        <Typography variant="h4" align="center" component="p">
+                          <BsFillSunriseFill />
                         </Typography>
                       </Grid>
-                      {/* <Grid item xs >
-                        <Typography
-                          component="h1"
-                          variant="h5"
-                          align="right"
-                          
-                        >
-                          {day.day.avgtemp_c}°
-                          <span style={{ fontSize: "15px" }} >
-                            C
-                          </span>
-                        </Typography>
-                        <Typography gutterBottom variant="h5" align="right"  component="p">
-                          <CgCompressV />
-                        </Typography>
-                      </Grid> */}
                     </Grid>
 
                     {/* 2nd Row */}
@@ -133,23 +115,23 @@ function WeatherForecast({ data2 }) {
                         <Typography
                           component="h1"
                           variant="h5"
-                          align="left"
-
+                          align="center"
                         >
-                          {day.astro.sunrise.slice(0, 5)}
+                          {Math.round(day.day.mintemp_c)}°
                           <span style={{ fontSize: "15px" }} >
-                            am
+                            C
                           </span>
                         </Typography>
-                        <Typography variant="h4" align="left" component="p">
-                          <BsFillSunriseFill />
+                        <Typography gutterBottom variant="h5" align="center" component="p">
+                          <BsArrowDown />
                         </Typography>
                       </Grid>
+
                       <Grid item xs >
                         <Typography
                           component="h1"
                           variant="h5"
-                          align="right"
+                          align="center"
 
                         >
                           {day.astro.sunset.slice(0, 5)}
@@ -157,23 +139,10 @@ function WeatherForecast({ data2 }) {
                             pm
                           </span>
                         </Typography>
-                        <Typography variant="h4" align="right" component="p">
+                        <Typography variant="h4" align="center" component="p">
                           <BsFillSunsetFill />
                         </Typography>
                       </Grid>
-                      {/* <Grid item xs >
-                        <Typography
-                          component="h1"
-                          variant="h5"
-                          align="right"
-                          
-                        >
-                          {day.day.uv}
-                        </Typography>
-                        <Typography variant="h4" align="right"  component="p">
-                          <BsFillSunFill />
-                        </Typography>
-                      </Grid> */}
                     </Grid>
                   </Grid>
                 </CardContent>
