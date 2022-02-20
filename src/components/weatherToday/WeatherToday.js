@@ -43,9 +43,9 @@ function WeatherToday({ data }) {
       >
         <Card className={classes.card}  >
           <CardContent>
-            <Grid container spacing={1}>
+            <Grid container >
               <Grid item xs={4} >
-                <Typography variant="h9" align="left" component="p">
+                <Typography variant="caption" display="block" align="left" >
                   {today}
                 </Typography>
                 <Typography
@@ -55,7 +55,7 @@ function WeatherToday({ data }) {
                 >
                   {data.location.name}
                 </Typography>
-                <Typography variant="h9" align="left" >
+                <Typography variant="subtitle2" align="left" >
                   {data.location.region}
                   {/* , {data.location.country} */}
                 </Typography>
@@ -74,7 +74,7 @@ function WeatherToday({ data }) {
                   component="h1"
                 >
                   {Math.round(data.current.temp_c)}°
-                  <span style={{ fontSize: "45px" }} >
+                  <span style={{ fontSize: "30px" }} >
                     C
                   </span>
                 </Typography>
