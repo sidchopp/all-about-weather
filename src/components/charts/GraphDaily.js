@@ -23,31 +23,31 @@ export default function GraphDaily({ data1 }) {
     objectSets.value = temperature;
     graphData.push(objectSets)
   };
-  console.log(graphData);
+  // console.log(graphData);
 
-
+  // To show max. min. Temperatures in graph
   const temp = graphData.map(temp => temp.value);
-  console.log(temp);
-
-  const uniqueTemp = [...new Set(temp)]
-  console.log(uniqueTemp);
-  const maxTemp = Math.max(...uniqueTemp);
-  const minTemp = Math.min(...uniqueTemp);
-  console.log(maxTemp, minTemp);
+  const maxTemp = Math.max(...temp);
+  const minTemp = Math.min(...temp);
+  const indexMaxTemp = temp.indexOf(maxTemp);
+  const indexMinTemp = temp.indexOf(minTemp)
+  // console.log(indexMaxTemp, indexMinTemp);
+  // console.log(maxTemp, minTemp);
 
 
   const CustomizedDot = (props) => {
-    const { x, y, stroke, value } = props;
-    if (value === maxTemp) {
+    const { x, y, stroke, index, value } = props;
+    // console.log(props);
+    if (value === maxTemp && index === indexMaxTemp) {
       return (
-        <text x={x} y={y} dy={-4} fill='blue' fontSize={10} textAnchor="middle">
-          Max: {Math.round(maxTemp)}
+        <text x={x} y={y} dy={-8} fill='blue' fontSize={15} textAnchor="middle">
+          Max: {Math.round(value)}
         </text>
       )
-    } if (value === minTemp) {
+    } if (value === minTemp && index === indexMinTemp) {
       return (
-        <text x={x} y={y} dy={-4} fill='red' fontSize={10} textAnchor="middle">
-          Min: {Math.round(minTemp)}
+        <text x={x} y={y} dy={16} fill='red' fontSize={15} textAnchor="middle">
+          Min: {Math.round(value)}
         </text>
       )
     }
