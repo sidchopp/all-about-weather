@@ -8,6 +8,9 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import CancelIcon from '@mui/icons-material/Cancel';
 
+//Components
+import useStyles from '../styles/UseStyles';
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -24,6 +27,7 @@ const style = {
 
 export default function Warning({ data }) {
   // console.log(data);
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -43,41 +47,41 @@ export default function Warning({ data }) {
             aria-describedby="modal-modal-description"
           >
             <Box sx={style}>
-              <Paper style={{ padding: "10px", position: "relative" }} elevation={12} >
+              <Paper className={classes.card} style={{ padding: "10px", position: "relative" }} elevation={12} >
 
                 {data.alerts.alert.map(alert => (
                   <>
                     <Grid container direction="row" justifyContent="space-between" alignItems="center" >
                       <Grid item >
-                        <Typography variant="h6" color="text.primary" component="p">
+                        <Typography variant="h6" component="p">
                           Warning
                         </Typography>
                       </Grid>
                       <Grid item >
-                        <IconButton color="primary" variant="contained" onClick={handleClose}>
+                        <IconButton className={classes.darkColor} variant="contained" onClick={handleClose}>
                           <CancelIcon />
                         </IconButton>
                       </Grid>
                     </Grid>
-                    <Typography variant="button" color="text.secondary" >
+                    <Typography variant="button"  >
                       {alert.event}
                     </Typography>
-                    <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}>
+                    <Typography variant="h6" component="p" sx={{ mt: 2 }}>
                       Issued By
                     </Typography>
-                    <Typography variant="h7" color="text.secondary" component="p">
+                    <Typography variant="h7" component="p">
                       {alert.headline}
                     </Typography>
-                    <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }} >
+                    <Typography variant="h6" component="p" sx={{ mt: 2 }} >
                       Description
                     </Typography>
-                    <Typography variant="h7" color="text.secondary" component="p" >
+                    <Typography variant="h7" component="p" >
                       {alert.desc}
                     </Typography>
-                    <Typography variant="h6" color="text.primary" component="p" sx={{ mt: 2 }}  >
+                    <Typography variant="h6" component="p" sx={{ mt: 2 }}  >
                       Effective From
                     </Typography>
-                    <Typography variant="h7" color="text.secondary" component="p">
+                    <Typography variant="h7" component="p">
                       {` ${alert.effective} to ${alert.expires}`}
                     </Typography>
                   </>

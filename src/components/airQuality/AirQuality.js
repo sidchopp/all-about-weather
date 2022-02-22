@@ -54,7 +54,7 @@ export default function AirQuality({ data }) {
                   </Typography>
                 </Grid>
                 <Grid item >
-                  <IconButton color="primary" variant="contained" onClick={handleClose}>
+                  <IconButton className={classes.darkColor} variant="contained" onClick={handleClose}>
                     <CancelIcon />
                   </IconButton>
                 </Grid>
