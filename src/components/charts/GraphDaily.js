@@ -23,7 +23,38 @@ export default function GraphDaily({ data1 }) {
     objectSets.value = temperature;
     graphData.push(objectSets)
   };
-  // console.log(graphData);
+  console.log(graphData);
+
+
+  const temp = graphData.map(temp => temp.value);
+  console.log(temp);
+
+  const uniqueTemp = [...new Set(temp)]
+  console.log(uniqueTemp);
+  const maxTemp = Math.max(...uniqueTemp);
+  const minTemp = Math.min(...uniqueTemp);
+  console.log(maxTemp, minTemp);
+
+
+  const CustomizedDot = (props) => {
+    const { x, y, stroke, value } = props;
+    if (value === maxTemp) {
+      return (
+        <text x={x} y={y} dy={-4} fill='blue' fontSize={10} textAnchor="middle">
+          Max: {Math.round(maxTemp)}
+        </text>
+      )
+    } if (value === minTemp) {
+      return (
+        <text x={x} y={y} dy={-4} fill='red' fontSize={10} textAnchor="middle">
+          Min: {Math.round(minTemp)}
+        </text>
+      )
+    }
+    else {
+      return <></>
+    }
+  }
 
   return (
     <div>
@@ -92,6 +123,7 @@ export default function GraphDaily({ data1 }) {
                 dataKey="value"
                 name='Temp(°C)'
                 stroke={theme.palette.primary.main}
+                label={<CustomizedDot />}
               // dot={false}
               />
             </LineChart>
