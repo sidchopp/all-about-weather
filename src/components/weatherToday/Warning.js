@@ -18,7 +18,7 @@ const style = {
   transform: 'translate(-50%, -50%)',
   overflow: 'scroll',
   width: "350px",
-  // height: "550px",
+  height: "550px",
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
@@ -26,7 +26,7 @@ const style = {
 };
 
 export default function Warning({ data }) {
-  // console.log(data);
+  console.log(data);
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -82,7 +82,11 @@ export default function Warning({ data }) {
                       Effective From
                     </Typography>
                     <Typography variant="h7" component="p">
-                      {` ${alert.effective} to ${alert.expires}`}
+                      {` 
+                      ${new Date(alert.effective)}
+                       to 
+                       ${new Date(alert.expires)}
+                       `}
                     </Typography>
                   </>
                 )
