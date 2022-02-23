@@ -41,13 +41,13 @@ export default function GraphDaily({ data1 }) {
     if (value === maxTemp && index === indexMaxTemp) {
       return (
         <text x={x} y={y} dy={-8} fill='blue' fontSize={15} textAnchor="middle">
-          Max: {Math.round(value)}
+          Max:{Math.round(value)}
         </text>
       )
     } if (value === minTemp && index === indexMinTemp) {
       return (
         <text x={x} y={y} dy={16} fill='red' fontSize={15} textAnchor="middle">
-          Min: {Math.round(value)}
+          Min:{Math.round(value)}
         </text>
       )
     }
@@ -77,7 +77,7 @@ export default function GraphDaily({ data1 }) {
               data={graphData}
               margin={{
                 top: 24,
-                right: 24,
+                right: 30,
                 bottom: 44,
                 left: 24,
               }}
