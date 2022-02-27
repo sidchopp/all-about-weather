@@ -26,7 +26,7 @@ const style = {
 };
 
 export default function Warning({ data }) {
-  console.log(data);
+  // console.log(data);
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
