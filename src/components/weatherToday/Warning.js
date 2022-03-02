@@ -32,9 +32,22 @@ export default function Warning({ data }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  // Destructuring data to get ONLY alerts
+  const { alerts: { alert } } = data;
+  // console.log(alert);
+
+  // To avoid duplicates in alert
+  const uniqueAlert = new Set();
+  const filteredAlert = alert.filter(el => {
+    const duplicate = uniqueAlert.has(el.category);
+    uniqueAlert.add(el.category);
+    return !duplicate;
+  });
+  console.log(filteredAlert);
+
   return (
     <div>
-      {data.alerts.alert.length === 0
+      {filteredAlert.length === 0
         ? <></>
         : <>
           <IconButton variant="contained" onClick={handleOpen}>
@@ -48,10 +61,9 @@ export default function Warning({ data }) {
           >
             <Box sx={style}>
               <Paper className={classes.card} style={{ padding: "10px", position: "relative" }} elevation={12} >
-
-                {data.alerts.alert.map(alert => (
+                {filteredAlert.map(alert => (
                   <>
-                    <Grid container direction="row" justifyContent="space-between" alignItems="center" >
+                    <Grid key={alert.effective} container direction="row" justifyContent="space-between" alignItems="center" >
                       <Grid item >
                         <Typography variant="h6" component="p">
                           Warning

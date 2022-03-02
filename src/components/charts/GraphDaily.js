@@ -2,8 +2,6 @@ import { useTheme } from '@mui/material/styles';
 import { LineChart, Line, XAxis, YAxis, Label, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import Paper from '@mui/material/Paper';
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 //Components
@@ -36,7 +34,7 @@ export default function GraphDaily({ data1 }) {
 
 
   const CustomizedDot = (props) => {
-    const { x, y, stroke, index, value } = props;
+    const { x, y, index, value } = props;
     // console.log(props);
     if (value === maxTemp && index === indexMaxTemp) {
       return (
