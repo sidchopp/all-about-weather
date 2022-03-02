@@ -3,10 +3,10 @@ import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 
 //Components
-import useStyles from '../styles/UseStyles';
+// import useStyles from '../styles/UseStyles';
 
 function Footer() {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
     <Container
       maxWidth="md"

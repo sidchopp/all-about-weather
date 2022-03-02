@@ -43,7 +43,7 @@ export default function Warning({ data }) {
     uniqueAlert.add(el.category);
     return !duplicate;
   });
-  console.log(filteredAlert);
+  // console.log(filteredAlert);
 
   return (
     <div>
