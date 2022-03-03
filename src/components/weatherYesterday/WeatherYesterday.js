@@ -97,7 +97,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                     align="right"
 
                   >
-                    {value.astro.sunrise.slice(0, 5)}
+                    {value.astro.sunrise.slice(1, 5)}
                     <span style={{ fontSize: "15px" }} >
                       am
                     </span>
@@ -149,7 +149,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                     align="right"
 
                   >
-                    {value.astro.sunset.slice(0, 5)}
+                    {value.astro.sunset.slice(1, 5)}
                     <span style={{ fontSize: "15px" }} >
                       pm
                     </span>

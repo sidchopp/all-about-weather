@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { WiHumidity } from "react-icons/wi";
 import { BsFillPersonLinesFill, BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
-import { format } from 'date-fns'
+import { format } from 'date-fns';
 
 //Components
 import useStyles from '../styles/UseStyles';
@@ -78,7 +78,7 @@ function WeatherTodayDetails({ data }) {
                     variant="h5"
                     align="center"
                   >
-                    {data.forecast.forecastday[0].astro.sunrise.slice(0, 5)}
+                    {data.forecast.forecastday[0].astro.sunrise.slice(1, 5)}
                     <span style={{ fontSize: "15px" }} >
                       am
                     </span>
@@ -130,7 +130,7 @@ function WeatherTodayDetails({ data }) {
                     align="center"
 
                   >
-                    {data.forecast.forecastday[0].astro.sunset.slice(0, 5)}
+                    {data.forecast.forecastday[0].astro.sunset.slice(1, 5)}
                     <span style={{ fontSize: "15px" }} >
                       pm
                     </span>

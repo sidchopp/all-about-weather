@@ -98,7 +98,7 @@ function WeatherForecast({ data2 }) {
                           variant="h5"
                           align="center"
                         >
-                          {day.astro.sunrise.slice(0, 5)}
+                          {day.astro.sunrise.slice(1, 5)}
                           <span style={{ fontSize: "15px" }} >
                             am
                           </span>
@@ -134,7 +134,7 @@ function WeatherForecast({ data2 }) {
                           align="center"
 
                         >
-                          {day.astro.sunset.slice(0, 5)}
+                          {day.astro.sunset.slice(1, 5)}
                           <span style={{ fontSize: "15px" }} >
                             pm
                           </span>
