@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { WiHumidity } from "react-icons/wi";
 import { BsFillPersonLinesFill, BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
+import { format } from 'date-fns'
 
 //Components
 import useStyles from '../styles/UseStyles';
@@ -15,6 +16,11 @@ import WindDirection from '../dynamic/WindDirection';
 function WeatherTodayDetails({ data }) {
   const classes = useStyles();
   // console.log(data);
+
+  // last updated time format
+  const { current: { last_updated } } = data;
+  const time = format(new Date(last_updated), 'p')
+
   return (
     <div>
       <Paper
@@ -185,7 +191,7 @@ function WeatherTodayDetails({ data }) {
               </Grid>
               <Grid>
                 <Typography variant="caption" align="center" display="block" >
-                  Last updated:{" "}{data.current.last_updated.slice(-6)}
+                  Last updated:{" "}{time}
                 </Typography>
               </Grid>
             </Grid>
