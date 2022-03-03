@@ -8,6 +8,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { WiHumidity } from "react-icons/wi";
 import { BsFillPersonLinesFill, BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
 import { format } from 'date-fns';
+import 'animate.css';
 
 //Components
 import useStyles from '../styles/UseStyles';
@@ -49,7 +50,7 @@ function WeatherTodayDetails({ data }) {
                       °C
                     </span>
                   </Typography>
-                  <Typography gutterBottom variant="h5" align="center" component="p">
+                  <Typography gutterBottom variant="h5" align="center" component="div">
                     <BsFillPersonLinesFill />
                   </Typography>
                 </Grid>
@@ -65,10 +66,12 @@ function WeatherTodayDetails({ data }) {
                       mph
                     </span>
                   </Typography>
-                  <Typography variant="h5" align="center" component="p">
+                  <Typography variant="h5" align="center" component="div">
 
                     {/* Component import */}
-                    <WindDirection data={data} />
+                    <div className="animate__animated animate__swing animate__slower animate__infinite	">
+                      <WindDirection data={data} />
+                    </div>
 
                   </Typography>
                 </Grid>
@@ -83,7 +86,7 @@ function WeatherTodayDetails({ data }) {
                       am
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="center" component="p">
+                  <Typography variant="h4" align="center" component="div">
                     <BsFillSunriseFill />
                   </Typography>
                 </Grid>
@@ -103,7 +106,7 @@ function WeatherTodayDetails({ data }) {
                       °C
                     </span>
                   </Typography>
-                  <Typography gutterBottom variant="h5" align="center" component="p">
+                  <Typography gutterBottom variant="h5" align="center" component="div">
                     <BsArrowUp />
                   </Typography>
                 </Grid>
@@ -119,7 +122,7 @@ function WeatherTodayDetails({ data }) {
                       miles
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="center" component="p">
+                  <Typography variant="h4" align="center" component="div">
                     <VisibilityIcon />
                   </Typography>
                 </Grid>
@@ -135,7 +138,7 @@ function WeatherTodayDetails({ data }) {
                       pm
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="center" component="p">
+                  <Typography variant="h4" align="center" component="div">
                     <BsFillSunsetFill />
                   </Typography>
                 </Grid>
@@ -155,7 +158,7 @@ function WeatherTodayDetails({ data }) {
                       °C
                     </span>
                   </Typography>
-                  <Typography gutterBottom variant="h5" align="center" component="p">
+                  <Typography gutterBottom variant="h5" align="center" component="div">
                     <BsArrowDown />
                   </Typography>
                 </Grid>
@@ -171,7 +174,7 @@ function WeatherTodayDetails({ data }) {
                       %
                     </span>
                   </Typography>
-                  <Typography gutterBottom variant="h4" align="center" component="p">
+                  <Typography gutterBottom variant="h4" align="center" component="div">
                     <WiHumidity />
                   </Typography>
                 </Grid>
@@ -184,7 +187,7 @@ function WeatherTodayDetails({ data }) {
                   >
                     {data.forecast.forecastday[0].day.uv}
                   </Typography>
-                  <Typography gutterBottom variant="h4" align="center" component="p">
+                  <Typography gutterBottom variant="h4" align="center" component="div">
                     <BsFillSunFill />
                   </Typography>
                 </Grid>
