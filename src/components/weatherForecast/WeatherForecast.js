@@ -65,7 +65,7 @@ function WeatherForecast({ data2 }) {
                   action={
                     day.date === todayDate
                       ? <Typography variant="caption" display="block" align="right"  >
-                        TODAY
+                        Today
                       </Typography>
                       : <Typography variant="caption" display="block" align="right"  >
                         {day.date.slice(-5)}
