@@ -69,7 +69,7 @@ function WeatherTodayDetails({ data }) {
                   <Typography variant="h5" align="center" component="div">
 
                     {/* Component import */}
-                    <div className="animate__animated animate__swing animate__slower animate__infinite	">
+                    <div className="animate__animated animate__headShake animate__slower animate__infinite	">
                       <WindDirection data={data} />
                     </div>
 
