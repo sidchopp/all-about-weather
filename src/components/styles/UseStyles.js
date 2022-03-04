@@ -6,7 +6,7 @@ const darkColor = '#7b9acc';
 const useStyles = makeStyles({
   body: {
     backgroundColor: lightColor,
-    color: darkColor
+    color: darkColor,
   },
   darkColor: {
     color: darkColor
@@ -20,6 +20,11 @@ const useStyles = makeStyles({
   card: {
     backgroundColor: lightColor,
     color: darkColor
+  },
+  footer: {
+    backgroundColor: 'lightColor',
+    color: darkColor,
+    padding: "30px"
   }
 });
 
