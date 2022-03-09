@@ -49,7 +49,7 @@ export default function AirQuality({ data }) {
             <Paper className={classes.card} style={{ padding: "10px", position: "relative" }} elevation={12} >
               <Grid container direction="row" justifyContent="space-between" alignItems="center" >
                 <Grid item >
-                  <Typography variant="h6" c component="p">
+                  <Typography variant="h6" component="p">
                     Air Quality
                   </Typography>
                 </Grid>
