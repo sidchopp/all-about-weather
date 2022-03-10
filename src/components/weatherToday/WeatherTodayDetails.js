@@ -25,16 +25,16 @@ function WeatherTodayDetails({ data }) {
   return (
     <div>
       <Paper
+        elevation={9}
+        className={classes.paper}
         sx={{
           p: 1,
           display: 'flex',
           flexDirection: 'column',
           // height: 350,
         }}
-        elevation={9}
-        className={classes.paper}
       >
-        <Card  >
+        <Card>
           <CardContent className={classes.card}>
             <Grid>
               {/* 1st Row */}
@@ -59,7 +59,6 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-
                   >
                     {Math.round(data.current.wind_mph)}
                     <span style={{ fontSize: "15px" }} >
@@ -72,7 +71,6 @@ function WeatherTodayDetails({ data }) {
                     <div className="animate__animated animate__headShake animate__slower animate__infinite	">
                       <WindDirection data={data} />
                     </div>
-
                   </Typography>
                 </Grid>
                 <Grid item xs >
@@ -99,7 +97,6 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-
                   >
                     {Math.round(data.forecast.forecastday[0].day.maxtemp_c)}
                     <span style={{ fontSize: "15px" }} >
@@ -115,7 +112,6 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-
                   >
                     {Math.round(data.current.vis_miles)}
                     <span style={{ fontSize: "15px" }} >
@@ -131,7 +127,6 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-
                   >
                     {data.forecast.forecastday[0].astro.sunset.slice(1, 5)}
                     <span style={{ fontSize: "15px" }} >
@@ -151,7 +146,6 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-
                   >
                     {Math.round(data.forecast.forecastday[0].day.mintemp_c)}
                     <span style={{ fontSize: "15px" }} >
@@ -167,7 +161,6 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-
                   >
                     {Math.round(data.current.humidity)}
                     <span style={{ fontSize: "15px" }} >
@@ -183,7 +176,6 @@ function WeatherTodayDetails({ data }) {
                     component="h1"
                     variant="h5"
                     align="center"
-
                   >
                     {data.forecast.forecastday[0].day.uv}
                   </Typography>

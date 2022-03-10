@@ -56,12 +56,14 @@ function WeatherForecast({ data2 }) {
               <Card className={classes.card}   >
                 <CardHeader
                   className={classes.darkColor}
-                  avatar={<Grid container spacing={1} >
-                    <Typography variant="caption" display="block" align="center" component="p">
-                      <Img src={day.day.condition.icon} alt="Weather" />
-                      <span >  {day.day.condition.text}</span>
-                    </Typography>
-                  </Grid>}
+                  avatar={
+                    <Grid container spacing={1} >
+                      <Typography variant="caption" display="block" align="center" component="p">
+                        <Img src={day.day.condition.icon} alt="Weather" />
+                        <span >  {day.day.condition.text}</span>
+                      </Typography>
+                    </Grid>
+                  }
                   action={
                     day.date === todayDate
                       ? <Typography variant="caption" display="block" align="right"  >
@@ -126,13 +128,11 @@ function WeatherForecast({ data2 }) {
                           <BsArrowDown />
                         </Typography>
                       </Grid>
-
                       <Grid item xs >
                         <Typography
                           component="h1"
                           variant="h5"
                           align="center"
-
                         >
                           {day.astro.sunset.slice(1, 5)}
                           <span style={{ fontSize: "15px" }} >
