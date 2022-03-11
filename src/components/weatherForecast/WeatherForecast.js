@@ -8,10 +8,28 @@ import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Collapse from '@mui/material/Collapse';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import IconButton from '@mui/material/IconButton';
 import { BsFillSunriseFill, BsFillSunsetFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
 
 //Components
 import useStyles from '../styles/UseStyles';
+
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
 
 
 //For today's and tomorrow's date
@@ -29,12 +47,21 @@ const Img = styled('img')({
 });
 
 function WeatherForecast({ data2 }) {
-  const classes = useStyles();
   // console.log(data2)
+  const { forecast: { forecastday } } = data2;
+  console.log(forecastday);
+  //States
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <Container maxWidth="xl" component="main">
       <Grid container spacing={6} alignItems="flex-end">
-        {data2.forecast.forecastday.map((day) => (
+        {forecastday.map((day) => (
           // Today's card is full width at sm breakpoint
 
           <Grid
@@ -146,6 +173,49 @@ function WeatherForecast({ data2 }) {
                     </Grid>
                   </Grid>
                 </CardContent>
+
+
+                {/* Collapse */}
+
+                <CardActions disableSpacing>
+
+
+                  <ExpandMore
+                    expand={expanded}
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                  >
+                    <ExpandMoreIcon />
+                  </ExpandMore>
+                </CardActions>
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                  <CardContent>
+
+                    {day.hour.map((value) => {
+                      return (
+                        <>
+                          < Grid container spacing={1}>
+                            <Grid item xs  >
+                              <Typography variant="h7" align="center">
+                                {value.time.slice(11, 16)}
+                              </Typography>
+                            </Grid>
+                            <Grid item xs  >
+                              <Typography variant="h6" align="center">
+                                {Math.round(value.temp_c)}°C
+                              </Typography>
+                            </Grid>
+                            <Grid item xs  >
+                              <Typography variant="h6" align="center">
+                                {value.condition.text}
+                              </Typography>
+                            </Grid>
+                          </Grid>
+                        </>)
+                    })}
+                  </CardContent>
+                </Collapse>
               </Card>
             </Paper>
           </Grid>
