@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { formatISO, startOfYesterday } from 'date-fns';
+import BackgroundImage from '../dynamic/BackgroundImage';
 
 //Components
 import WeatherForecast from '../weatherForecast/WeatherForecast';
@@ -10,21 +11,20 @@ import Loader from '../loader/Loader';
 import WeatherTodayDetails from '../weatherToday/WeatherTodayDetails';
 import WeatherYesterday from '../weatherYesterday/WeatherYesterday'
 import GraphDaily from '../charts/GraphDaily';
-import Image from '../../images/background.jpg';
+
+// Date in ISO format For Yesterday's weather
+const yesterday = startOfYesterday()
+const yesterdayIso = formatISO(yesterday, { representation: 'date' })
 
 const styles = {
   paperContainer: {
-    backgroundImage: `url(${Image})`,
+    backgroundImage: `url(${BackgroundImage()})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     padding: "5px"
   }
 };
-
-// Date in ISO format For Yesterday's weather
-const yesterday = startOfYesterday()
-const yesterdayIso = formatISO(yesterday, { representation: 'date' })
 
 function WeatherAll() {
   //States
