@@ -6,7 +6,7 @@ import { format } from "date-fns";
 
 const time = format(new Date(), 'k');
 const timeNumber = Number(time);
-console.log(timeNumber);
+// console.log(timeNumber);
 
 function BackgroundImage() {
   if (timeNumber > 5 && timeNumber <= 12) {
