@@ -3,9 +3,14 @@ import { LineChart, Line, XAxis, YAxis, Label, CartesianGrid, Tooltip, Responsiv
 import Paper from '@mui/material/Paper';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
+import { format } from "date-fns";
 
 //Components
 import useStyles from '../styles/UseStyles';
+
+const time = format(new Date(), 'HH');
+const timeString = `${time}:00`;
+console.log(timeString);
 
 export default function GraphDaily({ data1 }) {
   const theme = useTheme();
@@ -32,6 +37,10 @@ export default function GraphDaily({ data1 }) {
   // console.log(indexMaxTemp, indexMinTemp);
   // console.log(maxTemp, minTemp);
 
+  //To display Current Temp
+  const showCurrentTemp = graphData.find(value => value.time === timeString);
+  const { value: currentTemp } = showCurrentTemp;
+  console.log(currentTemp);
 
   const CustomizedDot = (props) => {
     const { x, y, index, value } = props;
@@ -45,6 +54,12 @@ export default function GraphDaily({ data1 }) {
     } if (value === minTemp && index === indexMinTemp) {
       return (
         <text x={x} y={y} dy={16} fill='red' fontSize={15} textAnchor="middle">
+          {Math.round(value)}°C
+        </text>
+      )
+    } if (value === currentTemp) {
+      return (
+        <text x={x} y={y} dy={16} fill='black' fontSize={15} textAnchor="middle">
           {Math.round(value)}°C
         </text>
       )
