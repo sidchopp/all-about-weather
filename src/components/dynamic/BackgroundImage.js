@@ -11,9 +11,9 @@ const timeNumber = Number(time);
 function BackgroundImage() {
   if (timeNumber > 5 && timeNumber <= 12) {
     return Day;
-  } else if (timeNumber > 12 && timeNumber <= 17) {
+  } else if (timeNumber > 12 && timeNumber <= 16) {
     return Afternoon;
-  } else if (timeNumber > 17 && timeNumber <= 20) {
+  } else if (timeNumber > 16 && timeNumber <= 19) {
     return Evening;
   } else {
     return Night;
