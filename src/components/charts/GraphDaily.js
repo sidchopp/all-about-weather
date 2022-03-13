@@ -82,7 +82,7 @@ export default function GraphDaily({ data1 }) {
         className={classes.paper}
       >
         <Card className={classes.card} style={{ padding: '20px' }}>
-          <Typography component="h2" variant="h6" gutterBottom sx={{ textAlign: 'center' }}>
+          <Typography component="h3" variant="h8" sx={{ textAlign: 'center' }}>
             Today's Temperature
           </Typography>
           <ResponsiveContainer width="100%" >
@@ -92,7 +92,7 @@ export default function GraphDaily({ data1 }) {
                 top: 24,
                 right: 30,
                 bottom: 44,
-                left: 24,
+                left: -24,
               }}
             >
               <CartesianGrid stroke="#ccc" />
@@ -117,7 +117,7 @@ export default function GraphDaily({ data1 }) {
                 stroke={theme.palette.text.secondary}
                 style={theme.typography.body2}
               >
-                <Label
+                {/* <Label
                   angle={270}
                   position="left"
                   style={{
@@ -127,7 +127,7 @@ export default function GraphDaily({ data1 }) {
                   }}
                 >
                   Temperature (°C)
-                </Label>
+                </Label> */}
               </YAxis>
               <Tooltip />
               <Line
