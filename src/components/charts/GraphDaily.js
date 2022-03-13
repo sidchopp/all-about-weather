@@ -10,12 +10,10 @@ import useStyles from '../styles/UseStyles';
 
 const time = format(new Date(), 'HH');
 const timeString = `${time}:00`;
-console.log(timeString);
 
 export default function GraphDaily({ data1 }) {
   const theme = useTheme();
   const classes = useStyles();
-  // console.log(data1);
 
   const graphData = [];
   for (let i = 0; i < data1.forecast.forecastday[0].hour.length; i++) {
@@ -26,7 +24,6 @@ export default function GraphDaily({ data1 }) {
     objectSets.value = temperature;
     graphData.push(objectSets)
   };
-  // console.log(graphData);
 
   // To show max. min. Temperatures in graph
   const temp = graphData.map(temp => temp.value);
@@ -34,14 +31,13 @@ export default function GraphDaily({ data1 }) {
   const minTemp = Math.min(...temp);
   const indexMaxTemp = temp.indexOf(maxTemp);
   const indexMinTemp = temp.indexOf(minTemp)
-  // console.log(indexMaxTemp, indexMinTemp);
-  // console.log(maxTemp, minTemp);
 
   //To display Current Temp
   const showCurrentTemp = graphData.find(value => value.time === timeString);
+  const indexCurrentTemp = graphData.indexOf(graphData.find(value => value.time === timeString))
   const { value: currentTemp } = showCurrentTemp;
-  console.log(currentTemp);
 
+  // For showing info on graph with dots
   const CustomizedDot = (props) => {
     const { x, y, index, value } = props;
     // console.log(props);
@@ -57,7 +53,7 @@ export default function GraphDaily({ data1 }) {
           {Math.round(value)}°C
         </text>
       )
-    } if (value === currentTemp) {
+    } if (value === currentTemp && index === indexCurrentTemp) {
       return (
         <text x={x} y={y} dy={16} fill='black' fontSize={15} textAnchor="middle">
           {Math.round(value)}°C
