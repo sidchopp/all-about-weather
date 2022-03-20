@@ -21,9 +21,10 @@ const Img = styled('img')({
 
 // Today's Date and Day
 const day = format(new Date(), 'd');
+const time = format(new Date(), "p")
 const weekday = format(new Date(), 'eee');
 const month = format(new Date(), 'MMM');
-const today = `${weekday},${month}${" "}${day}`
+const today = `${weekday},${month}${" "}${day}${" "}${time}`
 
 function WeatherToday({ data }) {
   const classes = useStyles();
