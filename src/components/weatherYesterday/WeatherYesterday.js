@@ -14,6 +14,7 @@ import { CgCompressV } from "react-icons/cg";
 
 //Components
 import useStyles from '../styles/UseStyles';
+import IconStyle from '../styles/IconStyles';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -63,7 +64,6 @@ function WeatherTodayDetails({ dataYesterday }) {
                     component="h1"
                     variant="h5"
                     align="left"
-
                   >
                     {Math.round(value.day.avgtemp_c)}
                     <span style={{ fontSize: "15px" }} >
@@ -79,7 +79,6 @@ function WeatherTodayDetails({ dataYesterday }) {
                     component="h1"
                     variant="h5"
                     align="center"
-
                   >
                     {Math.round(value.day.maxwind_mph)}
                     <span style={{ fontSize: "15px" }} >
@@ -95,14 +94,13 @@ function WeatherTodayDetails({ dataYesterday }) {
                     component="h1"
                     variant="h5"
                     align="right"
-
                   >
                     {value.astro.sunrise.slice(1, 5)}
                     <span style={{ fontSize: "15px" }} >
                       am
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="right" component="p">
+                  <Typography color={IconStyle.sunRise} variant="h4" align="right" component="p">
                     <BsFillSunriseFill />
                   </Typography>
                 </Grid>
@@ -115,7 +113,6 @@ function WeatherTodayDetails({ dataYesterday }) {
                     component="h1"
                     variant="h5"
                     align="left"
-
                   >
                     {Math.round(value.day.maxtemp_c)}
                     <span style={{ fontSize: "15px" }} >
@@ -131,7 +128,6 @@ function WeatherTodayDetails({ dataYesterday }) {
                     component="h1"
                     variant="h5"
                     align="center"
-
                   >
                     {Math.round(value.day.avgvis_km)}
                     <span style={{ fontSize: "15px" }} >
@@ -147,14 +143,13 @@ function WeatherTodayDetails({ dataYesterday }) {
                     component="h1"
                     variant="h5"
                     align="right"
-
                   >
                     {value.astro.sunset.slice(1, 5)}
                     <span style={{ fontSize: "15px" }} >
                       pm
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="right" component="p">
+                  <Typography color={IconStyle.sunSet} variant="h4" align="right" component="p">
                     <BsFillSunsetFill />
                   </Typography>
                 </Grid>
@@ -167,7 +162,6 @@ function WeatherTodayDetails({ dataYesterday }) {
                     component="h1"
                     variant="h5"
                     align="left"
-
                   >
                     {Math.round(value.day.mintemp_c)}
                     <span style={{ fontSize: "15px" }} >
@@ -184,7 +178,6 @@ function WeatherTodayDetails({ dataYesterday }) {
                     component="h1"
                     variant="h5"
                     align="center"
-
                   >
                     {value.day.uv}
                   </Typography>
@@ -197,7 +190,6 @@ function WeatherTodayDetails({ dataYesterday }) {
                     component="h1"
                     variant="h5"
                     align="right"
-
                   >
                     {Math.round(value.day.avghumidity)}
                     <span style={{ fontSize: "15px" }} >

@@ -12,6 +12,7 @@ import { BsFillSunriseFill, BsFillSunsetFill, BsArrowUp, BsArrowDown } from "rea
 
 //Components
 import useStyles from '../styles/UseStyles';
+import IconStyle from '../styles/IconStyles';
 
 
 //For today's and tomorrow's date
@@ -105,7 +106,7 @@ function WeatherForecast({ data2 }) {
                             am
                           </span>
                         </Typography>
-                        <Typography variant="h4" align="center" component="p">
+                        <Typography color={IconStyle.sunRise} variant="h4" align="center" component="p">
                           <BsFillSunriseFill />
                         </Typography>
                       </Grid>
@@ -139,7 +140,7 @@ function WeatherForecast({ data2 }) {
                             pm
                           </span>
                         </Typography>
-                        <Typography variant="h4" align="center" component="p">
+                        <Typography color={IconStyle.sunSet} variant="h4" align="center" component="p">
                           <BsFillSunsetFill />
                         </Typography>
                       </Grid>

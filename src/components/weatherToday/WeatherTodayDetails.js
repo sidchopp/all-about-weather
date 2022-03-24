@@ -13,6 +13,8 @@ import 'animate.css';
 //Components
 import useStyles from '../styles/UseStyles';
 import WindDirection from '../dynamic/WindDirection';
+import IconStyle from '../styles/IconStyles';
+
 
 function WeatherTodayDetails({ data }) {
   const classes = useStyles();
@@ -84,7 +86,7 @@ function WeatherTodayDetails({ data }) {
                       am
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="center" component="div">
+                  <Typography color={IconStyle.sunRise} variant="h4" align="center" component="div">
                     <BsFillSunriseFill />
                   </Typography>
                 </Grid>
@@ -133,7 +135,7 @@ function WeatherTodayDetails({ data }) {
                       pm
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="center" component="div">
+                  <Typography color={IconStyle.sunSet} variant="h4" align="center" component="div">
                     <BsFillSunsetFill />
                   </Typography>
                 </Grid>
