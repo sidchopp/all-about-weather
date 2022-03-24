@@ -119,7 +119,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                       °C
                     </span>
                   </Typography>
-                  <Typography gutterBottom variant="h5" align="left" component="p">
+                  <Typography color={IconStyle.highTemp} gutterBottom variant="h5" align="left" component="p">
                     <BsArrowUp />
                   </Typography>
                 </Grid>
@@ -168,7 +168,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                       °C
                     </span>
                   </Typography>
-                  <Typography gutterBottom variant="h5" align="left" component="p">
+                  <Typography color={IconStyle.lowTemp} gutterBottom variant="h5" align="left" component="p">
                     <BsArrowDown />
                   </Typography>
                 </Grid>
@@ -181,7 +181,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                   >
                     {value.day.uv}
                   </Typography>
-                  <Typography variant="h4" align="center" component="p">
+                  <Typography color={IconStyle.uvIndex} variant="h4" align="center" component="p">
                     <BsFillSunFill />
                   </Typography>
                 </Grid>

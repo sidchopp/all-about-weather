@@ -91,7 +91,7 @@ function WeatherForecast({ data2 }) {
                             °C
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h5" align="center" component="p">
+                        <Typography color={IconStyle.highTemp} gutterBottom variant="h5" align="center" component="p">
                           <BsArrowUp />
                         </Typography>
                       </Grid>
@@ -125,7 +125,7 @@ function WeatherForecast({ data2 }) {
                             °C
                           </span>
                         </Typography>
-                        <Typography gutterBottom variant="h5" align="center" component="p">
+                        <Typography color={IconStyle.lowTemp} gutterBottom variant="h5" align="center" component="p">
                           <BsArrowDown />
                         </Typography>
                       </Grid>
