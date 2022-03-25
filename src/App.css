@@ -1,10 +1,9 @@
 :root {
   --lightColor: #fcf6f5;
-  --midColor: #4cbfa6;
   --darkColor: #7b9acc;
   --backgroundColor: var(--darkColor);
   --textColor: var(--lightColor);
-  --cardShadow: 5px 10px 18px var(--midColor);
+  --cardShadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   --cardHoverShadow: 5px 10px 18px var(--darkColor);
   --transition: 0.3s ease-in-out all;
 }
