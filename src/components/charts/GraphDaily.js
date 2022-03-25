@@ -1,6 +1,5 @@
 import { useTheme } from '@mui/material/styles';
 import { LineChart, Line, XAxis, YAxis, Label, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import Paper from '@mui/material/Paper';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import { format } from "date-fns";
@@ -43,13 +42,13 @@ export default function GraphDaily({ data1 }) {
     // console.log(props);
     if (value === maxTemp && index === indexMaxTemp) {
       return (
-        <text x={x} y={y} dy={-8} fill='blue' fontSize={15} textAnchor="middle">
+        <text x={x} y={y} dy={-8} fill='red' fontSize={15} textAnchor="middle">
           {Math.round(value)}°C
         </text>
       )
     } if (value === minTemp && index === indexMinTemp) {
       return (
-        <text x={x} y={y} dy={16} fill='red' fontSize={15} textAnchor="middle">
+        <text x={x} y={y} dy={16} fill='blue' fontSize={15} textAnchor="middle">
           {Math.round(value)}°C
         </text>
       )
@@ -57,7 +56,7 @@ export default function GraphDaily({ data1 }) {
       return (
         <text x={x} y={y} dy={16} fill='black' fontSize={15} textAnchor="middle">
           {Math.round(value)}°C
-        </text>
+        </text >
       )
     }
     else {
@@ -66,80 +65,67 @@ export default function GraphDaily({ data1 }) {
   }
 
   return (
-    <div>
-      <Paper
-        sx={{
-          p: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          height: 350,
-        }}
-        elevation={9}
-        className={classes.paper}
-      >
-        <Card className={classes.card} style={{ padding: '20px' }}>
-          <Typography component="h3" variant="h8" sx={{ textAlign: 'center' }}>
-            Today's Temperature
-          </Typography>
-          <ResponsiveContainer width="100%" >
-            <LineChart
-              data={graphData}
-              margin={{
-                top: 24,
-                right: 30,
-                bottom: 44,
-                left: -24,
-              }}
+    <div className='card'>
+      <Card className={classes.card} style={{ padding: '20px' }}>
+        <Typography component="h3" variant="h8" sx={{ textAlign: 'center' }}>
+          Today's Temperature
+        </Typography>
+        <ResponsiveContainer width="100%" aspect={5} >
+          <LineChart
+            data={graphData}
+            margin={{
+              top: 24,
+              right: 30,
+              bottom: 44,
+              left: -24,
+            }}
+          >
+            <CartesianGrid stroke="#ccc" />
+            <XAxis
+              dataKey="time"
+              stroke={theme.palette.text.secondary}
+              style={theme.typography.body2}
             >
-              <CartesianGrid stroke="#ccc" />
-              <XAxis
-                dataKey="time"
-                stroke={theme.palette.text.secondary}
-                style={theme.typography.body2}
+              <Label
+                angle={0}
+                position="bottom"
+                style={{
+                  textAnchor: 'middle',
+                  fill: theme.palette.text.primary,
+                  ...theme.typography.body1,
+                }}
               >
-                <Label
-                  angle={0}
-                  position="bottom"
-                  style={{
-                    textAnchor: 'middle',
-                    fill: theme.palette.text.primary,
-                    ...theme.typography.body1,
-                  }}
-                >
-                  Time
-                </Label>
-              </XAxis>
-              <YAxis
-                stroke={theme.palette.text.secondary}
-                style={theme.typography.body2}
+                Time
+              </Label>
+            </XAxis>
+            <YAxis
+              stroke={theme.palette.text.secondary}
+              style={theme.typography.body2}
+            >
+              {/* <Label
+                angle={270}
+                position="left"
+                style={{
+                  textAnchor: 'middle',
+                  fill: theme.palette.text.primary,
+                  ...theme.typography.body1,
+                }}
               >
-                {/* <Label
-                  angle={270}
-                  position="left"
-                  style={{
-                    textAnchor: 'middle',
-                    fill: theme.palette.text.primary,
-                    ...theme.typography.body1,
-                  }}
-                >
-                  Temperature (°C)
-                </Label> */}
-              </YAxis>
-              <Tooltip />
-              <Line
-                isAnimationActive={false}
-                type="monotone"
-                dataKey="value"
-                name='Temp(°C)'
-                stroke={theme.palette.primary.main}
-                label={<CustomizedDot />}
-              // dot={false}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </Card>
-      </Paper>
-      {/* </Container> */}
+                Temperature (°C)
+              </Label> */}
+            </YAxis>
+            <Tooltip />
+            <Line
+              isAnimationActive={false}
+              type="monotone"
+              dataKey="value"
+              name='Temp(°C)'
+              stroke={theme.palette.primary.main}
+              label={<CustomizedDot />}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </Card>
     </div>
   );
 }
