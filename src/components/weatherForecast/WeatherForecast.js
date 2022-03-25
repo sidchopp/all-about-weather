@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { format } from 'date-fns';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -37,7 +36,6 @@ function WeatherForecast({ data2 }) {
       <Grid container spacing={6} alignItems="flex-end">
         {data2.forecast.forecastday.map((day) => (
           // Today's card is full width at sm breakpoint
-
           <Grid
             item
             key={day.astro.sunrise}
@@ -45,15 +43,7 @@ function WeatherForecast({ data2 }) {
             sm={day.date === todayDate ? 12 : 6}
             md={4}
           >
-            <Paper
-              sx={{
-                p: 1,
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-              elevation={9}
-              className={classes.paper}
-            >
+            <div className='card'>
               <Card className={classes.card}   >
                 <CardHeader
                   className={classes.darkColor}
@@ -148,7 +138,7 @@ function WeatherForecast({ data2 }) {
                   </Grid>
                 </CardContent>
               </Card>
-            </Paper>
+            </div>
           </Grid>
         ))}
       </Grid>
