@@ -2,16 +2,24 @@
   --lightColor: #fcf6f5;
   --midColor: #4cbfa6;
   --darkColor: #7b9acc;
+  --backgroundColor: var(--darkColor);
+  --textColor: var(--lightColor);
   --cardShadow: 5px 10px 18px var(--midColor);
   --cardHoverShadow: 5px 10px 18px var(--darkColor);
   --transition: 0.3s ease-in-out all;
+}
+
+body {
+  background-color: var(--backgroundColor);
+  /* font-family: var(--bodyFont); */
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--textColor);
 }
 .card {
   height: "100%";
   display: "flex";
   flex-direction: "column";
-  background-color: var(--lightColor);
-  color: var(--darkColor);
   transition: var(--transition);
   box-shadow: var(--cardShadow);
 }
@@ -21,4 +29,24 @@
 }
 .card:active {
   transform: scale(1.01) translateY(0.2rem);
+}
+
+.card-text-background {
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+}
+.footer {
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+}
+
+.graph {
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+  padding: 20px;
+}
+.modal {
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+  padding: 20px;
 }

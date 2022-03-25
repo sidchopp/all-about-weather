@@ -10,7 +10,6 @@ import CardContent from '@mui/material/CardContent';
 import { BsFillSunriseFill, BsFillSunsetFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
 
 //Components
-import useStyles from '../styles/UseStyles';
 import IconStyle from '../styles/IconStyles';
 
 
@@ -29,7 +28,6 @@ const Img = styled('img')({
 });
 
 function WeatherForecast({ data2 }) {
-  const classes = useStyles();
   // console.log(data2)
   return (
     <Container maxWidth="xl" component="main">
@@ -44,99 +42,100 @@ function WeatherForecast({ data2 }) {
             md={4}
           >
             <div className='card'>
-              <Card className={classes.card}   >
-                <CardHeader
-                  className={classes.darkColor}
-                  avatar={
-                    <Grid container spacing={1} >
-                      <Typography variant="caption" display="block" align="center" component="p">
-                        <Img src={day.day.condition.icon} alt="Weather" />
-                        <span >  {day.day.condition.text}</span>
-                      </Typography>
-                    </Grid>
-                  }
-                  action={
-                    day.date === todayDate
-                      ? <Typography variant="caption" display="block" align="right"  >
-                        Today
-                      </Typography>
-                      : <Typography variant="caption" display="block" align="right"  >
-                        {day.date.slice(-5)}
-                      </Typography>
-                  }
-                />
-                <CardContent>
-                  <Grid >
+              <Card>
+                <div className='card-text-background'>
+                  <CardHeader
+                    avatar={
+                      <Grid container spacing={1} >
+                        <Typography variant="caption" display="block" align="center" component="p">
+                          <Img src={day.day.condition.icon} alt="Weather" />
+                          <span >  {day.day.condition.text}</span>
+                        </Typography>
+                      </Grid>
+                    }
+                    action={
+                      day.date === todayDate
+                        ? <Typography variant="caption" display="block" align="right"  >
+                          Today
+                        </Typography>
+                        : <Typography variant="caption" display="block" align="right"  >
+                          {day.date.slice(-5)}
+                        </Typography>
+                    }
+                  />
+                  <CardContent>
+                    <Grid >
 
-                    {/* 1st Row */}
-                    < Grid container spacing={1}>
-                      <Grid item xs >
-                        <Typography
-                          component="h1"
-                          variant="h5"
-                          align="center"
-                        >
-                          {Math.round(day.day.maxtemp_c)}
-                          <span style={{ fontSize: "15px" }} >
-                            °C
-                          </span>
-                        </Typography>
-                        <Typography color={IconStyle.highTemp} gutterBottom variant="h5" align="center" component="p">
-                          <BsArrowUp />
-                        </Typography>
+                      {/* 1st Row */}
+                      < Grid container spacing={1}>
+                        <Grid item xs >
+                          <Typography
+                            component="h1"
+                            variant="h5"
+                            align="center"
+                          >
+                            {Math.round(day.day.maxtemp_c)}
+                            <span style={{ fontSize: "15px" }} >
+                              °C
+                            </span>
+                          </Typography>
+                          <Typography color={IconStyle.highTemp} gutterBottom variant="h5" align="center" component="p">
+                            <BsArrowUp />
+                          </Typography>
+                        </Grid>
+                        <Grid item xs >
+                          <Typography
+                            component="h1"
+                            variant="h5"
+                            align="center"
+                          >
+                            {day.astro.sunrise.slice(1, 5)}
+                            <span style={{ fontSize: "15px" }} >
+                              am
+                            </span>
+                          </Typography>
+                          <Typography color={IconStyle.sunRise} variant="h4" align="center" component="p">
+                            <BsFillSunriseFill />
+                          </Typography>
+                        </Grid>
                       </Grid>
-                      <Grid item xs >
-                        <Typography
-                          component="h1"
-                          variant="h5"
-                          align="center"
-                        >
-                          {day.astro.sunrise.slice(1, 5)}
-                          <span style={{ fontSize: "15px" }} >
-                            am
-                          </span>
-                        </Typography>
-                        <Typography color={IconStyle.sunRise} variant="h4" align="center" component="p">
-                          <BsFillSunriseFill />
-                        </Typography>
-                      </Grid>
-                    </Grid>
 
-                    {/* 2nd Row */}
-                    <Grid container spacing={1}>
-                      <Grid item xs >
-                        <Typography
-                          component="h1"
-                          variant="h5"
-                          align="center"
-                        >
-                          {Math.round(day.day.mintemp_c)}
-                          <span style={{ fontSize: "15px" }} >
-                            °C
-                          </span>
-                        </Typography>
-                        <Typography color={IconStyle.lowTemp} gutterBottom variant="h5" align="center" component="p">
-                          <BsArrowDown />
-                        </Typography>
-                      </Grid>
-                      <Grid item xs >
-                        <Typography
-                          component="h1"
-                          variant="h5"
-                          align="center"
-                        >
-                          {day.astro.sunset.slice(1, 5)}
-                          <span style={{ fontSize: "15px" }} >
-                            pm
-                          </span>
-                        </Typography>
-                        <Typography color={IconStyle.sunSet} variant="h4" align="center" component="p">
-                          <BsFillSunsetFill />
-                        </Typography>
+                      {/* 2nd Row */}
+                      <Grid container spacing={1}>
+                        <Grid item xs >
+                          <Typography
+                            component="h1"
+                            variant="h5"
+                            align="center"
+                          >
+                            {Math.round(day.day.mintemp_c)}
+                            <span style={{ fontSize: "15px" }} >
+                              °C
+                            </span>
+                          </Typography>
+                          <Typography color={IconStyle.lowTemp} gutterBottom variant="h5" align="center" component="p">
+                            <BsArrowDown />
+                          </Typography>
+                        </Grid>
+                        <Grid item xs >
+                          <Typography
+                            component="h1"
+                            variant="h5"
+                            align="center"
+                          >
+                            {day.astro.sunset.slice(1, 5)}
+                            <span style={{ fontSize: "15px" }} >
+                              pm
+                            </span>
+                          </Typography>
+                          <Typography color={IconStyle.sunSet} variant="h4" align="center" component="p">
+                            <BsFillSunsetFill />
+                          </Typography>
+                        </Grid>
                       </Grid>
                     </Grid>
-                  </Grid>
-                </CardContent>
+                  </CardContent>
+                </div>
               </Card>
             </div>
           </Grid>

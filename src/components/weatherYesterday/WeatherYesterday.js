@@ -12,7 +12,6 @@ import { BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowD
 import { CgCompressV } from "react-icons/cg";
 
 //Components
-import useStyles from '../styles/UseStyles';
 import IconStyle from '../styles/IconStyles';
 
 const Img = styled('img')({
@@ -23,176 +22,177 @@ const Img = styled('img')({
 });
 
 function WeatherTodayDetails({ dataYesterday }) {
-  const classes = useStyles();
   const value = dataYesterday.forecast.forecastday[0]
   // console.log(value);
   // console.log(dataYesterday);
   return (
     <div className='card'>
-      <Card className={classes.card} style={{ padding: "10px" }}  >
-        <CardHeader
-          avatar={<Grid container spacing={1} >
-            <Typography variant="caption" display="block" align="center" component="p">
-              <Img src={value.day.condition.icon} alt="Weather" />
-              <span >  {value.day.condition.text}</span>
-            </Typography>
-          </Grid>}
-          action={
-            <Typography variant="caption" display="block" align="right"  >
-              Yesterday
-            </Typography>
-          }
-        />
-        <CardContent>
-          <Grid>
+      <Card  >
+        <div className='card-text-background'>
+          <CardHeader
+            avatar={<Grid container spacing={1} >
+              <Typography variant="caption" display="block" align="center" component="p">
+                <Img src={value.day.condition.icon} alt="Weather" />
+                <span >  {value.day.condition.text}</span>
+              </Typography>
+            </Grid>}
+            action={
+              <Typography variant="caption" display="block" align="right"  >
+                Yesterday
+              </Typography>
+            }
+          />
+          <CardContent>
+            <Grid>
 
-            {/* 1st Row */}
-            <Grid container spacing={1}>
-              <Grid item xs >
-                <Typography
-                  component="h1"
-                  variant="h5"
-                  align="left"
-                >
-                  {Math.round(value.day.avgtemp_c)}
-                  <span style={{ fontSize: "15px" }} >
-                    °C
-                  </span>
-                </Typography>
-                <Typography gutterBottom variant="h5" align="left" component="p">
-                  <CgCompressV />
-                </Typography>
+              {/* 1st Row */}
+              <Grid container spacing={1}>
+                <Grid item xs >
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    align="left"
+                  >
+                    {Math.round(value.day.avgtemp_c)}
+                    <span style={{ fontSize: "15px" }} >
+                      °C
+                    </span>
+                  </Typography>
+                  <Typography gutterBottom variant="h5" align="left" component="p">
+                    <CgCompressV />
+                  </Typography>
+                </Grid>
+                <Grid item xs >
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    align="center"
+                  >
+                    {Math.round(value.day.maxwind_mph)}
+                    <span style={{ fontSize: "15px" }} >
+                      mph
+                    </span>
+                  </Typography>
+                  <Typography variant="h4" align="center" component="p">
+                    <AirIcon />
+                  </Typography>
+                </Grid>
+                <Grid item xs >
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    align="right"
+                  >
+                    {value.astro.sunrise.slice(1, 5)}
+                    <span style={{ fontSize: "15px" }} >
+                      am
+                    </span>
+                  </Typography>
+                  <Typography color={IconStyle.sunRise} variant="h4" align="right" component="p">
+                    <BsFillSunriseFill />
+                  </Typography>
+                </Grid>
               </Grid>
-              <Grid item xs >
-                <Typography
-                  component="h1"
-                  variant="h5"
-                  align="center"
-                >
-                  {Math.round(value.day.maxwind_mph)}
-                  <span style={{ fontSize: "15px" }} >
-                    mph
-                  </span>
-                </Typography>
-                <Typography variant="h4" align="center" component="p">
-                  <AirIcon />
-                </Typography>
+
+              {/* 2nd Row */}
+              <Grid container spacing={1}>
+                <Grid item xs >
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    align="left"
+                  >
+                    {Math.round(value.day.maxtemp_c)}
+                    <span style={{ fontSize: "15px" }} >
+                      °C
+                    </span>
+                  </Typography>
+                  <Typography color={IconStyle.highTemp} gutterBottom variant="h5" align="left" component="p">
+                    <BsArrowUp />
+                  </Typography>
+                </Grid>
+                <Grid item xs >
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    align="center"
+                  >
+                    {Math.round(value.day.avgvis_km)}
+                    <span style={{ fontSize: "15px" }} >
+                      miles
+                    </span>
+                  </Typography>
+                  <Typography variant="h4" align="center" component="p">
+                    <VisibilityIcon />
+                  </Typography>
+                </Grid>
+                <Grid item xs >
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    align="right"
+                  >
+                    {value.astro.sunset.slice(1, 5)}
+                    <span style={{ fontSize: "15px" }} >
+                      pm
+                    </span>
+                  </Typography>
+                  <Typography color={IconStyle.sunSet} variant="h4" align="right" component="p">
+                    <BsFillSunsetFill />
+                  </Typography>
+                </Grid>
               </Grid>
-              <Grid item xs >
-                <Typography
-                  component="h1"
-                  variant="h5"
-                  align="right"
-                >
-                  {value.astro.sunrise.slice(1, 5)}
-                  <span style={{ fontSize: "15px" }} >
-                    am
-                  </span>
-                </Typography>
-                <Typography color={IconStyle.sunRise} variant="h4" align="right" component="p">
-                  <BsFillSunriseFill />
-                </Typography>
+
+              {/* 3rd Row */}
+              <Grid container spacing={1}>
+                <Grid item xs >
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    align="left"
+                  >
+                    {Math.round(value.day.mintemp_c)}
+                    <span style={{ fontSize: "15px" }} >
+                      °C
+                    </span>
+                  </Typography>
+                  <Typography color={IconStyle.lowTemp} gutterBottom variant="h5" align="left" component="p">
+                    <BsArrowDown />
+                  </Typography>
+                </Grid>
+
+                <Grid item xs >
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    align="center"
+                  >
+                    {value.day.uv}
+                  </Typography>
+                  <Typography color={IconStyle.uvIndex} variant="h4" align="center" component="p">
+                    <BsFillSunFill />
+                  </Typography>
+                </Grid>
+                <Grid item xs >
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    align="right"
+                  >
+                    {Math.round(value.day.avghumidity)}
+                    <span style={{ fontSize: "15px" }} >
+                      %
+                    </span>
+                  </Typography>
+                  <Typography variant="h4" align="right" component="p">
+                    <WiHumidity />
+                  </Typography>
+                </Grid>
               </Grid>
+
             </Grid>
-
-            {/* 2nd Row */}
-            <Grid container spacing={1}>
-              <Grid item xs >
-                <Typography
-                  component="h1"
-                  variant="h5"
-                  align="left"
-                >
-                  {Math.round(value.day.maxtemp_c)}
-                  <span style={{ fontSize: "15px" }} >
-                    °C
-                  </span>
-                </Typography>
-                <Typography color={IconStyle.highTemp} gutterBottom variant="h5" align="left" component="p">
-                  <BsArrowUp />
-                </Typography>
-              </Grid>
-              <Grid item xs >
-                <Typography
-                  component="h1"
-                  variant="h5"
-                  align="center"
-                >
-                  {Math.round(value.day.avgvis_km)}
-                  <span style={{ fontSize: "15px" }} >
-                    miles
-                  </span>
-                </Typography>
-                <Typography variant="h4" align="center" component="p">
-                  <VisibilityIcon />
-                </Typography>
-              </Grid>
-              <Grid item xs >
-                <Typography
-                  component="h1"
-                  variant="h5"
-                  align="right"
-                >
-                  {value.astro.sunset.slice(1, 5)}
-                  <span style={{ fontSize: "15px" }} >
-                    pm
-                  </span>
-                </Typography>
-                <Typography color={IconStyle.sunSet} variant="h4" align="right" component="p">
-                  <BsFillSunsetFill />
-                </Typography>
-              </Grid>
-            </Grid>
-
-            {/* 3rd Row */}
-            <Grid container spacing={1}>
-              <Grid item xs >
-                <Typography
-                  component="h1"
-                  variant="h5"
-                  align="left"
-                >
-                  {Math.round(value.day.mintemp_c)}
-                  <span style={{ fontSize: "15px" }} >
-                    °C
-                  </span>
-                </Typography>
-                <Typography color={IconStyle.lowTemp} gutterBottom variant="h5" align="left" component="p">
-                  <BsArrowDown />
-                </Typography>
-              </Grid>
-
-              <Grid item xs >
-                <Typography
-                  component="h1"
-                  variant="h5"
-                  align="center"
-                >
-                  {value.day.uv}
-                </Typography>
-                <Typography color={IconStyle.uvIndex} variant="h4" align="center" component="p">
-                  <BsFillSunFill />
-                </Typography>
-              </Grid>
-              <Grid item xs >
-                <Typography
-                  component="h1"
-                  variant="h5"
-                  align="right"
-                >
-                  {Math.round(value.day.avghumidity)}
-                  <span style={{ fontSize: "15px" }} >
-                    %
-                  </span>
-                </Typography>
-                <Typography variant="h4" align="right" component="p">
-                  <WiHumidity />
-                </Typography>
-              </Grid>
-            </Grid>
-
-          </Grid>
-        </CardContent>
+          </CardContent>
+        </div>
       </Card>
     </div >
   )

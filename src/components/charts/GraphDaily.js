@@ -4,15 +4,11 @@ import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import { format } from "date-fns";
 
-//Components
-import useStyles from '../styles/UseStyles';
-
 const time = format(new Date(), 'HH');
 const timeString = `${time}:00`;
 
 export default function GraphDaily({ data1 }) {
   const theme = useTheme();
-  const classes = useStyles();
 
   const graphData = [];
   for (let i = 0; i < data1.forecast.forecastday[0].hour.length; i++) {
@@ -66,43 +62,44 @@ export default function GraphDaily({ data1 }) {
 
   return (
     <div className='card'>
-      <Card className={classes.card} style={{ padding: '20px' }}>
-        <Typography component="h3" variant="h8" sx={{ textAlign: 'center' }}>
-          Today's Temperature
-        </Typography>
-        <ResponsiveContainer width="100%" aspect={5} >
-          <LineChart
-            data={graphData}
-            margin={{
-              top: 24,
-              right: 30,
-              bottom: 44,
-              left: -24,
-            }}
-          >
-            <CartesianGrid stroke="#ccc" />
-            <XAxis
-              dataKey="time"
-              stroke={theme.palette.text.secondary}
-              style={theme.typography.body2}
+      <Card >
+        <div className='graph'>
+          <Typography component="h3" variant="h8" sx={{ textAlign: 'center' }}>
+            Today's Temperature
+          </Typography>
+          <ResponsiveContainer width="100%" aspect={5} >
+            <LineChart
+              data={graphData}
+              margin={{
+                top: 24,
+                right: 30,
+                bottom: 44,
+                left: -24,
+              }}
             >
-              <Label
-                angle={0}
-                position="bottom"
-                style={{
-                  textAnchor: 'middle',
-                  fill: theme.palette.text.primary,
-                  ...theme.typography.body1,
-                }}
+              <CartesianGrid stroke="#ccc" />
+              <XAxis
+                dataKey="time"
+                stroke={theme.palette.text.secondary}
+                style={theme.typography.body2}
               >
-                Time
-              </Label>
-            </XAxis>
-            <YAxis
-              stroke={theme.palette.text.secondary}
-              style={theme.typography.body2}
-            >
-              {/* <Label
+                <Label
+                  angle={0}
+                  position="bottom"
+                  style={{
+                    textAnchor: 'middle',
+                    fill: theme.palette.text.primary,
+                    ...theme.typography.body1,
+                  }}
+                >
+                  Time
+                </Label>
+              </XAxis>
+              <YAxis
+                stroke={theme.palette.text.secondary}
+                style={theme.typography.body2}
+              >
+                {/* <Label
                 angle={270}
                 position="left"
                 style={{
@@ -113,18 +110,19 @@ export default function GraphDaily({ data1 }) {
               >
                 Temperature (°C)
               </Label> */}
-            </YAxis>
-            <Tooltip />
-            <Line
-              isAnimationActive={false}
-              type="monotone"
-              dataKey="value"
-              name='Temp(°C)'
-              stroke={theme.palette.primary.main}
-              label={<CustomizedDot />}
-            />
-          </LineChart>
-        </ResponsiveContainer>
+              </YAxis>
+              <Tooltip />
+              <Line
+                isAnimationActive={false}
+                type="monotone"
+                dataKey="value"
+                name='Temp(°C)'
+                stroke={theme.palette.primary.main}
+                label={<CustomizedDot />}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </Card>
     </div>
   );

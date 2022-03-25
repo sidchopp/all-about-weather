@@ -1,15 +1,11 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
 import IconButton from '@mui/material/IconButton';
 import ReportIcon from '@mui/icons-material/Report';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import CancelIcon from '@mui/icons-material/Cancel';
-
-//Components
-import useStyles from '../styles/UseStyles';
 
 const style = {
   position: 'absolute',
@@ -19,15 +15,10 @@ const style = {
   overflow: 'scroll',
   width: "350px",
   height: "550px",
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 1,
 };
 
 export default function Warning({ data }) {
   // console.log(data);
-  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -59,8 +50,8 @@ export default function Warning({ data }) {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            <Box sx={style}>
-              <Paper className={classes.card} style={{ padding: "10px", position: "relative" }} elevation={12} >
+            <Card sx={style}>
+              <div className='modal'>
                 {filteredAlert.map(alert => (
                   <>
                     <Grid key={alert.effective} container direction="row" justifyContent="space-between" alignItems="center" >
@@ -70,7 +61,7 @@ export default function Warning({ data }) {
                         </Typography>
                       </Grid>
                       <Grid item >
-                        <IconButton className={classes.darkColor} variant="contained" onClick={handleClose}>
+                        <IconButton variant="contained" onClick={handleClose}>
                           <CancelIcon />
                         </IconButton>
                       </Grid>
@@ -103,8 +94,8 @@ export default function Warning({ data }) {
                   </>
                 )
                 )}
-              </Paper>
-            </Box>
+              </div>
+            </Card>
           </Modal>
         </>
       }
