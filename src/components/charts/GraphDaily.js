@@ -67,7 +67,7 @@ export default function GraphDaily({ data1 }) {
           <Typography component="h3" variant="h8" sx={{ textAlign: 'center' }}>
             Today's Temperature
           </Typography>
-          <ResponsiveContainer width="100%" aspect={5} >
+          <ResponsiveContainer >
             <LineChart
               data={graphData}
               margin={{

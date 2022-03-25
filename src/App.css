@@ -39,6 +39,8 @@ body {
   background-color: var(--lightColor);
   color: var(--darkColor);
   padding: 20px;
+  width: "100px";
+  height: 350px;
 }
 .modal {
   background-color: var(--lightColor);
