@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { formatISO, startOfYesterday } from 'date-fns';
-import BackgroundImage from '../dynamic/BackgroundImage';
+// import BackgroundImage from '../dynamic/BackgroundImage';
 
 //Components
 import WeatherForecast from '../weatherForecast/WeatherForecast';
@@ -16,15 +16,15 @@ import GraphDaily from '../charts/GraphDaily';
 const yesterday = startOfYesterday()
 const yesterdayIso = formatISO(yesterday, { representation: 'date' })
 
-const styles = {
-  paperContainer: {
-    backgroundImage: `url(${BackgroundImage()})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    padding: "5px"
-  }
-};
+// const styles = {
+//   paperContainer: {
+//     backgroundImage: `url(${BackgroundImage()})`,
+//     backgroundSize: 'cover',
+//     backgroundRepeat: 'no-repeat',
+//     backgroundPosition: 'center',
+//     padding: "5px"
+//   }
+// };
 
 function WeatherAll() {
   //States
@@ -74,7 +74,8 @@ function WeatherAll() {
     <>
       {(typeof data.current !== 'undefined' && typeof data.location !== 'undefined' && typeof data.forecast !== 'undefined' && typeof dataYesterday.forecast !== 'undefined')
         ? <>
-          <div style={styles.paperContainer}>
+          <div>
+            {/* style={styles.paperContainer} */}
             <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={8} lg={4}>

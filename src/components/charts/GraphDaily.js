@@ -62,7 +62,7 @@ export default function GraphDaily({ data1 }) {
 
   return (
     <div className='card'>
-      <Card >
+      <Card variant="outlined" >
         <div className='graph'>
           <Typography component="h3" variant="h8" sx={{ textAlign: 'center' }}>
             Today's Temperature

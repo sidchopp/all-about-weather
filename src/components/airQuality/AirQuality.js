@@ -36,7 +36,7 @@ export default function AirQuality({ data }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Card sx={style}>
+        <Card variant="outlined" sx={style}>
           <div className='modal'>
             <Grid container direction="row" justifyContent="space-between" alignItems="center" >
               <Grid item >

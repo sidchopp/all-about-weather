@@ -42,7 +42,7 @@ function WeatherForecast({ data2 }) {
             md={4}
           >
             <div className='card'>
-              <Card>
+              <Card variant="outlined">
                 <div className='card-text-background'>
                   <CardHeader
                     avatar={

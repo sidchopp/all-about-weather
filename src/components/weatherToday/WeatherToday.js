@@ -28,7 +28,7 @@ function WeatherToday({ data }) {
   // console.log(data);
   return (
     <div className='card'>
-      <Card  >
+      <Card variant="outlined"  >
         <div className='card-text-background'>
           <CardContent>
             <Grid container >
