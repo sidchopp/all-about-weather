@@ -1,7 +1,7 @@
 :root {
-  --lightColor: #fcf6f5;
-  --darkColor: #7b9acc;
-  --backgroundColor: var(--darkColor);
+  --lightColor: #edf6ff;
+  --darkColor: #437fc7;
+  --backgroundColor: #e8f4f8;
   --textColor: var(--lightColor);
   --cardShadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   --cardHoverShadow: 5px 10px 18px var(--darkColor);
@@ -10,10 +10,7 @@
 
 body {
   background-color: var(--backgroundColor);
-  /* font-family: var(--bodyFont); */
-  font-weight: 400;
-  line-height: 1.75;
-  color: var(--textColor);
+  color: var(--darkColor);
 }
 .card {
   height: "100%";
@@ -35,8 +32,7 @@ body {
   color: var(--darkColor);
 }
 .footer {
-  background-color: var(--lightColor);
-  color: var(--darkColor);
+  padding: 20px;
 }
 
 .graph {
