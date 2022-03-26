@@ -33,9 +33,10 @@ function WeatherTodayDetails({ data }) {
                     variant="h5"
                     align="center"
                   >
-                    {Math.round(data.current.feelslike_c)}
-                    <span style={{ fontSize: "15px" }} >
-                      °C
+                    <span className='font'> {Math.round(data.current.feelslike_c)}
+                      <span style={{ fontSize: "15px" }} >
+                        °C
+                      </span>
                     </span>
                   </Typography>
                   <Typography gutterBottom variant="h5" align="center" component="div">
@@ -48,9 +49,10 @@ function WeatherTodayDetails({ data }) {
                     variant="h5"
                     align="center"
                   >
-                    {Math.round(data.current.wind_mph)}
-                    <span style={{ fontSize: "15px" }} >
-                      mph
+                    <span className='font'>   {Math.round(data.current.wind_mph)}
+                      <span style={{ fontSize: "15px" }} >
+                        mph
+                      </span>
                     </span>
                   </Typography>
                   <Typography variant="h5" align="center" component="div">
@@ -67,9 +69,10 @@ function WeatherTodayDetails({ data }) {
                     variant="h5"
                     align="center"
                   >
-                    {data.forecast.forecastday[0].astro.sunrise.slice(1, 5)}
-                    <span style={{ fontSize: "15px" }} >
-                      am
+                    <span className='font'>   {data.forecast.forecastday[0].astro.sunrise.slice(1, 5)}
+                      <span style={{ fontSize: "15px" }} >
+                        am
+                      </span>
                     </span>
                   </Typography>
                   <Typography color={IconStyle.sunRise} variant="h4" align="center" component="div">
@@ -86,9 +89,10 @@ function WeatherTodayDetails({ data }) {
                     variant="h5"
                     align="center"
                   >
-                    {Math.round(data.forecast.forecastday[0].day.maxtemp_c)}
-                    <span style={{ fontSize: "15px" }} >
-                      °C
+                    <span className='font'>   {Math.round(data.forecast.forecastday[0].day.maxtemp_c)}
+                      <span style={{ fontSize: "15px" }} >
+                        °C
+                      </span>
                     </span>
                   </Typography>
                   <Typography color={IconStyle.highTemp} gutterBottom variant="h5" align="center" component="div">
@@ -101,9 +105,10 @@ function WeatherTodayDetails({ data }) {
                     variant="h5"
                     align="center"
                   >
-                    {Math.round(data.current.vis_miles)}
-                    <span style={{ fontSize: "15px" }} >
-                      miles
+                    <span className='font'>   {Math.round(data.current.vis_miles)}
+                      <span style={{ fontSize: "15px" }} >
+                        miles
+                      </span>
                     </span>
                   </Typography>
                   <Typography variant="h4" align="center" component="div">
@@ -116,9 +121,10 @@ function WeatherTodayDetails({ data }) {
                     variant="h5"
                     align="center"
                   >
-                    {data.forecast.forecastday[0].astro.sunset.slice(1, 5)}
-                    <span style={{ fontSize: "15px" }} >
-                      pm
+                    <span className='font'>  {data.forecast.forecastday[0].astro.sunset.slice(1, 5)}
+                      <span style={{ fontSize: "15px" }} >
+                        pm
+                      </span>
                     </span>
                   </Typography>
                   <Typography color={IconStyle.sunSet} variant="h4" align="center" component="div">
@@ -135,9 +141,10 @@ function WeatherTodayDetails({ data }) {
                     variant="h5"
                     align="center"
                   >
-                    {Math.round(data.forecast.forecastday[0].day.mintemp_c)}
-                    <span style={{ fontSize: "15px" }} >
-                      °C
+                    <span className='font'>  {Math.round(data.forecast.forecastday[0].day.mintemp_c)}
+                      <span style={{ fontSize: "15px" }} >
+                        °C
+                      </span>
                     </span>
                   </Typography>
                   <Typography color={IconStyle.lowTemp} gutterBottom variant="h5" align="center" component="div">
@@ -150,9 +157,10 @@ function WeatherTodayDetails({ data }) {
                     variant="h5"
                     align="center"
                   >
-                    {Math.round(data.current.humidity)}
-                    <span style={{ fontSize: "15px" }} >
-                      %
+                    <span className='font'>  {Math.round(data.current.humidity)}
+                      <span style={{ fontSize: "15px" }} >
+                        %
+                      </span>
                     </span>
                   </Typography>
                   <Typography gutterBottom variant="h4" align="center" component="div">
@@ -165,7 +173,7 @@ function WeatherTodayDetails({ data }) {
                     variant="h5"
                     align="center"
                   >
-                    {data.forecast.forecastday[0].day.uv}
+                    <span className='font'>   {data.forecast.forecastday[0].day.uv}</span>
                   </Typography>
                   <Typography color={IconStyle.uvIndex} gutterBottom variant="h4" align="center" component="div">
                     <BsFillSunFill />
@@ -174,7 +182,7 @@ function WeatherTodayDetails({ data }) {
               </Grid>
               <Grid>
                 <Typography variant="caption" align="center" display="block" >
-                  Last updated:{" "}{time}
+                  <span className='font'>   Last updated:{" "}{time}</span>
                 </Typography>
               </Grid>
             </Grid>

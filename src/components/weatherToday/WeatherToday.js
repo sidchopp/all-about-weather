@@ -34,17 +34,17 @@ function WeatherToday({ data }) {
             <Grid container >
               <Grid item xs={5} >
                 <Typography variant="caption" display="block" align="left" >
-                  {today}
+                  <span className='font'> {today}</span>
                 </Typography>
                 <Typography
                   component="h1"
                   variant="h6"
                   align="left"
                 >
-                  {data.location.name}
+                  <span className='font'> {data.location.name}</span>
                 </Typography>
                 <Typography variant="subtitle2" align="left" >
-                  {data.location.region}
+                  <span className='font'> {data.location.region}</span>
                   {/* , {data.location.country} */}
                 </Typography>
                 <Typography gutterBottom variant="button" display="block" align="left" >
@@ -61,9 +61,10 @@ function WeatherToday({ data }) {
                   // color={data.current.temp_c < 0 ? "red" : "blue"}
                   component="h1"
                 >
-                  {Math.round(data.current.temp_c)}
-                  <span style={{ fontSize: "30px" }} >
-                    °C
+                  <span className='font'> {Math.round(data.current.temp_c)}
+                    <span style={{ fontSize: "30px" }} >
+                      °C
+                    </span>
                   </span>
                 </Typography>
                 <Typography
@@ -71,7 +72,7 @@ function WeatherToday({ data }) {
                   variant="h6"
                   align="right"
                 >
-                  {data.current.condition.text}
+                  <span className='font'>{data.current.condition.text}</span>
                 </Typography>
                 <Typography variant="h7" align="center" component="p">
                   <Img style={{ float: 'right' }} src={data.current.condition.icon} alt="Weather" />

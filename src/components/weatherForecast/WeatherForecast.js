@@ -49,17 +49,17 @@ function WeatherForecast({ data2 }) {
                       <Grid container spacing={1} >
                         <Typography variant="caption" display="block" align="center" component="p">
                           <Img src={day.day.condition.icon} alt="Weather" />
-                          <span >  {day.day.condition.text}</span>
+                          <span className='font'>  {day.day.condition.text}</span>
                         </Typography>
                       </Grid>
                     }
                     action={
                       day.date === todayDate
                         ? <Typography variant="caption" display="block" align="right"  >
-                          Today
+                          <span className='font'>  Today</span>
                         </Typography>
                         : <Typography variant="caption" display="block" align="right"  >
-                          {day.date.slice(-5)}
+                          <span className='font'> {day.date.slice(-5)}</span>
                         </Typography>
                     }
                   />
@@ -74,9 +74,11 @@ function WeatherForecast({ data2 }) {
                             variant="h5"
                             align="center"
                           >
-                            {Math.round(day.day.maxtemp_c)}
-                            <span style={{ fontSize: "15px" }} >
-                              °C
+                            <span className='font'>
+                              {Math.round(day.day.maxtemp_c)}
+                              <span style={{ fontSize: "15px" }} >
+                                °C
+                              </span>
                             </span>
                           </Typography>
                           <Typography color={IconStyle.highTemp} gutterBottom variant="h5" align="center" component="p">
@@ -89,9 +91,11 @@ function WeatherForecast({ data2 }) {
                             variant="h5"
                             align="center"
                           >
-                            {day.astro.sunrise.slice(1, 5)}
-                            <span style={{ fontSize: "15px" }} >
-                              am
+                            <span className='font'>
+                              {day.astro.sunrise.slice(1, 5)}
+                              <span style={{ fontSize: "15px" }} >
+                                am
+                              </span>
                             </span>
                           </Typography>
                           <Typography color={IconStyle.sunRise} variant="h4" align="center" component="p">
@@ -108,9 +112,11 @@ function WeatherForecast({ data2 }) {
                             variant="h5"
                             align="center"
                           >
-                            {Math.round(day.day.mintemp_c)}
-                            <span style={{ fontSize: "15px" }} >
-                              °C
+                            <span className='font'>
+                              {Math.round(day.day.mintemp_c)}
+                              <span style={{ fontSize: "15px" }} >
+                                °C
+                              </span>
                             </span>
                           </Typography>
                           <Typography color={IconStyle.lowTemp} gutterBottom variant="h5" align="center" component="p">
@@ -123,9 +129,11 @@ function WeatherForecast({ data2 }) {
                             variant="h5"
                             align="center"
                           >
-                            {day.astro.sunset.slice(1, 5)}
-                            <span style={{ fontSize: "15px" }} >
-                              pm
+                            <span className='font'>
+                              {day.astro.sunset.slice(1, 5)}
+                              <span style={{ fontSize: "15px" }} >
+                                pm
+                              </span>
                             </span>
                           </Typography>
                           <Typography color={IconStyle.sunSet} variant="h4" align="center" component="p">

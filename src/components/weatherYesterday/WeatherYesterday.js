@@ -33,12 +33,12 @@ function WeatherTodayDetails({ dataYesterday }) {
             avatar={<Grid container spacing={1} >
               <Typography variant="caption" display="block" align="center" component="p">
                 <Img src={value.day.condition.icon} alt="Weather" />
-                <span >  {value.day.condition.text}</span>
+                <span className='font' >  {value.day.condition.text}</span>
               </Typography>
             </Grid>}
             action={
               <Typography variant="caption" display="block" align="right"  >
-                Yesterday
+                <span className='font'>   Yesterday</span>
               </Typography>
             }
           />
@@ -53,9 +53,11 @@ function WeatherTodayDetails({ dataYesterday }) {
                     variant="h5"
                     align="left"
                   >
-                    {Math.round(value.day.avgtemp_c)}
-                    <span style={{ fontSize: "15px" }} >
-                      °C
+                    <span className='font'>
+                      {Math.round(value.day.avgtemp_c)}
+                      <span style={{ fontSize: "15px" }} >
+                        °C
+                      </span>
                     </span>
                   </Typography>
                   <Typography gutterBottom variant="h5" align="left" component="p">
@@ -68,9 +70,11 @@ function WeatherTodayDetails({ dataYesterday }) {
                     variant="h5"
                     align="center"
                   >
-                    {Math.round(value.day.maxwind_mph)}
-                    <span style={{ fontSize: "15px" }} >
-                      mph
+                    <span className='font'>
+                      {Math.round(value.day.maxwind_mph)}
+                      <span style={{ fontSize: "15px" }} >
+                        mph
+                      </span>
                     </span>
                   </Typography>
                   <Typography variant="h4" align="center" component="p">
@@ -83,9 +87,11 @@ function WeatherTodayDetails({ dataYesterday }) {
                     variant="h5"
                     align="right"
                   >
-                    {value.astro.sunrise.slice(1, 5)}
-                    <span style={{ fontSize: "15px" }} >
-                      am
+                    <span className='font'>
+                      {value.astro.sunrise.slice(1, 5)}
+                      <span style={{ fontSize: "15px" }} >
+                        am
+                      </span>
                     </span>
                   </Typography>
                   <Typography color={IconStyle.sunRise} variant="h4" align="right" component="p">
@@ -102,9 +108,11 @@ function WeatherTodayDetails({ dataYesterday }) {
                     variant="h5"
                     align="left"
                   >
-                    {Math.round(value.day.maxtemp_c)}
-                    <span style={{ fontSize: "15px" }} >
-                      °C
+                    <span className='font'>
+                      {Math.round(value.day.maxtemp_c)}
+                      <span style={{ fontSize: "15px" }} >
+                        °C
+                      </span>
                     </span>
                   </Typography>
                   <Typography color={IconStyle.highTemp} gutterBottom variant="h5" align="left" component="p">
@@ -117,9 +125,11 @@ function WeatherTodayDetails({ dataYesterday }) {
                     variant="h5"
                     align="center"
                   >
-                    {Math.round(value.day.avgvis_km)}
-                    <span style={{ fontSize: "15px" }} >
-                      miles
+                    <span className='font'>
+                      {Math.round(value.day.avgvis_km)}
+                      <span style={{ fontSize: "15px" }} >
+                        miles
+                      </span>
                     </span>
                   </Typography>
                   <Typography variant="h4" align="center" component="p">
@@ -132,9 +142,11 @@ function WeatherTodayDetails({ dataYesterday }) {
                     variant="h5"
                     align="right"
                   >
-                    {value.astro.sunset.slice(1, 5)}
-                    <span style={{ fontSize: "15px" }} >
-                      pm
+                    <span className='font'>
+                      {value.astro.sunset.slice(1, 5)}
+                      <span style={{ fontSize: "15px" }} >
+                        pm
+                      </span>
                     </span>
                   </Typography>
                   <Typography color={IconStyle.sunSet} variant="h4" align="right" component="p">
@@ -151,9 +163,11 @@ function WeatherTodayDetails({ dataYesterday }) {
                     variant="h5"
                     align="left"
                   >
-                    {Math.round(value.day.mintemp_c)}
-                    <span style={{ fontSize: "15px" }} >
-                      °C
+                    <span className='font'>
+                      {Math.round(value.day.mintemp_c)}
+                      <span style={{ fontSize: "15px" }} >
+                        °C
+                      </span>
                     </span>
                   </Typography>
                   <Typography color={IconStyle.lowTemp} gutterBottom variant="h5" align="left" component="p">
@@ -167,7 +181,9 @@ function WeatherTodayDetails({ dataYesterday }) {
                     variant="h5"
                     align="center"
                   >
-                    {value.day.uv}
+                    <span className='font'>
+                      {value.day.uv}
+                    </span>
                   </Typography>
                   <Typography color={IconStyle.uvIndex} variant="h4" align="center" component="p">
                     <BsFillSunFill />
@@ -179,9 +195,11 @@ function WeatherTodayDetails({ dataYesterday }) {
                     variant="h5"
                     align="right"
                   >
-                    {Math.round(value.day.avghumidity)}
-                    <span style={{ fontSize: "15px" }} >
-                      %
+                    <span className='font'>
+                      {Math.round(value.day.avghumidity)}
+                      <span style={{ fontSize: "15px" }} >
+                        %
+                      </span>
                     </span>
                   </Typography>
                   <Typography variant="h4" align="right" component="p">

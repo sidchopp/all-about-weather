@@ -12,16 +12,18 @@ function Footer() {
           component="p"
           gutterBottom
         >
-          ALL WEATHER
+          <span className='font'>
+            ALL WEATHER
+          </span>
         </Typography>
         <Typography variant="body2" color="text.secondary" align="center" >
-          {'Copyright © '}
-
-          {new Date().getFullYear()}
-          {'.'} {' '}
-          <Link href="https://sid-projects.netlify.app/" target="_blank">
-            My Other Projects
-          </Link>
+          <span className='font'>   {'Copyright © '}
+            {new Date().getFullYear()}
+            {'.'} {' '}
+            <Link href="https://sid-projects.netlify.app/" target="_blank">
+              My Other Projects
+            </Link>
+          </span>
         </Typography>
       </Container>
     </div>
