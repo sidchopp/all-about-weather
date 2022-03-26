@@ -78,10 +78,10 @@ function WeatherAll() {
             {/* style={styles.paperContainer} */}
             <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
               <Grid container spacing={3}>
-                <Grid item xs={12} md={8} lg={4}>
+                <Grid item xs={12} md={4} lg={4}>
                   <WeatherToday data={data} />
                 </Grid>
-                <Grid item xs={12} md={4} lg={8}>
+                <Grid item xs={12} md={8} lg={8}>
                   <WeatherTodayDetails data={data} />
                 </Grid>
               </Grid>

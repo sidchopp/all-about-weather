@@ -32,7 +32,7 @@ function WeatherToday({ data }) {
         <div className='card-text-background'>
           <CardContent>
             <Grid container >
-              <Grid item xs={4} >
+              <Grid item xs={5} >
                 <Typography variant="caption" display="block" align="left" >
                   {today}
                 </Typography>
@@ -54,7 +54,7 @@ function WeatherToday({ data }) {
                   <Warning data={data} />
                 </Typography>
               </Grid>
-              <Grid item xs={8}>
+              <Grid item xs={7}>
                 <Typography
                   variant="h1"
                   align="right"
