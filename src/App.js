@@ -8,7 +8,9 @@ import WeatherAll from './components/weatherAll/WeatherAll';
 function App() {
   return (
     <React.Fragment>
-      <WeatherAll />
+      <main>
+        <WeatherAll />
+      </main>
       <Footer />
     </React.Fragment>
   );

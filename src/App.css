@@ -31,10 +31,6 @@ body {
   background-color: var(--lightColor);
   color: var(--darkColor);
 }
-.footer {
-  padding: 20px;
-}
-
 .graph {
   background-color: var(--lightColor);
   color: var(--darkColor);
@@ -46,4 +42,17 @@ body {
   background-color: var(--lightColor);
   color: var(--darkColor);
   padding: 20px;
+}
+.loader {
+  max-width: 50px;
+  margin: auto;
+  padding: 70px 0;
+}
+.footer {
+  padding: 20px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
