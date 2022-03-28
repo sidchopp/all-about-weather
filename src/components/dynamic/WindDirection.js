@@ -23,7 +23,7 @@ function WindDirection({ data }) {
     return <BsFillArrowDownLeftCircleFill />;
   } else if (data.current.wind_degree > 270 && data.current.wind_degree < 360 && data.current.wind_degree) {
     return <BsFillArrowDownRightCircleFill />;
-  } else if (data.current.wind_degree === 0 && data.current.wind_degree) {
+  } else if ((data.current.wind_degree === 0 || data.current.wind_degree === 360) && data.current.wind_degree) {
     return <BsFillArrowRightCircleFill />;
   } else if (data.current.wind_degree === 90 && data.current.wind_degree) {
     return <BsFillArrowUpCircleFill />;
