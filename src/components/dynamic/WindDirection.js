@@ -13,27 +13,26 @@ import {
 
 
 function WindDirection({ data }) {
-  // console.log(data.current.wind_degree);
+  const { current: { wind_degree: windAngle } } = data;
 
-  if (data.current.wind_degree > 0 && data.current.wind_degree < 90 && data.current.wind_degree) {
+  if (windAngle > 0 && windAngle < 90 && windAngle) {
     return <BsFillArrowUpRightCircleFill />;
-  } else if (data.current.wind_degree > 90 && data.current.wind_degree < 180 && data.current.wind_degree) {
+  } else if (windAngle > 90 && windAngle < 180 && windAngle) {
     return <BsFillArrowUpLeftCircleFill />;
-  } else if (data.current.wind_degree > 180 && data.current.wind_degree < 270 && data.current.wind_degree) {
+  } else if (windAngle > 180 && windAngle < 270 && windAngle) {
     return <BsFillArrowDownLeftCircleFill />;
-  } else if (data.current.wind_degree > 270 && data.current.wind_degree < 360 && data.current.wind_degree) {
+  } else if (windAngle > 270 && windAngle < 360 && windAngle) {
     return <BsFillArrowDownRightCircleFill />;
-  } else if ((data.current.wind_degree === 0 || data.current.wind_degree === 360) && data.current.wind_degree) {
+  } else if ((windAngle === 0 || windAngle === 360) && windAngle) {
     return <BsFillArrowRightCircleFill />;
-  } else if (data.current.wind_degree === 90 && data.current.wind_degree) {
+  } else if (windAngle === 90 && windAngle) {
     return <BsFillArrowUpCircleFill />;
-  } else if (data.current.wind_degree === 180 && data.current.wind_degree) {
+  } else if (windAngle === 180 && windAngle) {
     return <BsFillArrowLeftCircleFill />;
-  } else if (data.current.wind_degree === 270 && data.current.wind_degree) {
+  } else if (windAngle === 270 && windAngle) {
     return <BsFillArrowDownCircleFill />;
   } else {
     return <BsWind />
-
   }
 };
 
