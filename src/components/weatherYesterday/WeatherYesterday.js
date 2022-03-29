@@ -174,7 +174,6 @@ function WeatherTodayDetails({ dataYesterday }) {
                     <BsArrowDown />
                   </Typography>
                 </Grid>
-
                 <Grid item xs >
                   <Typography
                     component="h1"
@@ -182,11 +181,14 @@ function WeatherTodayDetails({ dataYesterday }) {
                     align="center"
                   >
                     <span className='font'>
-                      {value.day.uv}
+                      {Math.round(value.day.avghumidity)}
+                      <span style={{ fontSize: "15px" }} >
+                        %
+                      </span>
                     </span>
                   </Typography>
-                  <Typography color={IconStyle.uvIndex} variant="h4" align="center" component="p">
-                    <BsFillSunFill />
+                  <Typography variant="h4" align="center" component="p">
+                    <WiHumidity />
                   </Typography>
                 </Grid>
                 <Grid item xs >
@@ -196,16 +198,14 @@ function WeatherTodayDetails({ dataYesterday }) {
                     align="right"
                   >
                     <span className='font'>
-                      {Math.round(value.day.avghumidity)}
-                      <span style={{ fontSize: "15px" }} >
-                        %
-                      </span>
+                      {value.day.uv}
                     </span>
                   </Typography>
-                  <Typography variant="h4" align="right" component="p">
-                    <WiHumidity />
+                  <Typography color={IconStyle.uvIndex} variant="h4" align="right" component="p">
+                    <BsFillSunFill />
                   </Typography>
                 </Grid>
+
               </Grid>
 
             </Grid>
