@@ -72,7 +72,7 @@ function WeatherAll() {
   }
   return (
     <>
-      {(typeof data.current !== 'undefined' && typeof data.location !== 'undefined' && typeof data.forecast !== 'undefined' && typeof dataYesterday.forecast !== 'undefined')
+      {(Object.keys(data).length !== 0 && Object.keys(dataYesterday).length !== 0)
         ? <>
           <div>
             {/* style={styles.paperContainer} */}
