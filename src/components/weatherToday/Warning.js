@@ -53,8 +53,8 @@ export default function Warning({ data }) {
             <Card sx={style}>
               <div className='modal'>
                 {filteredAlert.map(alert => (
-                  <>
-                    <Grid key={alert.effective} container direction="row" justifyContent="space-between" alignItems="center" >
+                  <div key={alert.effective}>
+                    <Grid container direction="row" justifyContent="space-between" alignItems="center" >
                       <Grid item >
                         <Typography variant="h6" component="p">
                           Warning
@@ -91,7 +91,7 @@ export default function Warning({ data }) {
                        ${new Date(alert.expires)}
                        `}
                     </Typography>
-                  </>
+                  </div>
                 )
                 )}
               </div>
