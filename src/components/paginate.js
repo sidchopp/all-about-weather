@@ -1,7 +1,6 @@
 const paginate = (hour) => {
 
-
-  const temperaturesPerSlide = 4;
+  const temperaturesPerSlide = 3;
   const slides = Math.ceil(hour.length / temperaturesPerSlide);
 
   const newTemperatures = Array
