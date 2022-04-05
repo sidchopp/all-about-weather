@@ -73,9 +73,34 @@ body {
 .temp-paginate-card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  border: 2px solid red;
+  border: 2px solid var(--darkColor);
   border-radius: 8px;
   padding: 5px;
+  margin: 15px 3px;
+}
+.btn {
+  padding: 0.35rem 0.75rem;
+  letter-spacing: 1.6px;
+  font-size: 0.75rem;
+  color: var(--clr-white);
+  background: var(--clr-primary-5);
+  border-radius: var(--radius);
+  border-color: transparent;
+  text-transform: uppercase;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.page-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-color: var(--darkColor);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0.1rem;
+  transition: var(--transition);
+}
+.active-btn {
+  background: var(--darkColor);
 }
 .footer {
   padding: 20px;
