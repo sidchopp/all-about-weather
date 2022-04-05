@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 //Components
 import Warning from './Warning';
 import AirQuality from './AirQuality';
+import TodayTempPaginate from './TodayTempPaginate';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -77,6 +78,9 @@ function WeatherToday({ data }) {
                 <Typography variant="h7" align="center" component="p">
                   <Img style={{ float: 'right' }} src={data.current.condition.icon} alt="Weather" />
                 </Typography>
+              </Grid>
+              <Grid>
+                <TodayTempPaginate data={data} />
               </Grid>
             </Grid>
           </CardContent>

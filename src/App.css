@@ -66,6 +66,17 @@ body {
   margin: auto;
   padding: 70px 0;
 }
+.paginate-rows {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.temp-paginate-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 5px;
+}
 .footer {
   padding: 20px;
 }
