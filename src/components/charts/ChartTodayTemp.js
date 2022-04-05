@@ -7,7 +7,7 @@ import { format } from "date-fns";
 const time = format(new Date(), 'HH');
 const timeString = `${time}:00`;
 
-export default function GraphDaily({ data1 }) {
+export default function ChartTodayTemp({ data1 }) {
   const theme = useTheme();
 
   const graphData = [];

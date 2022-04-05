@@ -10,7 +10,7 @@ import WeatherToday from '../weatherToday/WeatherToday';
 import Loader from '../loader/Loader';
 import WeatherTodayDetails from '../weatherToday/WeatherTodayDetails';
 import WeatherYesterday from '../weatherYesterday/WeatherYesterday'
-import GraphDaily from '../charts/GraphDaily';
+import ChartTodayTemp from '../charts/ChartTodayTemp';
 
 // Date in ISO format For Yesterday's weather
 const yesterday = startOfYesterday()
@@ -87,7 +87,7 @@ function WeatherAll() {
               </Grid>
             </Container>
             <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
-              <GraphDaily data1={data} />
+              <ChartTodayTemp data1={data} />
             </Container>
             <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
               <WeatherForecast data2={data} />
