@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 
 //Components
 import Warning from './Warning';
-import AirQuality from '../airQuality/AirQuality';
+import AirQuality from './AirQuality';
 
 const Img = styled('img')({
   margin: 'auto',

@@ -5,12 +5,12 @@ import { formatISO, startOfYesterday } from 'date-fns';
 // import BackgroundImage from '../dynamic/BackgroundImage';
 
 //Components
-import WeatherForecast from '../weatherForecast/WeatherForecast';
-import WeatherToday from '../weatherToday/WeatherToday';
-import Loader from '../loader/Loader';
-import WeatherTodayDetails from '../weatherToday/WeatherTodayDetails';
-import WeatherYesterday from '../weatherYesterday/WeatherYesterday'
-import ChartTodayTemp from '../charts/ChartTodayTemp';
+import WeatherForecast from './WeatherForecast';
+import WeatherToday from './WeatherToday';
+import Loader from './Loader';
+import WeatherTodayDetails from './WeatherTodayDetails';
+import WeatherYesterday from './WeatherYesterday'
+import ChartTodayTemp from './charts/ChartTodayTemp';
 
 // Date in ISO format For Yesterday's weather
 const yesterday = startOfYesterday()

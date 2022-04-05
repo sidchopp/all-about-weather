@@ -10,8 +10,8 @@ import { format } from 'date-fns';
 import 'animate.css';
 
 //Components
-import WindDirection from '../dynamic/WindDirection';
-import IconStyle from '../styles/IconStyles';
+import WindDirection from './dynamic/WindDirection';
+import IconStyle from './styles/IconStyles';
 
 function WeatherTodayDetails({ data }) {
 

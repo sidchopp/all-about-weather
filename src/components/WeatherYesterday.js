@@ -12,7 +12,7 @@ import { BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowD
 import { CgCompressV } from "react-icons/cg";
 
 //Components
-import IconStyle from '../styles/IconStyles';
+import IconStyle from './styles/IconStyles';
 
 const Img = styled('img')({
   margin: 'auto',

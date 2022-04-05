@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 
 //Components
-import Footer from './components/footer/Footer';
-import WeatherAll from './components/weatherAll/WeatherAll';
+import Footer from './components/Footer';
+import WeatherAll from './components/WeatherAll';
 
 function App() {
   return (

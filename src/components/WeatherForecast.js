@@ -10,7 +10,7 @@ import CardContent from '@mui/material/CardContent';
 import { BsFillSunriseFill, BsFillSunsetFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
 
 //Components
-import IconStyle from '../styles/IconStyles';
+import IconStyle from './styles/IconStyles';
 
 
 //For today's and tomorrow's date
