@@ -22,7 +22,7 @@ const TodayTempPaginate = ({ data }) => {
   const [slide, setSlide] = useState(0);
   const [totalSlides, setTotalSlides] = useState(paginate(hour))
   const [temperatures, setTemperatures] = useState([]);
-  console.log(totalSlides);
+  // console.log(totalSlides);
 
   useEffect(() => {
     setTemperatures(paginate(hour)[slide])
