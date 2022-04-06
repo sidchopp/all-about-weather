@@ -56,16 +56,16 @@ const TodayTempPaginate = ({ data }) => {
       <div className='paginate-rows'>
         {temperatures.map(value => {
           return (
-            <div key={value.time_epoch} className='temp-paginate-card' >
-              <div>
+            <div key={value.time_epoch} className='temp-paginate-card font' >
+              <div style={{ fontSize: '0.8rem' }} >
+                {value.time.slice(11, 16)}
+              </div>
+              <div style={{ textAlign: 'center' }}>
                 <Img src={value.condition.icon} />
               </div>
-              <div style={{ textAlign: 'center', fontSize: '0.7rem' }} >
-                {value.time.slice(11, 16)}
-                <div style={{ fontSize: "1rem" }}  >
-                  {Math.round(value.temp_c)}
-                  <span style={{ textAlign: 'center', fontSize: '0.5rem' }}>°C</span>
-                </div>
+              <div style={{ fontSize: '1.2rem' }}  >
+                {Math.round(value.temp_c)}
+                <span >°C</span>
               </div>
             </div>
           )

@@ -73,11 +73,12 @@ body {
 }
 .temp-paginate-card {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: 2px solid var(--darkColor);
-  border-radius: 8px;
+  grid-template-rows: repeat(3, 1fr);
+  /* border: 2px solid var(--darkColor);
+  border-radius: 8px; */
   padding: 5px;
   margin: 15px 3px;
+  justify-content: space-evenly;
 }
 .btn {
   padding: 0.35rem 0.75rem;

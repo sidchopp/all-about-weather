@@ -4,6 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import Divider from '@mui/material/Divider';
 import { WiHumidity } from "react-icons/wi";
 import { BsFillPersonLinesFill, BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
 import { format } from 'date-fns';
@@ -181,6 +182,7 @@ function WeatherTodayDetails({ data }) {
                   </Typography>
                 </Grid>
               </Grid>
+              <Divider variant="middle" />
               <Grid>
                 <Typography variant="caption" align="center" display="block" >
                   <TodayTempPaginate data={data} />
