@@ -25,8 +25,14 @@ const weekday = format(new Date(), 'eee');
 const month = format(new Date(), 'MMM');
 const today = `${weekday},${month}${" "}${day}${" "}${time}`
 
+
+
+
 function WeatherToday({ data }) {
   // console.log(data);
+  // last updated time format
+  const { current: { last_updated } } = data;
+  const Time = format(new Date(last_updated), 'p')
   return (
     <div className='card'>
       <Card variant="outlined"  >
@@ -79,9 +85,14 @@ function WeatherToday({ data }) {
                   <Img style={{ float: 'right' }} src={data.current.condition.icon} alt="Weather" />
                 </Typography>
               </Grid>
-              <Grid>
+              {/* <Grid>
                 <TodayTempPaginate data={data} />
-              </Grid>
+              </Grid> */}
+            </Grid>
+            <Grid>
+              <Typography variant="caption" align="center" display="block" >
+                <span className='font'>   Last updated:{" "}{Time}</span>
+              </Typography>
             </Grid>
           </CardContent>
         </div>

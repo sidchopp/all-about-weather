@@ -12,6 +12,7 @@ import 'animate.css';
 //Components
 import WindDirection from './dynamic/WindDirection';
 import IconStyle from './styles/IconStyles';
+import TodayTempPaginate from './TodayTempPaginate';
 
 function WeatherTodayDetails({ data }) {
 
@@ -182,9 +183,14 @@ function WeatherTodayDetails({ data }) {
               </Grid>
               <Grid>
                 <Typography variant="caption" align="center" display="block" >
-                  <span className='font'>   Last updated:{" "}{time}</span>
+                  <TodayTempPaginate data={data} />
                 </Typography>
               </Grid>
+              {/* <Grid>
+                <Typography variant="caption" align="center" display="block" >
+                  <span className='font'>   Last updated:{" "}{time}</span>
+                </Typography>
+              </Grid> */}
             </Grid>
           </CardContent>
         </div>
