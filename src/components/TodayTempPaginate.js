@@ -47,7 +47,6 @@ const TodayTempPaginate = ({ data }) => {
       if (prevPage < 0) {
         prevPage = totalSlides.length - 1
       }
-      console.log(prevPage);
       return prevPage
     })
   }
