@@ -10,6 +10,7 @@
   --cardHoverShadow: 5px 10px 18px var(--darkColor);
   --transition: 0.3s ease-in-out all;
   --bodyFont: "Merriweather", serif;
+  --spacing: 0.1rem;
 }
 
 body {
@@ -82,13 +83,18 @@ body {
   padding: 0.35rem 0.75rem;
   letter-spacing: 1.6px;
   font-size: 0.75rem;
-  color: var(--clr-white);
-  background: var(--clr-primary-5);
+  /* color: var(--clr-white); */
+  /* background: var(--clr-primary-5); */
   border-radius: var(--radius);
   border-color: transparent;
   text-transform: uppercase;
-  transition: var(--transition);
+  /* transition: var(--transition); */
   cursor: pointer;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .page-btn {
   width: 1.5rem;
@@ -101,6 +107,14 @@ body {
 }
 .active-btn {
   background: var(--darkColor);
+}
+.prev-btn,
+.next-btn {
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1rem;
+  text-align: center;
+  color: var(--darkColor);
 }
 .footer {
   padding: 20px;

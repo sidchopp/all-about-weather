@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import paginate from "./paginate";
 import { styled } from '@mui/material/styles';
-import Button from '@mui/material/Button';
+import { IconButton } from '@mui/material';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -30,6 +32,26 @@ const TodayTempPaginate = ({ data }) => {
     setSlide(index)
   }
 
+  const nextPage = () => {
+    setSlide((oldPage) => {
+      let nextPage = oldPage + 1;
+      if (nextPage > totalSlides.length - 1) {
+        nextPage = 0
+      }
+      return nextPage
+    })
+  }
+  const prevPage = () => {
+    setSlide((oldPage) => {
+      let prevPage = oldPage - 1;
+      if (prevPage < 0) {
+        prevPage = totalSlides.length - 1
+      }
+      console.log(prevPage);
+      return prevPage
+    })
+  }
+
   return (
     <>
       <div className='paginate-rows'>
@@ -51,7 +73,8 @@ const TodayTempPaginate = ({ data }) => {
         }
         )}
       </div>
-      <div style={{ margin: '5px', textAlign: 'center' }}>
+      <div className="btn-container ">
+        <IconButton size="small" onClick={prevPage} className="prev-btn"><ArrowLeftIcon /></IconButton>
         {totalSlides.map((item, index) => {
           return (
             <button
@@ -60,6 +83,7 @@ const TodayTempPaginate = ({ data }) => {
               onClick={() => handleSlides(index)}
             >{index + 1}</button>)
         })}
+        <IconButton size="small" onClick={nextPage} className="next-btn"><ArrowRightIcon /></IconButton>
       </div>
     </>
   )
