@@ -7,7 +7,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import Divider from '@mui/material/Divider';
 import { WiHumidity } from "react-icons/wi";
 import { BsFillPersonLinesFill, BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
-import { format } from 'date-fns';
+
 import 'animate.css';
 
 //Components
@@ -16,10 +16,6 @@ import IconStyle from './styles/IconStyles';
 import TodayTempPaginate from './TodayTempPaginate';
 
 function WeatherTodayDetails({ data }) {
-
-  // last updated time format
-  const { current: { last_updated } } = data;
-  const time = format(new Date(last_updated), 'p')
 
   return (
     <div className='card'>
@@ -188,11 +184,6 @@ function WeatherTodayDetails({ data }) {
                   <TodayTempPaginate data={data} />
                 </Typography>
               </Grid>
-              {/* <Grid>
-                <Typography variant="caption" align="center" display="block" >
-                  <span className='font'>   Last updated:{" "}{time}</span>
-                </Typography>
-              </Grid> */}
             </Grid>
           </CardContent>
         </div>

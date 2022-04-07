@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 //Components
 import Warning from './Warning';
 import AirQuality from './AirQuality';
-import TodayTempPaginate from './TodayTempPaginate';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -24,9 +23,6 @@ const time = format(new Date(), "p")
 const weekday = format(new Date(), 'eee');
 const month = format(new Date(), 'MMM');
 const today = `${weekday},${month}${" "}${day}${" "}${time}`
-
-
-
 
 function WeatherToday({ data }) {
   // console.log(data);
@@ -85,9 +81,6 @@ function WeatherToday({ data }) {
                   <Img style={{ float: 'right' }} src={data.current.condition.icon} alt="Weather" />
                 </Typography>
               </Grid>
-              {/* <Grid>
-                <TodayTempPaginate data={data} />
-              </Grid> */}
             </Grid>
             <Grid>
               <Typography variant="caption" align="center" display="block" >
