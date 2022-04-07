@@ -51,7 +51,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                   <Typography
                     component="h1"
                     variant="h5"
-                    align="left"
+                    align="center"
                   >
                     <span className='font'>
                       {Math.round(value.day.avgtemp_c)}
@@ -60,7 +60,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                       </span>
                     </span>
                   </Typography>
-                  <Typography gutterBottom variant="h5" align="left" component="p">
+                  <Typography gutterBottom variant="h5" align="center" component="p">
                     <CgCompressV />
                   </Typography>
                 </Grid>
@@ -85,7 +85,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                   <Typography
                     component="h1"
                     variant="h5"
-                    align="right"
+                    align="center"
                   >
                     <span className='font'>
                       {value.astro.sunrise.slice(1, 5)}
@@ -94,7 +94,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                       </span>
                     </span>
                   </Typography>
-                  <Typography color={IconStyle.sunRise} variant="h4" align="right" component="p">
+                  <Typography color={IconStyle.sunRise} variant="h4" align="center" component="p">
                     <BsFillSunriseFill />
                   </Typography>
                 </Grid>
@@ -106,7 +106,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                   <Typography
                     component="h1"
                     variant="h5"
-                    align="left"
+                    align="center"
                   >
                     <span className='font'>
                       {Math.round(value.day.maxtemp_c)}
@@ -115,7 +115,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                       </span>
                     </span>
                   </Typography>
-                  <Typography color={IconStyle.highTemp} gutterBottom variant="h5" align="left" component="p">
+                  <Typography color={IconStyle.highTemp} gutterBottom variant="h5" align="center" component="p">
                     <BsArrowUp />
                   </Typography>
                 </Grid>
@@ -140,7 +140,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                   <Typography
                     component="h1"
                     variant="h5"
-                    align="right"
+                    align="center"
                   >
                     <span className='font'>
                       {value.astro.sunset.slice(1, 5)}
@@ -149,7 +149,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                       </span>
                     </span>
                   </Typography>
-                  <Typography color={IconStyle.sunSet} variant="h4" align="right" component="p">
+                  <Typography color={IconStyle.sunSet} variant="h4" align="center" component="p">
                     <BsFillSunsetFill />
                   </Typography>
                 </Grid>
@@ -161,7 +161,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                   <Typography
                     component="h1"
                     variant="h5"
-                    align="left"
+                    align="center"
                   >
                     <span className='font'>
                       {Math.round(value.day.mintemp_c)}
@@ -170,7 +170,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                       </span>
                     </span>
                   </Typography>
-                  <Typography color={IconStyle.lowTemp} gutterBottom variant="h5" align="left" component="p">
+                  <Typography color={IconStyle.lowTemp} gutterBottom variant="h5" align="center" component="p">
                     <BsArrowDown />
                   </Typography>
                 </Grid>
@@ -195,13 +195,13 @@ function WeatherTodayDetails({ dataYesterday }) {
                   <Typography
                     component="h1"
                     variant="h5"
-                    align="right"
+                    align="center"
                   >
                     <span className='font'>
                       {value.day.uv}
                     </span>
                   </Typography>
-                  <Typography color={IconStyle.uvIndex} variant="h4" align="right" component="p">
+                  <Typography color={IconStyle.uvIndex} variant="h4" align="center" component="p">
                     <BsFillSunFill />
                   </Typography>
                 </Grid>
