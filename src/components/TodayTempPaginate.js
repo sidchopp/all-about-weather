@@ -78,7 +78,7 @@ const TodayTempPaginate = ({ data }) => {
           return (
             <button
               key={index}
-              className={` page-btn ${index === slide ? "active-btn" : null}`}
+              className={` page-btn font ${index === slide ? "active-btn" : null}`}
               onClick={() => handleSlides(index)}
             >{index + 1}</button>)
         })}
