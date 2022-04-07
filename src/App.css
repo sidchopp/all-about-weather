@@ -80,6 +80,10 @@ body {
   margin: 15px 3px;
   justify-content: space-evenly;
 }
+.img-weather {
+  border: 2px solid var(--darkColor);
+  border-radius: 4px;
+}
 .btn {
   padding: 0.35rem 0.75rem;
   letter-spacing: 1.6px;

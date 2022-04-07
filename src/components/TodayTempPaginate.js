@@ -60,7 +60,7 @@ const TodayTempPaginate = ({ data }) => {
               <div style={{ fontSize: '0.8rem' }} >
                 {value.time.slice(11, 16)}
               </div>
-              <div style={{ textAlign: 'center' }}>
+              <div className="img-weather " style={{ textAlign: 'center' }}>
                 <Img src={value.condition.icon} />
               </div>
               <div style={{ fontSize: '1.2rem' }}  >
