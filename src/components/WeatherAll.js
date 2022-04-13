@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { formatISO, startOfYesterday } from 'date-fns';
-// import BackgroundImage from '../dynamic/BackgroundImage';
+import { useGlobalContext } from './Context';
+
 
 //Components
 import WeatherForecast from './WeatherForecast';
@@ -11,10 +10,7 @@ import Loader from './Loader';
 import WeatherTodayDetails from './WeatherTodayDetails';
 import WeatherYesterday from './WeatherYesterday'
 import ChartTodayTemp from './charts/ChartTodayTemp';
-
-// Date in ISO format For Yesterday's weather
-const yesterday = startOfYesterday()
-const yesterdayIso = formatISO(yesterday, { representation: 'date' })
+// import BackgroundImage from '../dynamic/BackgroundImage';
 
 // const styles = {
 //   paperContainer: {
@@ -27,42 +23,7 @@ const yesterdayIso = formatISO(yesterday, { representation: 'date' })
 // };
 
 function WeatherAll() {
-  //States
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState({});
-  const [dataYesterday, setDataYesterday] = useState({});
-
-  // Promisifying the Geolocation API
-  const getPosition = function () {
-    return new Promise(function (resolve, reject) {
-      navigator.geolocation.getCurrentPosition(resolve, reject);
-    });
-  };
-
-  const whereAmI = async function () {
-    setLoading(true);
-    // Geo Location
-    const pos = await getPosition();
-    const { latitude: lat, longitude: lon } = pos.coords;
-    try {
-      const responseGeo = await fetch(`${process.env.REACT_APP_API_URL}/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${lat},${lon}&days=7&aqi=yes&alerts=yes`)
-      const dataGeo = await responseGeo.json();
-      setLoading(false)
-      setData(dataGeo)
-
-      // For yesterday's weather
-      const responseYesterday = await fetch(`${process.env.REACT_APP_API_URL}/history.json?key=${process.env.REACT_APP_API_KEY}&q=${lat},${lon}&dt=${yesterdayIso}`);
-      const dataYesterday = await responseYesterday.json();
-      setDataYesterday(dataYesterday);
-    } catch (err) {
-      setLoading(false)
-      console.log('This is the error:', err.message);
-    }
-  }
-  useEffect(() => {
-    whereAmI();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  const { loading, data, dataYesterday } = useGlobalContext();
 
   // if data is not fetched,show loader
   if (loading) {
@@ -75,7 +36,6 @@ function WeatherAll() {
       {(Object.keys(data).length !== 0 && Object.keys(dataYesterday).length !== 0)
         ? <>
           <div>
-            {/* style={styles.paperContainer} */}
             <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={4} lg={4}>
