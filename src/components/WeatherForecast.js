@@ -10,16 +10,13 @@ import CardContent from '@mui/material/CardContent';
 import { BsFillSunriseFill, BsFillSunsetFill, BsArrowUp, BsArrowDown } from "react-icons/bs";
 
 //Components
+import { useGlobalContext } from './Context';
 import IconStyle from './styles/IconStyles';
 
-
-//For today's and tomorrow's date
+//For today's date
 const todayDate = format(new Date(), "yyyy-MM-dd")
-// const tomdate = new Date().setDate(new Date().getDate() + 1)
-// const tomorrowDate = format(tomdate, "yyyy-MM-dd")
-// const dayAfterTomorrow = format(new Date().setDate(new Date().getDate() + 2), "yyyy-MM-dd")
-// console.log(todayDate, tomorrowDate, dayAfterTomorrow);
 
+// Icons image styling
 const Img = styled('img')({
   margin: 'auto',
   display: 'block',
@@ -27,12 +24,12 @@ const Img = styled('img')({
   maxHeight: '100%',
 });
 
-function WeatherForecast({ data2 }) {
-  // console.log(data2)
+function WeatherForecast() {
+  const { data } = useGlobalContext();
   return (
     <Container maxWidth="xl" component="main">
       <Grid container spacing={6} alignItems="flex-end">
-        {data2.forecast.forecastday.map((day) => (
+        {data.forecast.forecastday.map((day) => (
           // Today's card is full width at sm breakpoint
           <Grid
             item

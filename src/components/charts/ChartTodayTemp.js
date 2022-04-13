@@ -4,16 +4,20 @@ import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import { format } from "date-fns";
 
+//Components
+import { useGlobalContext } from '../Context';
+
 const time = format(new Date(), 'HH');
 const timeString = `${time}:00`;
 
-export default function ChartTodayTemp({ data1 }) {
+export default function ChartTodayTemp() {
+  const { data } = useGlobalContext();
   const theme = useTheme();
 
   const graphData = [];
-  for (let i = 0; i < data1.forecast.forecastday[0].hour.length; i++) {
-    const time = data1.forecast.forecastday[0].hour[i].time.slice(-5);
-    const temperature = data1.forecast.forecastday[0].hour[i].temp_c;
+  for (let i = 0; i < data.forecast.forecastday[0].hour.length; i++) {
+    const time = data.forecast.forecastday[0].hour[i].time.slice(-5);
+    const temperature = data.forecast.forecastday[0].hour[i].temp_c;
     const objectSets = {};
     objectSets.time = time;
     objectSets.value = temperature;

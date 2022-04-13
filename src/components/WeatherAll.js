@@ -1,9 +1,8 @@
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { useGlobalContext } from './Context';
-
 
 //Components
+import { useGlobalContext } from './Context';
 import WeatherForecast from './WeatherForecast';
 import WeatherToday from './WeatherToday';
 import Loader from './Loader';
@@ -47,13 +46,13 @@ function WeatherAll() {
               </Grid>
             </Container>
             <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
-              <ChartTodayTemp data1={data} />
+              <ChartTodayTemp />
             </Container>
             <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
-              <WeatherForecast data2={data} />
+              <WeatherForecast />
             </Container>
             <Container maxWidth="sm" sx={{ mt: 4, mb: 4 }}>
-              <WeatherYesterday dataYesterday={dataYesterday} />
+              <WeatherYesterday />
             </Container>
           </div>
         </>

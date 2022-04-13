@@ -12,6 +12,7 @@ import { BsFillSunriseFill, BsFillSunsetFill, BsFillSunFill, BsArrowUp, BsArrowD
 import { CgCompressV } from "react-icons/cg";
 
 //Components
+import { useGlobalContext } from './Context';
 import IconStyle from './styles/IconStyles';
 
 const Img = styled('img')({
@@ -21,10 +22,10 @@ const Img = styled('img')({
   maxHeight: '100%',
 });
 
-function WeatherTodayDetails({ dataYesterday }) {
+function WeatherTodayDetails() {
+  const { dataYesterday } = useGlobalContext();
   const value = dataYesterday.forecast.forecastday[0]
-  // console.log(value);
-  // console.log(dataYesterday);
+
   return (
     <div className='card'>
       <Card variant="outlined">
@@ -205,9 +206,7 @@ function WeatherTodayDetails({ dataYesterday }) {
                     <BsFillSunFill />
                   </Typography>
                 </Grid>
-
               </Grid>
-
             </Grid>
           </CardContent>
         </div>
