@@ -8,6 +8,7 @@
   --textColor: var(--lightColor);
   --cardShadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   --cardHoverShadow: 5px 10px 18px var(--darkColor);
+  --scrollToTopShadow: 0 8px 6px -6px var(--darkColor);
   --transition: 0.3s ease-in-out all;
   --bodyFont: "Merriweather", serif;
   --spacing: 0.1rem;
@@ -120,6 +121,19 @@ body {
   margin: 1rem;
   text-align: center;
   color: var(--darkColor);
+}
+.scrollToTop {
+  background: var(--darkColor);
+  color: var(--lightColor);
+  bottom: 12.5px;
+  right: 8.5px;
+  position: fixed;
+  box-shadow: var(--scrollToTopShadow);
+  transition: var(--transition);
+  border-radius: 5px;
+}
+.scrollToTop:hover {
+  transform: scale(1.1);
 }
 .footer {
   padding: 20px;

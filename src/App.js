@@ -3,6 +3,7 @@ import './App.css';
 
 //Components
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import WeatherAll from './components/WeatherAll';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <React.Fragment>
       <main>
         <WeatherAll />
+        <ScrollToTop />
       </main>
       <Footer />
     </React.Fragment>
