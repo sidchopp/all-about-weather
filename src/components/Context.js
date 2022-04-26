@@ -11,6 +11,8 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
   const [dataYesterday, setDataYesterday] = useState({});
+  // The back-to-top button is hidden at the beginning
+  const [showButton, setShowButton] = useState(false);
 
   // Promisifying the Geolocation API
   const getPosition = function () {
@@ -42,9 +44,21 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     whereAmI();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
-  return <AppContext.Provider value={{ loading, setLoading, data, setData, dataYesterday, setDataYesterday }}>{children}</AppContext.Provider>
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    });
+  }, []);
+
+  return <AppContext.Provider value={{ loading, setLoading, data, setData, dataYesterday, setDataYesterday, showButton, setShowButton }}>
+    {children}
+  </AppContext.Provider>
 }
 // make sure use
 export const useGlobalContext = () => {
