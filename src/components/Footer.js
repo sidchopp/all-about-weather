@@ -13,7 +13,7 @@ function Footer() {
           gutterBottom
         >
           <span className='font'>
-            ALL WEATHER
+            ALL ABOUT WEATHER
           </span>
         </Typography>
         <Typography variant="body2" color="text.secondary" align="center" >
