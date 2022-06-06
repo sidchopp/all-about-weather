@@ -65,7 +65,7 @@ const TodayTempPaginate = ({ data }) => {
               </div>
               <div style={{ fontSize: '1.2rem' }}  >
                 {Math.round(value.temp_c)}
-                <span >°C</span>
+                <span style={{ fontSize: '0.7rem' }} >°C</span>
               </div>
             </div>
           )
